@@ -1,0 +1,1313 @@
+{
+  "meta": {
+    "title": "The RPwD Act 2016",
+    "subtitle": "Easy Read Guide",
+    "audience": "A complete reference for persons with intellectual and learning disabilities.",
+    "version": "1.0",
+    "total_sections": 102,
+    "total_chapters": 17,
+    "source_note": "Section titles verified against the official RPwD Act 2016 (Ministry of Law and Justice)."
+  },
+  "palette": {
+    "vs_blue": "#00B0F0",
+    "vs_blue_dark": "#007CB0",
+    "vs_pink": "#F080B0",
+    "vs_pink_dark": "#C85C90"
+  },
+  "chapters": [
+    {
+      "id": "I",
+      "label": "CHAPTER I  ·  THE BASICS",
+      "title": "Preliminary",
+      "subtitle": "The basics: who is covered and what the words mean",
+      "kicker": "CHAPTER I",
+      "color": "#00ACC1",
+      "sections": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "II",
+      "label": "CHAPTER II  ·  YOUR RIGHTS",
+      "title": "Rights and Entitlements",
+      "subtitle": "What you can claim, and what is wrong",
+      "kicker": "CHAPTER II",
+      "color": "#C2185B",
+      "sections": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "id": "III",
+      "label": "CHAPTER III  ·  EDUCATION",
+      "title": "Education",
+      "subtitle": "Schools, colleges, and learning",
+      "kicker": "CHAPTER III",
+      "color": "#F57C00",
+      "sections": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "IV",
+      "label": "CHAPTER IV  ·  SKILL & WORK",
+      "title": "Skill Development and Employment",
+      "subtitle": "Training, jobs, and fair treatment at work",
+      "kicker": "CHAPTER IV",
+      "color": "#2E7D32",
+      "sections": [
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "id": "V",
+      "label": "CHAPTER V  ·  HEALTH AND SUPPORT",
+      "title": "Social Security, Health, Rehabilitation and Recreation",
+      "subtitle": "Help to live with dignity, stay well, and take part",
+      "kicker": "CHAPTER V",
+      "color": "#C62828",
+      "sections": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "id": "VI",
+      "label": "CHAPTER VI  ·  BENCHMARK DISABILITIES",
+      "title": "Special Provisions for Persons with Benchmark Disabilities",
+      "subtitle": "Extra rights when your disability is 40% or more",
+      "kicker": "CHAPTER VI",
+      "color": "#6A1B9A",
+      "sections": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "id": "VII",
+      "label": "CHAPTER VII  ·  HIGH SUPPORT NEEDS",
+      "title": "Persons with Disabilities with High Support Needs",
+      "subtitle": "Extra support for those who need it most",
+      "kicker": "CHAPTER VII",
+      "color": "#00897B",
+      "sections": [
+        38
+      ]
+    },
+    {
+      "id": "VIII",
+      "label": "CHAPTER VIII  ·  GOVERNMENT DUTIES",
+      "title": "Duties and Responsibilities of Appropriate Governments",
+      "subtitle": "Awareness, accessibility, and what governments must build",
+      "kicker": "CHAPTER VIII",
+      "color": "#283593",
+      "sections": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "id": "IX",
+      "label": "CHAPTER IX  ·  DISABILITY INSTITUTIONS",
+      "title": "Registration of Disability Institutions",
+      "subtitle": "Rules for organisations that work with persons with disabilities",
+      "kicker": "CHAPTER IX",
+      "color": "#5D4037",
+      "sections": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    {
+      "id": "X",
+      "label": "CHAPTER X  ·  CERTIFICATION",
+      "title": "Certification of Specified Disabilities",
+      "subtitle": "How to assess and certify a disability",
+      "kicker": "CHAPTER X",
+      "color": "#00838F",
+      "sections": [
+        56,
+        57,
+        58,
+        59
+      ]
+    },
+    {
+      "id": "XI",
+      "label": "CHAPTER XI  ·  ADVISORY BOARDS",
+      "title": "Advisory Boards on Disability",
+      "subtitle": "Central, state, and district advisory bodies",
+      "kicker": "CHAPTER XI",
+      "color": "#512DA8",
+      "sections": [
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73
+      ]
+    },
+    {
+      "id": "XII",
+      "label": "CHAPTER XII  ·  COMMISSIONERS",
+      "title": "Chief Commissioner and State Commissioners",
+      "subtitle": "The offices that handle your complaints",
+      "kicker": "CHAPTER XII",
+      "color": "#689F38",
+      "sections": [
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ]
+    },
+    {
+      "id": "XIII",
+      "label": "CHAPTER XIII  ·  SPECIAL COURT",
+      "title": "Special Court",
+      "subtitle": "Where serious cases under this Act are heard",
+      "kicker": "CHAPTER XIII",
+      "color": "#BF360C",
+      "sections": [
+        84,
+        85
+      ]
+    },
+    {
+      "id": "XIV",
+      "label": "CHAPTER XIV  ·  NATIONAL FUND",
+      "title": "National Fund for Persons with Disabilities",
+      "subtitle": "The national pot of money that pays for support",
+      "kicker": "CHAPTER XIV",
+      "color": "#455A64",
+      "sections": [
+        86,
+        87
+      ]
+    },
+    {
+      "id": "XV",
+      "label": "CHAPTER XV  ·  STATE FUND",
+      "title": "State Fund for Persons with Disabilities",
+      "subtitle": "Each state's own disability fund",
+      "kicker": "CHAPTER XV",
+      "color": "#4E342E",
+      "sections": [
+        88
+      ]
+    },
+    {
+      "id": "XVI",
+      "label": "CHAPTER XVI  ·  PENALTIES",
+      "title": "Offences and Penalties",
+      "subtitle": "If someone breaks these rules",
+      "kicker": "CHAPTER XVI",
+      "color": "#B71C1C",
+      "sections": [
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ]
+    },
+    {
+      "id": "XVII",
+      "label": "CHAPTER XVII  ·  MISCELLANEOUS",
+      "title": "Miscellaneous",
+      "subtitle": "The closing rules of the Act",
+      "kicker": "CHAPTER XVII",
+      "color": "#424242",
+      "sections": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "num": 1,
+      "chapter": "I",
+      "title": "Section 1 — Short title and commencement",
+      "official_title": "Short title and commencement",
+      "plain_text": "This section gives the Act its name and tells when it started. The Act began on 19 April 2017 and applies to all of India.",
+      "use_when": "(For reference. This section is the Act's name plate.)",
+      "illustration": "book_simple",
+      "is_reference": true
+    },
+    {
+      "num": 2,
+      "chapter": "I",
+      "title": "Section 2 — Definitions",
+      "official_title": "Definitions",
+      "plain_text": "The Act lists 21 disabilities. If you have one of them, you are covered. If your disability is 40% or more, you are called a person with benchmark disability — you get extra rights.",
+      "use_when": "You are not sure if the Act covers you, or whether you have a benchmark disability. Look at the list of 21 disabilities and the 40% rule.",
+      "illustration": "book_simple",
+      "is_reference": false
+    },
+    {
+      "num": 3,
+      "chapter": "II",
+      "title": "Section 3 — Equality and non-discrimination",
+      "official_title": "Equality and non-discrimination",
+      "plain_text": "You have the right to be treated equally. No one can treat you badly because you have a disability.",
+      "use_when": "Someone refused you a service, a job, or a place because of your disability. Cite Section 3 in your complaint.",
+      "illustration": "equality",
+      "is_reference": false
+    },
+    {
+      "num": 4,
+      "chapter": "II",
+      "title": "Section 4 — Women and children with disabilities",
+      "official_title": "Women and children with disabilities",
+      "plain_text": "Women and children with disabilities have the same rights as everyone else. The government must protect them from extra harm.",
+      "use_when": "A girl or woman is denied school, work, or safety because of her disability. Or a child is being kept out of school.",
+      "illustration": "women_children",
+      "is_reference": false
+    },
+    {
+      "num": 5,
+      "chapter": "II",
+      "title": "Section 5 — Community life",
+      "official_title": "Community life",
+      "plain_text": "You have the right to live in your own home and your own community. No one can force you into an institution against your will.",
+      "use_when": "Someone is forcing a person with a disability to live in a hostel or institution they do not want to live in.",
+      "illustration": "house_family",
+      "is_reference": false
+    },
+    {
+      "num": 6,
+      "chapter": "II",
+      "title": "Section 6 — Protection from cruelty and inhuman treatment",
+      "official_title": "Protection from cruelty and inhuman treatment",
+      "plain_text": "No one can hurt you or treat you in a cruel way. The government must keep you safe.",
+      "use_when": "A person with a disability is being treated cruelly at home, in school, in a hospital, or in care.",
+      "illustration": "shield",
+      "is_reference": false
+    },
+    {
+      "num": 7,
+      "chapter": "II",
+      "title": "Section 7 — Protection from abuse, violence and exploitation",
+      "official_title": "Protection from abuse, violence and exploitation",
+      "plain_text": "No one can hit you, hurt you, or use you for their gain. You can tell the police. They must help. You can also ask a magistrate for protection.",
+      "use_when": "Someone is hurting, abusing, or exploiting a person with a disability.",
+      "illustration": "shield",
+      "is_reference": false
+    },
+    {
+      "num": 8,
+      "chapter": "II",
+      "title": "Section 8 — Protection and safety",
+      "official_title": "Protection and safety",
+      "plain_text": "The government must keep persons with disabilities safe in disasters, fires, floods, armed conflict, and other emergencies.",
+      "use_when": "A relief camp, shelter, or evacuation plan does not include or is not safe for persons with disabilities.",
+      "illustration": "disaster_safe",
+      "is_reference": false
+    },
+    {
+      "num": 9,
+      "chapter": "II",
+      "title": "Section 9 — Home and family",
+      "official_title": "Home and family",
+      "plain_text": "Persons with disabilities have the right to a home and a family. No child can be taken from a parent only because the parent has a disability.",
+      "use_when": "A child welfare worker tries to take your child away because of your disability.",
+      "illustration": "house_family",
+      "is_reference": false
+    },
+    {
+      "num": 10,
+      "chapter": "II",
+      "title": "Section 10 — Reproductive rights",
+      "official_title": "Reproductive rights",
+      "plain_text": "Persons with disabilities have the right to decide about marriage and children. No one can force you to have an operation that stops you from having children.",
+      "use_when": "A doctor, family member, or institution wants to sterilise a person with a disability without their full free consent.",
+      "illustration": "heart",
+      "is_reference": false
+    },
+    {
+      "num": 11,
+      "chapter": "II",
+      "title": "Section 11 — Accessibility in voting",
+      "official_title": "Accessibility in voting",
+      "plain_text": "You have the right to vote in private. Polling stations must have ramps, easy ballots, and help if you need it.",
+      "use_when": "A polling station has no ramp, no Braille ballot, or no help for voters with disabilities.",
+      "illustration": "vote",
+      "is_reference": false
+    },
+    {
+      "num": 12,
+      "chapter": "II",
+      "title": "Section 12 — Access to justice",
+      "official_title": "Access to justice",
+      "plain_text": "You have the right to go to court. Courts must let you take part. They must give you a sign language interpreter or a support person if you need one.",
+      "use_when": "A court, police station, or tribunal does not let you take part because of your disability.",
+      "illustration": "justice_scales",
+      "is_reference": false
+    },
+    {
+      "num": 13,
+      "chapter": "II",
+      "title": "Section 13 — Legal capacity",
+      "official_title": "Legal capacity",
+      "plain_text": "You can make your own decisions. You can own things. You can run a bank account. No one can take that away because of your disability.",
+      "use_when": "Someone says you cannot sign a document, open a bank account, or own property because of your disability.",
+      "illustration": "pencil_signing",
+      "is_reference": false
+    },
+    {
+      "num": 14,
+      "chapter": "II",
+      "title": "Section 14 — Provision for guardianship",
+      "official_title": "Provision for guardianship",
+      "plain_text": "Guardianship can only be a last step. It must be limited and end when you can decide for yourself again. You always have the right to support to make your own choices.",
+      "use_when": "Someone wants to put a person with a disability under full guardianship without trying support first.",
+      "illustration": "friends_support",
+      "is_reference": false
+    },
+    {
+      "num": 15,
+      "chapter": "II",
+      "title": "Section 15 — Designation of authorities to support",
+      "official_title": "Designation of authorities to support",
+      "plain_text": "The government must name offices that help persons with disabilities make their own decisions.",
+      "use_when": "(For reference. This section sets up the support system for decision-making.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 16,
+      "chapter": "III",
+      "title": "Section 16 — Duty of educational institutions",
+      "official_title": "Duty of educational institutions",
+      "plain_text": "All schools must welcome children with disabilities. Schools must give the help each child needs to learn.",
+      "use_when": "A school refused to take a child because of disability, or refuses to give support.",
+      "illustration": "school",
+      "is_reference": false
+    },
+    {
+      "num": 17,
+      "chapter": "III",
+      "title": "Section 17 — Specific measures to promote and facilitate inclusive education",
+      "official_title": "Specific measures to promote and facilitate inclusive education",
+      "plain_text": "The government must train teachers, make books in accessible formats, and make schools easy to enter and use.",
+      "use_when": "A school does not have ramps, accessible books, sign language support, or trained teachers.",
+      "illustration": "book_open",
+      "is_reference": false
+    },
+    {
+      "num": 18,
+      "chapter": "III",
+      "title": "Section 18 — Adult education",
+      "official_title": "Adult education",
+      "plain_text": "The government must run adult education programmes that include adults with disabilities.",
+      "use_when": "An adult literacy or skills programme has no place for persons with disabilities.",
+      "illustration": "book_learning",
+      "is_reference": false
+    },
+    {
+      "num": 19,
+      "chapter": "IV",
+      "title": "Section 19 — Vocational training and self-employment",
+      "official_title": "Vocational training and self-employment",
+      "plain_text": "The government must run job training programmes and help persons with disabilities start their own work.",
+      "use_when": "A skill training programme refused you, or did not have an accessible course.",
+      "illustration": "briefcase",
+      "is_reference": false
+    },
+    {
+      "num": 20,
+      "chapter": "IV",
+      "title": "Section 20 — Non-discrimination in employment",
+      "official_title": "Non-discrimination in employment",
+      "plain_text": "A government job cannot say no to you because you have a disability. You must be treated fairly at work.",
+      "use_when": "You did not get a job, a promotion, or a fair review because of your disability.",
+      "illustration": "briefcase",
+      "is_reference": false
+    },
+    {
+      "num": 21,
+      "chapter": "IV",
+      "title": "Section 21 — Equal opportunity policy",
+      "official_title": "Equal opportunity policy",
+      "plain_text": "Every workplace with 20 or more workers must write down how they will treat workers with disabilities fairly. They must show this paper if you ask.",
+      "use_when": "You want to know your workplace's rules for disability support. Ask to see the equal opportunity policy.",
+      "illustration": "document",
+      "is_reference": false
+    },
+    {
+      "num": 22,
+      "chapter": "IV",
+      "title": "Section 22 — Maintenance of records",
+      "official_title": "Maintenance of records",
+      "plain_text": "Every workplace must keep records of how many workers with disabilities they have, and what support each one needs.",
+      "use_when": "You ask your workplace for these records and they refuse, or they say no records are kept.",
+      "illustration": "clipboard_check",
+      "is_reference": false
+    },
+    {
+      "num": 23,
+      "chapter": "IV",
+      "title": "Section 23 — Appointment of Grievance Redressal Officer",
+      "official_title": "Appointment of Grievance Redressal Officer",
+      "plain_text": "Every government workplace must name an officer to handle complaints from workers with disabilities.",
+      "use_when": "Your workplace has no Grievance Redressal Officer, or the officer is not doing the job.",
+      "illustration": "committee_people",
+      "is_reference": false
+    },
+    {
+      "num": 24,
+      "chapter": "V",
+      "title": "Section 24 — Social security",
+      "official_title": "Social security",
+      "plain_text": "The government must help you with food, clothes, a home, and other support if you need it to live.",
+      "use_when": "You need a disability pension, ration card, or housing scheme but were turned away.",
+      "illustration": "money_jar",
+      "is_reference": false
+    },
+    {
+      "num": 25,
+      "chapter": "V",
+      "title": "Section 25 — Healthcare",
+      "official_title": "Healthcare",
+      "plain_text": "You should get free healthcare close to where you live. Healthcare must work for people with disabilities too.",
+      "use_when": "A government hospital or clinic refused you, charged you, or had no accessible service.",
+      "illustration": "medical_cross",
+      "is_reference": false
+    },
+    {
+      "num": 26,
+      "chapter": "V",
+      "title": "Section 26 — Insurance schemes",
+      "official_title": "Insurance schemes",
+      "plain_text": "The government must run insurance schemes for persons with disabilities.",
+      "use_when": "An insurance company refused you because of your disability, or you cannot find any disability insurance.",
+      "illustration": "document",
+      "is_reference": false
+    },
+    {
+      "num": 27,
+      "chapter": "V",
+      "title": "Section 27 — Rehabilitation",
+      "official_title": "Rehabilitation",
+      "plain_text": "The government must run rehabilitation programmes covering health, mind, social skills, and work.",
+      "use_when": "A government rehab centre is not available, is too far, or refused to take you.",
+      "illustration": "friends_support",
+      "is_reference": false
+    },
+    {
+      "num": 28,
+      "chapter": "V",
+      "title": "Section 28 — Research and development",
+      "official_title": "Research and development",
+      "plain_text": "The government must support research on disability, including new tools and treatments.",
+      "use_when": "(For reference. This section funds research on assistive technology and disability services.)",
+      "illustration": "book_open",
+      "is_reference": true
+    },
+    {
+      "num": 29,
+      "chapter": "V",
+      "title": "Section 29 — Culture and recreation",
+      "official_title": "Culture and recreation",
+      "plain_text": "Persons with disabilities have the right to take part in art, music, films, libraries, and leisure.",
+      "use_when": "A museum, cinema, library, or cultural event refused you or had no accessible entry.",
+      "illustration": "heart",
+      "is_reference": false
+    },
+    {
+      "num": 30,
+      "chapter": "V",
+      "title": "Section 30 — Sporting activities",
+      "official_title": "Sporting activities",
+      "plain_text": "The government must support sports for persons with disabilities.",
+      "use_when": "A sports facility, training programme, or competition refused to include persons with disabilities.",
+      "illustration": "certificate_star",
+      "is_reference": false
+    },
+    {
+      "num": 31,
+      "chapter": "VI",
+      "title": "Section 31 — Free education for children with benchmark disabilities",
+      "official_title": "Free education for children with benchmark disabilities",
+      "plain_text": "Children with benchmark disabilities aged 6 to 18 have the right to free education in any government or government-aided school.",
+      "use_when": "A government school asked a child with benchmark disability to pay fees, or refused to admit them.",
+      "illustration": "school",
+      "is_reference": false
+    },
+    {
+      "num": 32,
+      "chapter": "VI",
+      "title": "Section 32 — Reservation in higher educational institutions",
+      "official_title": "Reservation in higher educational institutions",
+      "plain_text": "Government colleges and universities must keep 5 seats out of every 100 for students with benchmark disabilities.",
+      "use_when": "A college denied you a reserved seat or did not have a 5% disability quota in admissions.",
+      "illustration": "school",
+      "is_reference": false
+    },
+    {
+      "num": 33,
+      "chapter": "VI",
+      "title": "Section 33 — Identification of posts for reservation",
+      "official_title": "Identification of posts for reservation",
+      "plain_text": "The government must list out which jobs are open to persons with benchmark disabilities under the reservation.",
+      "use_when": "(For reference. This section is the basis for the 4% reservation in Section 34.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 34,
+      "chapter": "VI",
+      "title": "Section 34 — Reservation",
+      "official_title": "Reservation",
+      "plain_text": "The government must keep 4 jobs out of every 100 for persons with benchmark disabilities. The 4% is split across categories of disability.",
+      "use_when": "A government office did not follow the 4% job quota, or did not let you apply under the disability category.",
+      "illustration": "chair_reserved",
+      "is_reference": false
+    },
+    {
+      "num": 35,
+      "chapter": "VI",
+      "title": "Section 35 — Incentives to employers in private sector",
+      "official_title": "Incentives to employers in private sector",
+      "plain_text": "The government can give private companies incentives like grants and tax breaks if they hire workers with disabilities.",
+      "use_when": "(For reference. This section encourages private sector hiring of persons with disabilities.)",
+      "illustration": "money_jar",
+      "is_reference": true
+    },
+    {
+      "num": 36,
+      "chapter": "VI",
+      "title": "Section 36 — Special employment exchange",
+      "official_title": "Special employment exchange",
+      "plain_text": "The government must set up special job centres that help persons with disabilities find work.",
+      "use_when": "You cannot find a special employment exchange in your district, or the one you found is not helping you.",
+      "illustration": "briefcase",
+      "is_reference": false
+    },
+    {
+      "num": 37,
+      "chapter": "VI",
+      "title": "Section 37 — Special schemes and development programmes",
+      "official_title": "Special schemes and development programmes",
+      "plain_text": "The government must run schemes that help persons with benchmark disabilities live, study, and work.",
+      "use_when": "(For reference. This section is the basis for many disability welfare schemes.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 38,
+      "chapter": "VII",
+      "title": "Section 38 — Special provisions for persons with disabilities with high support",
+      "official_title": "Special provisions for persons with disabilities with high support",
+      "plain_text": "Persons with disabilities who need a lot of support get extra help. They have the right to ask for support, and the help must be reviewed often.",
+      "use_when": "A person needs daily personal support but is not getting it from any government scheme.",
+      "illustration": "high_support_hands",
+      "is_reference": false
+    },
+    {
+      "num": 39,
+      "chapter": "VIII",
+      "title": "Section 39 — Awareness campaigns",
+      "official_title": "Awareness campaigns",
+      "plain_text": "The government must run programmes to teach people about disability rights and accessibility.",
+      "use_when": "(For reference. This section requires public awareness of the Act.)",
+      "illustration": "megaphone",
+      "is_reference": true
+    },
+    {
+      "num": 40,
+      "chapter": "VIII",
+      "title": "Section 40 — Accessibility",
+      "official_title": "Accessibility",
+      "plain_text": "Buildings, places, transport, and information must be made easy to use for everyone, including persons with disabilities.",
+      "use_when": "A public building has no ramp, no lift, no accessible toilet, or no clear signs.",
+      "illustration": "building_ramp",
+      "is_reference": false
+    },
+    {
+      "num": 41,
+      "chapter": "VIII",
+      "title": "Section 41 — Access to transport",
+      "official_title": "Access to transport",
+      "plain_text": "Buses, trains, stations, and airports must have ramps, accessible signs, and trained staff to help.",
+      "use_when": "A bus, train, or station did not let you board, had no ramp or lift, or had no accessible toilet.",
+      "illustration": "bus",
+      "is_reference": false
+    },
+    {
+      "num": 42,
+      "chapter": "VIII",
+      "title": "Section 42 — Access to information and communication technology",
+      "official_title": "Access to information and communication technology",
+      "plain_text": "Websites, apps, TV, and phones must work for people with disabilities. Books, forms, and notices must come in accessible formats too.",
+      "use_when": "A government website, app, TV news, or printed form is not accessible to you.",
+      "illustration": "computer",
+      "is_reference": false
+    },
+    {
+      "num": 43,
+      "chapter": "VIII",
+      "title": "Section 43 — Consumer goods",
+      "official_title": "Consumer goods",
+      "plain_text": "Things sold in shops — like phones, TVs, and household goods — should be made so that persons with disabilities can use them.",
+      "use_when": "A product you bought is not usable because of your disability and the maker did not provide an accessible version.",
+      "illustration": "computer",
+      "is_reference": false
+    },
+    {
+      "num": 44,
+      "chapter": "VIII",
+      "title": "Section 44 — Mandatory observance of accessibility norms",
+      "official_title": "Mandatory observance of accessibility norms",
+      "plain_text": "No new building, transport, or service can get a permit unless it follows the accessibility rules.",
+      "use_when": "A new building or service has been approved but does not meet the accessibility standards.",
+      "illustration": "building_ramp",
+      "is_reference": false
+    },
+    {
+      "num": 45,
+      "chapter": "VIII",
+      "title": "Section 45 — Time limit for making existing infrastructure and premises accessible and action for that purpose",
+      "official_title": "Time limit for making existing infrastructure and premises accessible and action for that purpose",
+      "plain_text": "Old buildings and services must be made accessible within five years. This is the law, not a request.",
+      "use_when": "A public building or service is still inaccessible long after the law required it to be fixed.",
+      "illustration": "clock",
+      "is_reference": false
+    },
+    {
+      "num": 46,
+      "chapter": "VIII",
+      "title": "Section 46 — Time limit for accessibility by service providers",
+      "official_title": "Time limit for accessibility by service providers",
+      "plain_text": "Service providers — like banks, hospitals, and shops — must make their services accessible within a fixed time set by the government.",
+      "use_when": "A service provider has not made its service accessible within the time the government set.",
+      "illustration": "clock",
+      "is_reference": false
+    },
+    {
+      "num": 47,
+      "chapter": "VIII",
+      "title": "Section 47 — Human resource development",
+      "official_title": "Human resource development",
+      "plain_text": "The government must train enough teachers, doctors, and other staff to support persons with disabilities.",
+      "use_when": "There are no trained special educators, sign language interpreters, or rehab workers in your area.",
+      "illustration": "school",
+      "is_reference": false
+    },
+    {
+      "num": 48,
+      "chapter": "VIII",
+      "title": "Section 48 — Social audit",
+      "official_title": "Social audit",
+      "plain_text": "The government must check, at least every five years, if the schemes for persons with disabilities are working — and persons with disabilities themselves should be part of that check.",
+      "use_when": "A scheme is not being audited, or persons with disabilities were not part of the audit.",
+      "illustration": "clipboard_check",
+      "is_reference": false
+    },
+    {
+      "num": 49,
+      "chapter": "IX",
+      "title": "Section 49 — Competent authority",
+      "official_title": "Competent authority",
+      "plain_text": "The government must name the office that handles registration of organisations working with persons with disabilities.",
+      "use_when": "(For reference. This sets up the registration system for disability organisations.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 50,
+      "chapter": "IX",
+      "title": "Section 50 — Registration",
+      "official_title": "Registration",
+      "plain_text": "Any institution that wants to work with persons with disabilities must be registered. Without registration, they cannot legally provide services.",
+      "use_when": "An institution is offering disability services without being registered.",
+      "illustration": "document",
+      "is_reference": false
+    },
+    {
+      "num": 51,
+      "chapter": "IX",
+      "title": "Section 51 — Application and grant of certificate of registration",
+      "official_title": "Application and grant of certificate of registration",
+      "plain_text": "An institution must apply for a registration certificate. The competent authority gives the certificate after checking that the rules are met.",
+      "use_when": "Your application for a registration certificate is taking too long, or was unfairly refused.",
+      "illustration": "document",
+      "is_reference": false
+    },
+    {
+      "num": 52,
+      "chapter": "IX",
+      "title": "Section 52 — Revocation of registration",
+      "official_title": "Revocation of registration",
+      "plain_text": "If a registered institution breaks the rules or harms persons with disabilities, its registration can be cancelled.",
+      "use_when": "A registered institution is treating persons with disabilities badly. You can ask the authority to cancel its registration.",
+      "illustration": "warning",
+      "is_reference": false
+    },
+    {
+      "num": 53,
+      "chapter": "IX",
+      "title": "Section 53 — Appeal",
+      "official_title": "Appeal",
+      "plain_text": "If your registration is refused or cancelled, you have the right to appeal to a higher authority.",
+      "use_when": "Your institution's registration was refused or cancelled and you want to challenge that decision.",
+      "illustration": "justice_scales",
+      "is_reference": false
+    },
+    {
+      "num": 54,
+      "chapter": "IX",
+      "title": "Section 54 — Act not to apply to institutions established or maintained by Central or State Government",
+      "official_title": "Act not to apply to institutions established or maintained by Central or State Government",
+      "plain_text": "Government-run institutions for persons with disabilities do not need to register under this chapter — different rules apply to them.",
+      "use_when": "(For reference. Government institutions are exempt from this registration requirement.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 55,
+      "chapter": "IX",
+      "title": "Section 55 — Assistance to registered institutions",
+      "official_title": "Assistance to registered institutions",
+      "plain_text": "The government can give grants and other help to registered organisations that serve persons with disabilities.",
+      "use_when": "(For reference. This section is the basis for funding disability organisations.)",
+      "illustration": "money_jar",
+      "is_reference": true
+    },
+    {
+      "num": 56,
+      "chapter": "X",
+      "title": "Section 56 — Guidelines for assessment of specified disabilities",
+      "official_title": "Guidelines for assessment of specified disabilities",
+      "plain_text": "The government must publish clear guidelines on how to assess each of the 21 specified disabilities.",
+      "use_when": "(For reference. The assessment guidelines are issued by the central government.)",
+      "illustration": "clipboard_check",
+      "is_reference": true
+    },
+    {
+      "num": 57,
+      "chapter": "X",
+      "title": "Section 57 — Designation of certifying authorities",
+      "official_title": "Designation of certifying authorities",
+      "plain_text": "The government must name the doctors and offices that can issue a disability certificate.",
+      "use_when": "(For reference. This sets up the disability certification system.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 58,
+      "chapter": "X",
+      "title": "Section 58 — Procedure for certification",
+      "official_title": "Procedure for certification",
+      "plain_text": "There must be a clear, fair process to get a disability certificate. The certificate is valid all over India.",
+      "use_when": "A doctor or office is making the certificate process hard, slow, or unclear.",
+      "illustration": "clipboard_check",
+      "is_reference": false
+    },
+    {
+      "num": 59,
+      "chapter": "X",
+      "title": "Section 59 — Appeal against a decision of certifying authority",
+      "official_title": "Appeal against a decision of certifying authority",
+      "plain_text": "If you are refused a disability certificate or get the wrong one, you can appeal.",
+      "use_when": "Your application for a disability certificate was refused, or the percentage was wrong.",
+      "illustration": "justice_scales",
+      "is_reference": false
+    },
+    {
+      "num": 60,
+      "chapter": "XI",
+      "title": "Section 60 — Constitution of Central Advisory Board on Disability",
+      "official_title": "Constitution of Central Advisory Board on Disability",
+      "plain_text": "The central government must set up a Central Advisory Board on Disability to advise on disability matters.",
+      "use_when": "(For reference. This sets up the national disability advisory body.)",
+      "illustration": "committee_people",
+      "is_reference": true
+    },
+    {
+      "num": 61,
+      "chapter": "XI",
+      "title": "Section 61 — Terms and conditions of service of members",
+      "official_title": "Terms and conditions of service of members",
+      "plain_text": "The rules say how Central Advisory Board members are paid and how long they serve.",
+      "use_when": "(For reference. Administrative rule for Central Advisory Board members.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 62,
+      "chapter": "XI",
+      "title": "Section 62 — Disqualifications",
+      "official_title": "Disqualifications",
+      "plain_text": "Some people cannot be members of the Central Advisory Board — for example, people convicted of serious crimes.",
+      "use_when": "(For reference. Lists who cannot be a Central Advisory Board member.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 63,
+      "chapter": "XI",
+      "title": "Section 63 — Vacation of seats by Members",
+      "official_title": "Vacation of seats by Members",
+      "plain_text": "If a Central Advisory Board member misses too many meetings or breaks the rules, they lose their seat.",
+      "use_when": "(For reference. Administrative rule for Central Advisory Board.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 64,
+      "chapter": "XI",
+      "title": "Section 64 — Meetings of the Central Advisory Board on disability",
+      "official_title": "Meetings of the Central Advisory Board on disability",
+      "plain_text": "The Central Advisory Board must meet at least once every six months.",
+      "use_when": "(For reference. The Central Advisory Board has not met in over six months.)",
+      "illustration": "committee_people",
+      "is_reference": true
+    },
+    {
+      "num": 65,
+      "chapter": "XI",
+      "title": "Section 65 — Functions of Central Advisory Board on disability",
+      "official_title": "Functions of Central Advisory Board on disability",
+      "plain_text": "The Central Advisory Board advises the central government on disability rules, schemes, and reports.",
+      "use_when": "(For reference. Lists what the Central Advisory Board does.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 66,
+      "chapter": "XI",
+      "title": "Section 66 — State Advisory Board on disability",
+      "official_title": "State Advisory Board on disability",
+      "plain_text": "Every state must set up its own State Advisory Board on Disability.",
+      "use_when": "Your state does not have a State Advisory Board on Disability.",
+      "illustration": "committee_people",
+      "is_reference": false
+    },
+    {
+      "num": 67,
+      "chapter": "XI",
+      "title": "Section 67 — Terms and conditions of service of Members",
+      "official_title": "Terms and conditions of service of Members",
+      "plain_text": "Rules for State Advisory Board members — pay, term, and conditions.",
+      "use_when": "(For reference. Administrative rule for State Advisory Board members.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 68,
+      "chapter": "XI",
+      "title": "Section 68 — Disqualification",
+      "official_title": "Disqualification",
+      "plain_text": "Same kind of rules as the Central Board: who cannot be a State Advisory Board member.",
+      "use_when": "(For reference. Administrative rule for State Advisory Board.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 69,
+      "chapter": "XI",
+      "title": "Section 69 — Vacation of seats",
+      "official_title": "Vacation of seats",
+      "plain_text": "When a State Advisory Board member loses their seat — missed meetings, broken rules, etc.",
+      "use_when": "(For reference. Administrative rule for State Advisory Board.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 70,
+      "chapter": "XI",
+      "title": "Section 70 — Meetings of State Advisory Board on disability",
+      "official_title": "Meetings of State Advisory Board on disability",
+      "plain_text": "The State Advisory Board must meet at least once every six months.",
+      "use_when": "Your State Advisory Board has not met in over six months.",
+      "illustration": "committee_people",
+      "is_reference": false
+    },
+    {
+      "num": 71,
+      "chapter": "XI",
+      "title": "Section 71 — Functions of State Advisory Board on disability",
+      "official_title": "Functions of State Advisory Board on disability",
+      "plain_text": "The State Advisory Board advises the state government on disability rules, schemes, and reports.",
+      "use_when": "(For reference. Lists what the State Advisory Board does.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 72,
+      "chapter": "XI",
+      "title": "Section 72 — District-level Committee on disability",
+      "official_title": "District-level Committee on disability",
+      "plain_text": "Every district must have a committee that handles disability matters at the district level.",
+      "use_when": "Your district has no disability committee, or the committee is not working.",
+      "illustration": "committee_people",
+      "is_reference": false
+    },
+    {
+      "num": 73,
+      "chapter": "XI",
+      "title": "Section 73 — Vacancies not to invalidate proceedings",
+      "official_title": "Vacancies not to invalidate proceedings",
+      "plain_text": "Even if some seats on the Boards or committees are empty, their decisions are still valid.",
+      "use_when": "(For reference. Administrative rule.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 74,
+      "chapter": "XII",
+      "title": "Section 74 — Appointment of Chief Commissioner and Commissioners",
+      "official_title": "Appointment of Chief Commissioner and Commissioners",
+      "plain_text": "The central government appoints a Chief Commissioner for Persons with Disabilities and two Commissioners under the Chief Commissioner.",
+      "use_when": "(For reference. This sets up the national disability complaints office.)",
+      "illustration": "commissioner_badge",
+      "is_reference": true
+    },
+    {
+      "num": 75,
+      "chapter": "XII",
+      "title": "Section 75 — Functions of Chief Commissioner",
+      "official_title": "Functions of Chief Commissioner",
+      "plain_text": "The Chief Commissioner watches over how the Act is being followed across India and takes action when rights are broken.",
+      "use_when": "(For reference. The Chief Commissioner is who you escalate to after the State Commissioner.)",
+      "illustration": "commissioner_badge",
+      "is_reference": true
+    },
+    {
+      "num": 76,
+      "chapter": "XII",
+      "title": "Section 76 — Action of appropriate authorities on recommendation of Chief Commissioner",
+      "official_title": "Action of appropriate authorities on recommendation of Chief Commissioner",
+      "plain_text": "When the Chief Commissioner makes a recommendation, the government office must act on it within a fixed time and report back.",
+      "use_when": "The Chief Commissioner gave a recommendation and the office did not act on it.",
+      "illustration": "document",
+      "is_reference": false
+    },
+    {
+      "num": 77,
+      "chapter": "XII",
+      "title": "Section 77 — Powers of Chief Commissioner",
+      "official_title": "Powers of Chief Commissioner",
+      "plain_text": "The Chief Commissioner can call witnesses, ask for documents, and act like a civil court when looking into a complaint.",
+      "use_when": "You filed a complaint with the Chief Commissioner and they have not used their powers.",
+      "illustration": "justice_scales",
+      "is_reference": false
+    },
+    {
+      "num": 78,
+      "chapter": "XII",
+      "title": "Section 78 — Annual and special reports by Chief Commissioner",
+      "official_title": "Annual and special reports by Chief Commissioner",
+      "plain_text": "The Chief Commissioner must publish a yearly report. The report goes to Parliament.",
+      "use_when": "The Chief Commissioner has not published a yearly report.",
+      "illustration": "document",
+      "is_reference": false
+    },
+    {
+      "num": 79,
+      "chapter": "XII",
+      "title": "Section 79 — Appointment of State Commissioner in States",
+      "official_title": "Appointment of State Commissioner in States",
+      "plain_text": "Every state must appoint a State Commissioner for Persons with Disabilities.",
+      "use_when": "Your state does not have a State Commissioner for Persons with Disabilities.",
+      "illustration": "commissioner_badge",
+      "is_reference": false
+    },
+    {
+      "num": 80,
+      "chapter": "XII",
+      "title": "Section 80 — Functions of State Commissioner",
+      "official_title": "Functions of State Commissioner",
+      "plain_text": "The State Commissioner handles complaints in the state and watches over the Act in the state.",
+      "use_when": "Use the State Commissioner as your first stop for complaints inside your state.",
+      "illustration": "commissioner_badge",
+      "is_reference": false
+    },
+    {
+      "num": 81,
+      "chapter": "XII",
+      "title": "Section 81 — Action by appropriate authorities on recommendation of State Commissioner",
+      "official_title": "Action by appropriate authorities on recommendation of State Commissioner",
+      "plain_text": "When the State Commissioner makes a recommendation, the office must act on it and report back within a fixed time.",
+      "use_when": "The State Commissioner gave a recommendation and the office did not act on it.",
+      "illustration": "document",
+      "is_reference": false
+    },
+    {
+      "num": 82,
+      "chapter": "XII",
+      "title": "Section 82 — Powers of State Commissioner",
+      "official_title": "Powers of State Commissioner",
+      "plain_text": "The State Commissioner can call witnesses, ask for documents, and act like a civil court when looking into a complaint.",
+      "use_when": "You filed a complaint and the State Commissioner has not used their powers.",
+      "illustration": "justice_scales",
+      "is_reference": false
+    },
+    {
+      "num": 83,
+      "chapter": "XII",
+      "title": "Section 83 — Annual and special reports by State Commissioner",
+      "official_title": "Annual and special reports by State Commissioner",
+      "plain_text": "The State Commissioner must publish a yearly report. The report goes to the state government.",
+      "use_when": "The State Commissioner in your state has not published a yearly report.",
+      "illustration": "document",
+      "is_reference": false
+    },
+    {
+      "num": 84,
+      "chapter": "XIII",
+      "title": "Section 84 — Special Court",
+      "official_title": "Special Court",
+      "plain_text": "Each state must have a Special Court to handle serious offences against persons with disabilities under this Act.",
+      "use_when": "A serious case under this Act is not being heard in a Special Court.",
+      "illustration": "courthouse",
+      "is_reference": false
+    },
+    {
+      "num": 85,
+      "chapter": "XIII",
+      "title": "Section 85 — Special Public Prosecutor",
+      "official_title": "Special Public Prosecutor",
+      "plain_text": "Each Special Court must have a Special Public Prosecutor to argue the case for the victim.",
+      "use_when": "A case is being heard in the Special Court without a Special Public Prosecutor.",
+      "illustration": "courthouse",
+      "is_reference": false
+    },
+    {
+      "num": 86,
+      "chapter": "XIV",
+      "title": "Section 86 — National Fund for persons with disabilities",
+      "official_title": "National Fund for persons with disabilities",
+      "plain_text": "There is a National Fund for Persons with Disabilities. The Fund pays for schemes, support, and grants.",
+      "use_when": "(For reference. The Fund pays for many disability programmes.)",
+      "illustration": "money_jar",
+      "is_reference": true
+    },
+    {
+      "num": 87,
+      "chapter": "XIV",
+      "title": "Section 87 — Accounts and audit",
+      "official_title": "Accounts and audit",
+      "plain_text": "The National Fund must keep clear accounts. The accounts must be audited every year.",
+      "use_when": "(For reference. Audit rule for the National Fund.)",
+      "illustration": "clipboard_check",
+      "is_reference": true
+    },
+    {
+      "num": 88,
+      "chapter": "XV",
+      "title": "Section 88 — State Fund for persons with disabilities",
+      "official_title": "State Fund for persons with disabilities",
+      "plain_text": "Every state must set up a State Fund for Persons with Disabilities, like the National Fund.",
+      "use_when": "Your state has no State Fund, or the State Fund is not being used for persons with disabilities.",
+      "illustration": "money_jar",
+      "is_reference": false
+    },
+    {
+      "num": 89,
+      "chapter": "XVI",
+      "title": "Section 89 — Punishment for contravention of provisions of Act or rules or regulations made thereunder",
+      "official_title": "Punishment for contravention of provisions of Act or rules or regulations made thereunder",
+      "plain_text": "If anyone breaks the rules of this Act, they can be fined. The first time: up to Rs 10,000. The next time: Rs 50,000 to Rs 5 lakh.",
+      "use_when": "Someone or some office is breaking the rules of this Act and you want them to be punished.",
+      "illustration": "warning",
+      "is_reference": false
+    },
+    {
+      "num": 90,
+      "chapter": "XVI",
+      "title": "Section 90 — Offences by companies",
+      "official_title": "Offences by companies",
+      "plain_text": "If a company breaks the rules of this Act, the people running the company can also be punished.",
+      "use_when": "A company has broken the rules and you want the managers to be held responsible too.",
+      "illustration": "warning",
+      "is_reference": false
+    },
+    {
+      "num": 91,
+      "chapter": "XVI",
+      "title": "Section 91 — Punishment for fraudulently availing any benefit meant for persons with benchmark disabilities",
+      "official_title": "Punishment for fraudulently availing any benefit meant for persons with benchmark disabilities",
+      "plain_text": "If a person fakes a disability to get benefits meant for persons with benchmark disabilities, they can be jailed for up to 2 years and fined up to Rs 1 lakh.",
+      "use_when": "Someone is faking a disability certificate to get a job, seat, or benefit reserved for persons with disabilities.",
+      "illustration": "warning",
+      "is_reference": false
+    },
+    {
+      "num": 92,
+      "chapter": "XVI",
+      "title": "Section 92 — Punishment for offences of atrocities",
+      "official_title": "Punishment for offences of atrocities",
+      "plain_text": "If someone insults you, hurts you, or humiliates you because of your disability, they can go to jail for 6 months to 5 years.",
+      "use_when": "Someone publicly insults, beats, denies food, or sexually abuses a person with a disability because of their disability.",
+      "illustration": "warning",
+      "is_reference": false
+    },
+    {
+      "num": 93,
+      "chapter": "XVI",
+      "title": "Section 93 — Punishment for failure to furnish information",
+      "official_title": "Punishment for failure to furnish information",
+      "plain_text": "If anyone refuses to give information that the Chief Commissioner or State Commissioner asks for, they can be fined.",
+      "use_when": "An office refused to send information to the Chief Commissioner or State Commissioner.",
+      "illustration": "warning",
+      "is_reference": false
+    },
+    {
+      "num": 94,
+      "chapter": "XVI",
+      "title": "Section 94 — Previous sanction of appropriate Government",
+      "official_title": "Previous sanction of appropriate Government",
+      "plain_text": "Some cases under this Act need permission from the government before they can be filed in court.",
+      "use_when": "(For reference. Procedural rule for filing certain cases.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 95,
+      "chapter": "XVI",
+      "title": "Section 95 — Alternative punishments",
+      "official_title": "Alternative punishments",
+      "plain_text": "The court can give other punishments — like community service or training — instead of fine or jail in some cases.",
+      "use_when": "(For reference. Court has flexibility on punishment in some cases.)",
+      "illustration": "justice_scales",
+      "is_reference": true
+    },
+    {
+      "num": 96,
+      "chapter": "XVII",
+      "title": "Section 96 — Application of other laws not barred",
+      "official_title": "Application of other laws not barred",
+      "plain_text": "This Act does not stop you from using other laws too. You can use this Act and other laws together.",
+      "use_when": "(For reference. You can use multiple legal protections at once.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 97,
+      "chapter": "XVII",
+      "title": "Section 97 — Protection of action taken in good faith",
+      "official_title": "Protection of action taken in good faith",
+      "plain_text": "Government officers and others cannot be sued for actions they take honestly under this Act.",
+      "use_when": "(For reference. Protects officers acting in good faith.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 98,
+      "chapter": "XVII",
+      "title": "Section 98 — Power to remove difficulties",
+      "official_title": "Power to remove difficulties",
+      "plain_text": "If something in this Act is unclear or hard to do, the central government can issue an order to fix it within three years of the Act starting.",
+      "use_when": "(For reference. Allows the central government to issue clarifications.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 99,
+      "chapter": "XVII",
+      "title": "Section 99 — Power to amend Schedule",
+      "official_title": "Power to amend Schedule",
+      "plain_text": "The central government can change the list of 21 specified disabilities — add, remove, or change them.",
+      "use_when": "(For reference. The list of disabilities can be updated by the central government.)",
+      "illustration": "book_simple",
+      "is_reference": true
+    },
+    {
+      "num": 100,
+      "chapter": "XVII",
+      "title": "Section 100 — Power of Central Government to make rules",
+      "official_title": "Power of Central Government to make rules",
+      "plain_text": "The central government can make rules to put this Act into action.",
+      "use_when": "(For reference. Many parts of the Act work through rules made under Section 100.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 101,
+      "chapter": "XVII",
+      "title": "Section 101 — Power of State Government to make rules",
+      "official_title": "Power of State Government to make rules",
+      "plain_text": "Each state government can make its own rules to put this Act into action in the state.",
+      "use_when": "(For reference. State governments make their own rules under Section 101.)",
+      "illustration": "document",
+      "is_reference": true
+    },
+    {
+      "num": 102,
+      "chapter": "XVII",
+      "title": "Section 102 — Repeal and savings",
+      "official_title": "Repeal and savings",
+      "plain_text": "This Act replaces the older 1995 Persons with Disabilities Act, but actions already taken under the old Act are still valid.",
+      "use_when": "(For reference. The 1995 PWD Act is repealed and replaced by this 2016 Act.)",
+      "illustration": "book_simple",
+      "is_reference": true
+    }
+  ]
+}
