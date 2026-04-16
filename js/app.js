@@ -376,7 +376,7 @@ function renderHelp() {
         <div>
           <h3>Disability Law Unit at Vidya Sagar</h3>
           <p>A team that works on disability rights and legal support. They can guide you on how to use the RPwD Act.</p>
-          <p><strong><a href="mailto:dlu@vidyasagar.co.in">Ummul Khair</a></strong> · <a href="mailto:dlu@vidyasagar.co.in">dlu@vidyasagar.co.in</a> · <a href="tel:+919884795209">+91 9884795209</a></p>
+          <p><a href="mailto:dlu@vidyasagar.co.in">dlu@vidyasagar.co.in</a></p>
         </div>
       </div>
     </div>
