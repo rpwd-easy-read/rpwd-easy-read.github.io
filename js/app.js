@@ -24,6 +24,43 @@ const firstTwoSentences = (text, max = 140) => {
   return clipped;
 };
 
+const ALT_TEXT = {
+  book_learning: "A person sitting and reading a book in their lap, smiling",
+  book_open: "An open book with pages spread wide and a red bookmark ribbon",
+  book_simple: "A closed blue book titled RPwD ACT with a gold star",
+  briefcase: "A brown briefcase with a handle and clasp",
+  building_ramp: "A building with windows and a green accessibility ramp, a person in a wheelchair going up the ramp",
+  bus: "A bright blue bus with four smiling passengers in the windows and an accessibility ramp at the door",
+  certificate_star: "A gold star on red ribbons, like a medal or award",
+  chair_reserved: "A blue chair with a yellow RESERVED sign on the backrest",
+  clipboard_check: "A clipboard with a checklist showing four items, all ticked with green check marks",
+  clock: "A round yellow clock face with black hands showing the time",
+  commissioner_badge: "A person in a dark blue formal suit with a red tie and a gold star badge on their chest",
+  committee_people: "Four people sitting around a table, wearing blue, pink, green, and orange clothes",
+  computer: "A computer screen showing a checklist: Big text, Easy words, Pictures — all ticked",
+  courthouse: "A grand building with four tall columns, an orange roof, and wide steps",
+  disaster_safe: "A red umbrella protecting a person from rain drops falling from above",
+  document: "A white paper document with text lines, a folded corner, and a round red seal stamp",
+  equality: "Two people side by side — one standing in blue, one in a wheelchair in pink — with a green equals sign between them",
+  friends_support: "Two people standing close with arms around each other, a red heart above them",
+  globe_world: "A globe showing green land and blue water",
+  heart: "A large pink heart",
+  high_support_hands: "Two large hands gently holding and supporting a smaller person in the middle",
+  house_family: "A house with a red roof, brown door, blue windows, and a pink heart on the wall",
+  justice_scales: "A wooden balance scale with two golden pans hanging evenly",
+  medical_cross: "A large red plus-sign cross inside a white circle — the healthcare symbol",
+  megaphone: "An orange megaphone with blue sound waves coming out of it",
+  money_jar: "A glass jar filled with coins marked with the rupee symbol",
+  pencil_signing: "A yellow pencil writing a signature on a white document",
+  school: "A school building with an orange roof, a green flag, four windows, and an ABC sign above the door",
+  shield: "A blue shield with a white check mark inside — the protection symbol",
+  vote: "A ballot paper with a green tick being placed into a blue ballot box marked VOTE",
+  warning: "A yellow triangle with a black exclamation mark — a warning sign",
+  women_children: "A taller person in pink holding hands with a child in purple, with a heart between them",
+};
+
+const altFor = (name) => ALT_TEXT[name] || `Illustration for this section`;
+
 /* ============ views ============ */
 
 function renderHome() {
@@ -167,7 +204,7 @@ function renderSection(num) {
     <div class="section-grid">
       <figure class="section-illus">
         <img src="img/illustrations/${esc(s.illustration)}.png"
-             alt="Illustration for ${esc(s.official_title)}"
+             alt="${esc(altFor(s.illustration))}"
              loading="lazy">
       </figure>
       <div>
@@ -296,36 +333,52 @@ function renderComplain() {
 }
 
 function renderHelp() {
-  const cards = [
-    ['State Commissioner for Persons with Disabilities',
-     "Every state in India has one. They handle complaints inside the state. Look up your state's office or ask the state social welfare department.",
-     'First place to go for most complaints.'],
-    ['Chief Commissioner for Persons with Disabilities',
-     'A national office for cases that go beyond one state, or when the State Commissioner has not helped within 60 days.',
-     'Office of the Chief Commissioner, New Delhi.'],
-    ['National Human Rights Commission',
-     'For very serious cases — cruelty, abuse, denial of basic rights.',
-     'Especially under Sections 6, 7, and 92.'],
-    ["Disabled People's Organisations",
-     'Local groups led by persons with disabilities. They can help you write your complaint and stand with you.',
-     'Vidyasagar in Chennai is one such organisation.'],
-  ];
   return `
     <div class="content-page">
       <div class="page-hero-illus" aria-hidden="true">
         <img src="img/illustrations/friends_support.png" alt="" class="page-illus">
       </div>
       <h1>Who can help you</h1>
-      <p>If your rights are not respected, these offices can help:</p>
-      ${cards.map((c) => `
-        <div class="step-card">
-          <div>
-            <h3>${esc(c[0])}</h3>
-            <p>${esc(c[1])}</p>
-            <p><em>${esc(c[2])}</em></p>
-          </div>
+      <p>If your rights are not respected, these offices and organisations can help:</p>
+
+      <h2>Government offices</h2>
+      <div class="step-card">
+        <div>
+          <h3>State Commissioner for Persons with Disabilities</h3>
+          <p>Every state in India has one. They handle complaints inside the state. Look up your state's office or ask the state social welfare department.</p>
+          <p><em>First place to go for most complaints.</em></p>
         </div>
-      `).join('')}
+      </div>
+      <div class="step-card">
+        <div>
+          <h3>Chief Commissioner for Persons with Disabilities</h3>
+          <p>A national office for cases that go beyond one state, or when the State Commissioner has not helped within 60 days.</p>
+          <p><em>Office of the Chief Commissioner, New Delhi.</em></p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div>
+          <h3>National Human Rights Commission</h3>
+          <p>For very serious cases — cruelty, abuse, denial of basic rights.</p>
+          <p><em>Especially under Sections 6, 7, and 92.</em></p>
+        </div>
+      </div>
+
+      <h2>Disabled People's Organisations (DPOs)</h2>
+      <div class="step-card">
+        <div>
+          <p>DPOs are local groups led by persons with disabilities. They can help you write your complaint and stand with you. Look for a DPO in your city or district.</p>
+        </div>
+      </div>
+
+      <h2>Civil society organisations</h2>
+      <div class="step-card">
+        <div>
+          <h3>Disability Law Unit at Vidya Sagar</h3>
+          <p>A team that works on disability rights and legal support. They can guide you on how to use the RPwD Act.</p>
+          <p><strong><a href="mailto:dlu@vidyasagar.co.in">Ummul Khair</a></strong> · <a href="mailto:dlu@vidyasagar.co.in">dlu@vidyasagar.co.in</a> · <a href="tel:+919884795209">+91 9884795209</a></p>
+        </div>
+      </div>
     </div>
   `;
 }
@@ -487,6 +540,13 @@ function renderRoute() {
 
   if ('speechSynthesis' in window) {
     window.speechSynthesis.cancel();
+  }
+
+  // Announce page change to screen readers
+  const announcer = document.getElementById('sr-announce');
+  if (announcer) {
+    announcer.textContent = '';
+    setTimeout(() => { announcer.textContent = title; }, 100);
   }
 
   main.focus();
