@@ -321,7 +321,7 @@ function renderComplain() {
         <div class="step-card">
           <div class="num">${i + 1}</div>
           <div>
-            <h3>${esc(st[0])}</h3>
+            <h2>${esc(st[0])}</h2>
             <p>${esc(st[1])}</p>
           </div>
         </div>
