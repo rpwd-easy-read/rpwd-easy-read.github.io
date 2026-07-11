@@ -98,17 +98,17 @@ function renderHome() {
     <div class="home-features">
       <div class="feature-card">
         <img src="img/illustrations/shield.png" alt="" class="feature-img" aria-hidden="true">
-        <h3>Your rights</h3>
+        <h2>Your rights</h2>
         <p>Read each right in plain words. Every page keeps the official Section number — so you can use it in a complaint.</p>
       </div>
       <div class="feature-card">
         <img src="img/illustrations/women_children.png" alt="" class="feature-img" aria-hidden="true">
-        <h3>Friendly pictures</h3>
+        <h2>Friendly pictures</h2>
         <p>Every section has a simple drawing. Look at the picture if the words are hard.</p>
       </div>
       <div class="feature-card">
         <img src="img/illustrations/megaphone.png" alt="" class="feature-img" aria-hidden="true">
-        <h3>Read out loud</h3>
+        <h2>Read out loud</h2>
         <p>Tap the speak button on any section page to hear the words read out loud.</p>
       </div>
     </div>

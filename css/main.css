@@ -169,11 +169,13 @@ img {
 /* ============ header ============ */
 
 .site-header {
-  background: var(--ch-color);
+  /* Solid dark header (GOV.UK pattern): white text always passes AA.
+     The chapter colour lives on the boundary stripe, not the fill. */
+  background: #0b0c0c;
   color: white;
   padding: 0.75rem 1.25rem;
   box-shadow: var(--shadow);
-  transition: background-color 0.25s;
+  border-bottom: 6px solid var(--ch-color);
 }
 
 .site-header-inner {
@@ -228,7 +230,7 @@ img {
 }
 .nav-main a[aria-current="page"] {
   background: white;
-  color: var(--ch-color);
+  color: var(--brand-dark);
 }
 
 /* ============ main ============ */
@@ -357,7 +359,7 @@ main:focus-visible {
 }
 .feature-card:nth-child(2) { border-top-color: var(--accent); }
 .feature-card:nth-child(3) { border-top-color: var(--brand); }
-.feature-card h3 {
+.feature-card h2 {
   margin: 0 0 0.5rem;
   font-size: 1.2rem;
   color: var(--brand-dark);
