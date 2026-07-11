@@ -43,4 +43,3 @@ python -m http.server 8080
   `manifest.webmanifest`: the app
 - `source/`: the content pipeline (Act text, section titles, Easy Read
   booklet PPTX and PDF, generator scripts) and the original PWA plan
-- `PITCH-CBM-2026-07-12.md`: partnership pitch note (draft)
