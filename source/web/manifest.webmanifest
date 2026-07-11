@@ -1,0 +1,20 @@
+{
+  "name": "RPwD Act 2016 — Easy Read Guide",
+  "short_name": "RPwD Guide",
+  "description": "An Easy Read guide to all 102 sections of India's Rights of Persons with Disabilities Act 2016.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FFFAF0",
+  "theme_color": "#00B0F0",
+  "orientation": "any",
+  "categories": ["education", "accessibility"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "img/vidyasagar_logo.png",
+      "sizes": "254x232",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "1": {
+    "title": "Short title and commencement",
+    "chapter": "I",
+    "chapter_title": "PRELIMINARY"
+  },
+  "2": {
+    "title": "Definitions",
+    "chapter": "I",
+    "chapter_title": "PRELIMINARY"
+  },
+  "3": {
+    "title": "Equality and non-discrimination",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "4": {
+    "title": "Women and children with disabilities",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "5": {
+    "title": "Community life",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "6": {
+    "title": "Protection from cruelty and inhuman treatment",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "7": {
+    "title": "Protection from abuse, violence and exploitation",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "8": {
+    "title": "Protection and safety",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "9": {
+    "title": "Home and family",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "10": {
+    "title": "Reproductive rights",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "11": {
+    "title": "Accessibility in voting",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "12": {
+    "title": "Access to justice",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "13": {
+    "title": "Legal capacity",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "14": {
+    "title": "Provision for guardianship",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "15": {
+    "title": "Designation of authorities to support",
+    "chapter": "II",
+    "chapter_title": "RIGHTS AND ENTITLEMENTS"
+  },
+  "16": {
+    "title": "Duty of educational institutions",
+    "chapter": "III",
+    "chapter_title": "EDUCATION"
+  },
+  "17": {
+    "title": "Specific measures to promote and facilitate inclusive education",
+    "chapter": "III",
+    "chapter_title": "EDUCATION"
+  },
+  "18": {
+    "title": "Adult education",
+    "chapter": "III",
+    "chapter_title": "EDUCATION"
+  },
+  "19": {
+    "title": "Vocational training and self-employment",
+    "chapter": "IV",
+    "chapter_title": "SKILL DEVELOPMENT AND EMPLOYMENT"
+  },
+  "20": {
+    "title": "Non-discrimination in employment",
+    "chapter": "IV",
+    "chapter_title": "SKILL DEVELOPMENT AND EMPLOYMENT"
+  },
+  "21": {
+    "title": "Equal opportunity policy",
+    "chapter": "IV",
+    "chapter_title": "SKILL DEVELOPMENT AND EMPLOYMENT"
+  },
+  "22": {
+    "title": "Maintenance of records",
+    "chapter": "IV",
+    "chapter_title": "SKILL DEVELOPMENT AND EMPLOYMENT"
+  },
+  "23": {
+    "title": "Appointment of Grievance Redressal Officer",
+    "chapter": "IV",
+    "chapter_title": "SKILL DEVELOPMENT AND EMPLOYMENT"
+  },
+  "24": {
+    "title": "Social security",
+    "chapter": "V",
+    "chapter_title": "SOCIAL SECURITY, HEALTH, REHABILITATION AND RECREATION"
+  },
+  "25": {
+    "title": "Healthcare",
+    "chapter": "V",
+    "chapter_title": "SOCIAL SECURITY, HEALTH, REHABILITATION AND RECREATION"
+  },
+  "26": {
+    "title": "Insurance schemes",
+    "chapter": "V",
+    "chapter_title": "SOCIAL SECURITY, HEALTH, REHABILITATION AND RECREATION"
+  },
+  "27": {
+    "title": "Rehabilitation",
+    "chapter": "V",
+    "chapter_title": "SOCIAL SECURITY, HEALTH, REHABILITATION AND RECREATION"
+  },
+  "28": {
+    "title": "Research and development",
+    "chapter": "V",
+    "chapter_title": "SOCIAL SECURITY, HEALTH, REHABILITATION AND RECREATION"
+  },
+  "29": {
+    "title": "Culture and recreation",
+    "chapter": "V",
+    "chapter_title": "SOCIAL SECURITY, HEALTH, REHABILITATION AND RECREATION"
+  },
+  "30": {
+    "title": "Sporting activities",
+    "chapter": "V",
+    "chapter_title": "SOCIAL SECURITY, HEALTH, REHABILITATION AND RECREATION"
+  },
+  "31": {
+    "title": "Free education for children with benchmark disabilities",
+    "chapter": "VI",
+    "chapter_title": "SPECIAL PROVISIONS FOR PERSONS WITH BENCHMARK DISABILITIES"
+  },
+  "32": {
+    "title": "Reservation in higher educational institutions",
+    "chapter": "VI",
+    "chapter_title": "SPECIAL PROVISIONS FOR PERSONS WITH BENCHMARK DISABILITIES"
+  },
+  "33": {
+    "title": "Identification of posts for reservation",
+    "chapter": "VI",
+    "chapter_title": "SPECIAL PROVISIONS FOR PERSONS WITH BENCHMARK DISABILITIES"
+  },
+  "34": {
+    "title": "Reservation",
+    "chapter": "VI",
+    "chapter_title": "SPECIAL PROVISIONS FOR PERSONS WITH BENCHMARK DISABILITIES"
+  },
+  "35": {
+    "title": "Incentives to employers in private sector",
+    "chapter": "VI",
+    "chapter_title": "SPECIAL PROVISIONS FOR PERSONS WITH BENCHMARK DISABILITIES"
+  },
+  "36": {
+    "title": "Special employment exchange",
+    "chapter": "VI",
+    "chapter_title": "SPECIAL PROVISIONS FOR PERSONS WITH BENCHMARK DISABILITIES"
+  },
+  "37": {
+    "title": "Special schemes and development programmes",
+    "chapter": "VI",
+    "chapter_title": "SPECIAL PROVISIONS FOR PERSONS WITH BENCHMARK DISABILITIES"
+  },
+  "38": {
+    "title": "Special provisions for persons with disabilities with high support",
+    "chapter": "VII",
+    "chapter_title": "SPECIAL PROVISIONS FOR PERSONS WITH DISABILITIES WITH HIGH SUPPORT NEEDS"
+  },
+  "39": {
+    "title": "Awareness campaigns",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "40": {
+    "title": "Accessibility",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "41": {
+    "title": "Access to transport",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "42": {
+    "title": "Access to information and communication technology",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "43": {
+    "title": "Consumer goods",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "44": {
+    "title": "Mandatory observance of accessibility norms",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "45": {
+    "title": "Time limit for making existing infrastructure and premises accessible and action for that purpose",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "46": {
+    "title": "Time limit for accessibility by service providers",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "47": {
+    "title": "Human resource development",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "48": {
+    "title": "Social audit",
+    "chapter": "VIII",
+    "chapter_title": "DUTIES AND RESPONSIBILITIES OF APPROPRIATE GOVERNMENTS"
+  },
+  "49": {
+    "title": "Competent authority",
+    "chapter": "IX",
+    "chapter_title": "REGISTRATION OF INSTITUTIONS FOR PERSONS WITH DISABILITIES AND GRANTS TO SUCH"
+  },
+  "50": {
+    "title": "Registration",
+    "chapter": "IX",
+    "chapter_title": "REGISTRATION OF INSTITUTIONS FOR PERSONS WITH DISABILITIES AND GRANTS TO SUCH"
+  },
+  "51": {
+    "title": "Application and grant of certificate of registration",
+    "chapter": "IX",
+    "chapter_title": "REGISTRATION OF INSTITUTIONS FOR PERSONS WITH DISABILITIES AND GRANTS TO SUCH"
+  },
+  "52": {
+    "title": "Revocation of registration",
+    "chapter": "IX",
+    "chapter_title": "REGISTRATION OF INSTITUTIONS FOR PERSONS WITH DISABILITIES AND GRANTS TO SUCH"
+  },
+  "53": {
+    "title": "Appeal",
+    "chapter": "IX",
+    "chapter_title": "REGISTRATION OF INSTITUTIONS FOR PERSONS WITH DISABILITIES AND GRANTS TO SUCH"
+  },
+  "54": {
+    "title": "Act not to apply to institutions established or maintained by Central or State Government",
+    "chapter": "IX",
+    "chapter_title": "REGISTRATION OF INSTITUTIONS FOR PERSONS WITH DISABILITIES AND GRANTS TO SUCH"
+  },
+  "55": {
+    "title": "Assistance to registered institutions",
+    "chapter": "IX",
+    "chapter_title": "REGISTRATION OF INSTITUTIONS FOR PERSONS WITH DISABILITIES AND GRANTS TO SUCH"
+  },
+  "56": {
+    "title": "Guidelines for assessment of specified disabilities",
+    "chapter": "X",
+    "chapter_title": "CERTIFICATION OF SPECIFIED DISABILITIES"
+  },
+  "57": {
+    "title": "Designation of certifying authorities",
+    "chapter": "X",
+    "chapter_title": "CERTIFICATION OF SPECIFIED DISABILITIES"
+  },
+  "58": {
+    "title": "Procedure for certification",
+    "chapter": "X",
+    "chapter_title": "CERTIFICATION OF SPECIFIED DISABILITIES"
+  },
+  "59": {
+    "title": "Appeal against a decision of certifying authority",
+    "chapter": "X",
+    "chapter_title": "CERTIFICATION OF SPECIFIED DISABILITIES"
+  },
+  "60": {
+    "title": "Constitution of Central Advisory Board on Disability",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "61": {
+    "title": "Terms and conditions of service of members",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "62": {
+    "title": "Disqualifications",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "63": {
+    "title": "Vacation of seats by Members",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "64": {
+    "title": "Meetings of the Central Advisory Board on disability",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "65": {
+    "title": "Functions of Central Advisory Board on disability",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "66": {
+    "title": "State Advisory Board on disability",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "67": {
+    "title": "Terms and conditions of service of Members",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "68": {
+    "title": "Disqualification",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "69": {
+    "title": "Vacation of seats",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "70": {
+    "title": "Meetings of State Advisory Board on disability",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "71": {
+    "title": "Functions of State Advisory Board on disability",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "72": {
+    "title": "District-level Committee on disability",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "73": {
+    "title": "Vacancies not to invalidate proceedings",
+    "chapter": "XI",
+    "chapter_title": "CENTRAL AND STATE ADVISORY BOARDS ON DISABILITY AND DISTRICT LEVEL COMMITTEE"
+  },
+  "74": {
+    "title": "Appointment of Chief Commissioner and Commissioners",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "75": {
+    "title": "Functions of Chief Commissioner",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "76": {
+    "title": "Action of appropriate authorities on recommendation of Chief Commissioner",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "77": {
+    "title": "Powers of Chief Commissioner",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "78": {
+    "title": "Annual and special reports by Chief Commissioner",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "79": {
+    "title": "Appointment of State Commissioner in States",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "80": {
+    "title": "Functions of State Commissioner",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "81": {
+    "title": "Action by appropriate authorities on recommendation of State Commissioner",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "82": {
+    "title": "Powers of State Commissioner",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "83": {
+    "title": "Annual and special reports by State Commissioner",
+    "chapter": "XII",
+    "chapter_title": "CHIEF COMMISSIONER AND STATE COMMISSIONER FOR PERSONS WITH DISABILITIES"
+  },
+  "84": {
+    "title": "Special Court",
+    "chapter": "XIII",
+    "chapter_title": "SPECIAL COURT"
+  },
+  "85": {
+    "title": "Special Public Prosecutor",
+    "chapter": "XIII",
+    "chapter_title": "SPECIAL COURT"
+  },
+  "86": {
+    "title": "National Fund for persons with disabilities",
+    "chapter": "XIV",
+    "chapter_title": "NATIONAL FUND FOR PERSONS WITH DISABILITIES"
+  },
+  "87": {
+    "title": "Accounts and audit",
+    "chapter": "XIV",
+    "chapter_title": "NATIONAL FUND FOR PERSONS WITH DISABILITIES"
+  },
+  "88": {
+    "title": "State Fund for persons with disabilities",
+    "chapter": "XV",
+    "chapter_title": "STATE FUND FOR PERSONS WITH DISABILITIES"
+  },
+  "89": {
+    "title": "Punishment for contravention of provisions of Act or rules or regulations made thereunder",
+    "chapter": "XVI",
+    "chapter_title": "OFFENCES AND PENALTIES"
+  },
+  "90": {
+    "title": "Offences by companies",
+    "chapter": "XVI",
+    "chapter_title": "OFFENCES AND PENALTIES"
+  },
+  "91": {
+    "title": "Punishment for fraudulently availing any benefit meant for persons with benchmark disabilities",
+    "chapter": "XVI",
+    "chapter_title": "OFFENCES AND PENALTIES"
+  },
+  "92": {
+    "title": "Punishment for offences of atrocities",
+    "chapter": "XVI",
+    "chapter_title": "OFFENCES AND PENALTIES"
+  },
+  "93": {
+    "title": "Punishment for failure to furnish information",
+    "chapter": "XVI",
+    "chapter_title": "OFFENCES AND PENALTIES"
+  },
+  "94": {
+    "title": "Previous sanction of appropriate Government",
+    "chapter": "XVI",
+    "chapter_title": "OFFENCES AND PENALTIES"
+  },
+  "95": {
+    "title": "Alternative punishments",
+    "chapter": "XVI",
+    "chapter_title": "OFFENCES AND PENALTIES"
+  },
+  "96": {
+    "title": "Application of other laws not barred",
+    "chapter": "XVII",
+    "chapter_title": "MISCELLANEOUS"
+  },
+  "97": {
+    "title": "Protection of action taken in good faith",
+    "chapter": "XVII",
+    "chapter_title": "MISCELLANEOUS"
+  },
+  "98": {
+    "title": "Power to remove difficulties",
+    "chapter": "XVII",
+    "chapter_title": "MISCELLANEOUS"
+  },
+  "99": {
+    "title": "Power to amend Schedule",
+    "chapter": "XVII",
+    "chapter_title": "MISCELLANEOUS"
+  },
+  "100": {
+    "title": "Power of Central Government to make rules",
+    "chapter": "XVII",
+    "chapter_title": "MISCELLANEOUS"
+  },
+  "101": {
+    "title": "Power of State Government to make rules",
+    "chapter": "XVII",
+    "chapter_title": "MISCELLANEOUS"
+  },
+  "102": {
+    "title": "Repeal and savings",
+    "chapter": "XVII",
+    "chapter_title": "MISCELLANEOUS"
+  }
+}
