@@ -4,7 +4,7 @@
  * network-first for HTML/JS/CSS.
  */
 
-const CACHE_NAME = 'rpwd-easy-read-v1';
+const CACHE_NAME = 'rpwd-easy-read-v2';
 const SHELL = [
   './',
   'index.html',
@@ -12,7 +12,8 @@ const SHELL = [
   'js/app.js',
   'content.json',
   'manifest.webmanifest',
-  'img/vidyasagar_logo.png',
+  'img/icon-192.png',
+  'img/icon-512.png',
 ];
 
 self.addEventListener('install', (event) => {

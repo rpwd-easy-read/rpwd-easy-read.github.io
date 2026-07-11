@@ -1,17 +1,18 @@
 /* RPwD Easy Read — web app styles
- * Vidyasagar palette, Verdana, per-chapter accent colours.
+ * GOV.UK-inspired palette (open design system, no Crown assets), Verdana, per-chapter accent colours.
  * Mobile-first, progressive enhancement.
  */
 
 :root {
-  /* Vidyasagar brand */
-  --vs-blue:      #00B0F0;
-  --vs-blue-dark: #007CB0;
-  --vs-pink:      #F080B0;
-  --vs-pink-dark: #C85C90;
+  /* Brand (GOV.UK-inspired) */
+  --brand:       #1d70b8;
+  --brand-dark:  #003078;
+  --accent:      #00703c;
+  --accent-dark: #005a30;
+  --focus:       #ffdd00;
 
   /* Neutrals */
-  --cream:       #FFFAF0;
+  --surface:     #f3f2f1;
   --paper:       #FFFFFF;
   --dark:        #1A1A1A;
   --muted:       #555555;
@@ -38,7 +39,7 @@
   --ch-XVII: #424242;
 
   /* Current chapter colour — set per page by JS */
-  --ch-color: var(--vs-blue);
+  --ch-color: var(--brand);
 
   --font-body: Verdana, Geneva, Tahoma, sans-serif;
   --radius: 14px;
@@ -97,7 +98,7 @@ body {
   margin: 0;
   font-family: var(--font-body);
   color: var(--dark);
-  background: var(--cream);
+  background: var(--surface);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -109,18 +110,18 @@ body.big-text {
 }
 
 a {
-  color: var(--vs-blue-dark);
+  color: var(--brand-dark);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 a:hover,
 a:focus-visible {
-  color: var(--vs-pink-dark);
+  color: var(--accent-dark);
 }
 
 :focus-visible {
-  outline: 3px solid var(--vs-pink);
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -252,13 +253,13 @@ main:focus-visible {
 }
 .hero h1 {
   font-size: 2.75rem;
-  color: var(--vs-blue-dark);
+  color: var(--brand-dark);
   margin: 0 0 0.5rem;
   line-height: 1.1;
 }
 .hero-subtitle {
   font-size: 1.5rem;
-  color: var(--vs-pink-dark);
+  color: var(--accent-dark);
   font-style: italic;
   margin: 0.5rem 0;
 }
@@ -287,20 +288,20 @@ main:focus-visible {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
-  border: 4px solid var(--vs-blue);
+  border: 4px solid var(--brand);
   background: var(--paper);
   padding: 0.5rem;
   box-shadow: var(--shadow);
   object-fit: contain;
 }
 .hero-img-2 {
-  border-color: var(--vs-pink);
+  border-color: var(--accent);
   width: 8rem;
   height: 8rem;
   margin-top: -0.5rem;
 }
 .hero-img-3 {
-  border-color: var(--vs-blue);
+  border-color: var(--brand);
 }
 
 /* Feature card illustration */
@@ -309,7 +310,7 @@ main:focus-visible {
   height: 5.5rem;
   border-radius: var(--radius);
   margin-bottom: 0.75rem;
-  background: var(--cream);
+  background: var(--surface);
   padding: 0.25rem;
 }
 
@@ -322,7 +323,7 @@ main:focus-visible {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  border: 5px solid var(--vs-pink);
+  border: 5px solid var(--accent);
   background: var(--paper);
   padding: 0.75rem;
   box-shadow: var(--shadow-lg);
@@ -351,17 +352,17 @@ main:focus-visible {
   background: var(--paper);
   padding: 1.5rem;
   border-radius: var(--radius);
-  border-top: 6px solid var(--vs-blue);
+  border-top: 6px solid var(--brand);
   box-shadow: var(--shadow);
 }
-.feature-card:nth-child(2) { border-top-color: var(--vs-pink); }
-.feature-card:nth-child(3) { border-top-color: var(--vs-blue); }
+.feature-card:nth-child(2) { border-top-color: var(--accent); }
+.feature-card:nth-child(3) { border-top-color: var(--brand); }
 .feature-card h3 {
   margin: 0 0 0.5rem;
   font-size: 1.2rem;
-  color: var(--vs-blue-dark);
+  color: var(--brand-dark);
 }
-.feature-card:nth-child(2) h3 { color: var(--vs-pink-dark); }
+.feature-card:nth-child(2) h3 { color: var(--accent-dark); }
 .feature-card p {
   margin: 0;
   font-size: 1rem;
@@ -423,19 +424,19 @@ main:focus-visible {
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: var(--vs-blue-dark);
+  color: var(--brand-dark);
 }
 .search input {
   width: 100%;
   padding: 1rem 1.25rem;
   font-size: 1.2rem;
-  border: 3px solid var(--vs-blue);
+  border: 3px solid var(--brand);
   border-radius: var(--radius);
   font-family: var(--font-body);
   background: white;
 }
 .search input:focus-visible {
-  outline: 4px solid var(--vs-pink);
+  outline: 4px solid var(--accent);
   outline-offset: 2px;
 }
 .search-results {
@@ -444,7 +445,7 @@ main:focus-visible {
 .search-result {
   padding: 1rem 1.25rem;
   background: var(--paper);
-  border-left: 5px solid var(--vs-pink);
+  border-left: 5px solid var(--accent);
   border-radius: var(--radius-sm);
   margin-bottom: 0.75rem;
   display: block;
@@ -453,12 +454,12 @@ main:focus-visible {
 }
 .search-result:hover,
 .search-result:focus-visible {
-  background: var(--vs-pink);
+  background: var(--accent);
   color: white;
 }
 .search-result strong {
   display: block;
-  color: var(--vs-pink-dark);
+  color: var(--accent-dark);
 }
 .search-result:hover strong,
 .search-result:focus-visible strong {
@@ -469,7 +470,7 @@ main:focus-visible {
 
 .page-title {
   font-size: 2rem;
-  color: var(--vs-blue-dark);
+  color: var(--brand-dark);
   margin: 0 0 0.5rem;
 }
 .page-intro {
@@ -501,14 +502,14 @@ main:focus-visible {
   padding: 1.25rem;
   border-radius: var(--radius);
   background: var(--paper);
-  border-left: 8px solid var(--card-color, var(--vs-blue));
+  border-left: 8px solid var(--card-color, var(--brand));
   text-decoration: none;
   color: var(--dark);
   box-shadow: var(--shadow);
 }
 .chapter-card:hover,
 .chapter-card:focus-visible {
-  background: var(--card-color, var(--vs-blue));
+  background: var(--card-color, var(--brand));
   color: white;
   transform: translateY(-2px);
   transition: transform 0.15s;
@@ -516,7 +517,7 @@ main:focus-visible {
 .chapter-card .num {
   font-size: 0.85rem;
   font-weight: bold;
-  color: var(--card-color, var(--vs-blue));
+  color: var(--card-color, var(--brand));
   letter-spacing: 0.05em;
 }
 .chapter-card:hover .num,
@@ -746,12 +747,12 @@ main:focus-visible {
 /* Generic content pages */
 .content-page h1 {
   font-size: 2rem;
-  color: var(--vs-blue-dark);
+  color: var(--brand-dark);
   margin: 0 0 1rem;
 }
 .content-page h2 {
   font-size: 1.5rem;
-  color: var(--vs-pink-dark);
+  color: var(--accent-dark);
   margin: 2rem 0 1rem;
 }
 .content-page p,
@@ -773,19 +774,19 @@ main:focus-visible {
   padding: 1.25rem;
   background: var(--paper);
   border-radius: var(--radius);
-  border-left: 8px solid var(--vs-blue);
+  border-left: 8px solid var(--brand);
   margin-bottom: 1rem;
   box-shadow: var(--shadow);
 }
 .step-card:nth-child(even) {
-  border-left-color: var(--vs-pink);
+  border-left-color: var(--accent);
 }
 .step-card .num {
   flex: 0 0 auto;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: var(--vs-blue);
+  background: var(--brand);
   color: white;
   display: flex;
   align-items: center;
@@ -794,15 +795,15 @@ main:focus-visible {
   font-size: 1.5rem;
 }
 .step-card:nth-child(even) .num {
-  background: var(--vs-pink);
+  background: var(--accent);
 }
 .step-card h3 {
   margin: 0 0 0.25rem;
   font-size: 1.2rem;
-  color: var(--vs-blue-dark);
+  color: var(--brand-dark);
 }
 .step-card:nth-child(even) h3 {
-  color: var(--vs-pink-dark);
+  color: var(--accent-dark);
 }
 .step-card p {
   margin: 0;
@@ -819,20 +820,20 @@ main:focus-visible {
   padding: 1rem 1.25rem 1rem 2rem;
   margin-bottom: 0.75rem;
   background: var(--paper);
-  border-left: 8px solid var(--vs-blue);
+  border-left: 8px solid var(--brand);
   border-radius: var(--radius-sm);
   position: relative;
   font-size: 1.1rem;
 }
 .rights-list li:nth-child(even) {
-  border-left-color: var(--vs-pink);
+  border-left-color: var(--accent);
 }
 .rights-list li strong {
   display: block;
-  color: var(--vs-blue-dark);
+  color: var(--brand-dark);
 }
 .rights-list li:nth-child(even) strong {
-  color: var(--vs-pink-dark);
+  color: var(--accent-dark);
 }
 .rights-list .ref {
   display: inline-block;
@@ -857,8 +858,8 @@ main:focus-visible {
   font-family: var(--font-body);
   padding: 0.4rem 0.9rem;
   background: transparent;
-  border: 2px solid var(--vs-blue);
-  color: var(--vs-blue-dark);
+  border: 2px solid var(--brand);
+  color: var(--brand-dark);
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
   font-weight: bold;
@@ -866,14 +867,14 @@ main:focus-visible {
 }
 .toolbar button:hover,
 .toolbar button:focus-visible {
-  background: var(--vs-blue);
+  background: var(--brand);
   color: white;
 }
 
 /* ============ footer ============ */
 
 .site-footer {
-  background: var(--vs-blue-dark);
+  background: var(--brand-dark);
   color: white;
   padding: 2rem 1.25rem;
   text-align: center;

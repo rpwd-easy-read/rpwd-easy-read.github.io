@@ -76,7 +76,6 @@ function renderHome() {
       <p class="hero-tagline">
         Your rights, in plain words — with the law still attached.
         <br>A complete reference for persons with intellectual and learning disabilities.
-        <br><em style="font-size:0.85em;color:var(--muted)">Prepared by the Disability Law Unit of Vidya Sagar</em>
       </p>
       <div class="hero-actions">
         <a href="#/map" class="btn btn-primary btn-big">See all 17 chapters</a>
@@ -371,14 +370,6 @@ function renderHelp() {
         </div>
       </div>
 
-      <h2>Civil society organisations</h2>
-      <div class="step-card">
-        <div>
-          <h3>Disability Law Unit at Vidya Sagar</h3>
-          <p>A team that works on disability rights and legal support. They can guide you on how to use the RPwD Act.</p>
-          <p><a href="mailto:dlu@vidyasagar.co.in">dlu@vidyasagar.co.in</a></p>
-        </div>
-      </div>
     </div>
   `;
 }
