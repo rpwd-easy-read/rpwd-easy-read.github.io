@@ -517,9 +517,10 @@ main:focus-visible {
   transition: transform 0.15s;
 }
 .chapter-card .num {
+  /* Dark text for AA; the chapter colour cue lives on the card border. */
   font-size: 0.85rem;
   font-weight: bold;
-  color: var(--card-color, var(--brand));
+  color: var(--dark);
   letter-spacing: 0.05em;
 }
 .chapter-card:hover .num,
@@ -544,17 +545,21 @@ main:focus-visible {
 /* ============ chapter page ============ */
 
 .chapter-hero {
-  background: var(--ch-color);
-  color: white;
+  /* Colour on the boundary, dark text on white: passes AA for all 17 hues. */
+  background: var(--paper);
+  color: var(--dark);
   padding: 2rem 1.5rem;
   border-radius: var(--radius);
+  border: 2px solid var(--ch-color);
+  border-left-width: 10px;
   text-align: center;
   margin-bottom: 2rem;
 }
 .chapter-hero .kicker {
   font-size: 0.9rem;
   letter-spacing: 0.1em;
-  opacity: 0.85;
+  color: var(--ch-color);
+  font-weight: bold;
   font-style: italic;
 }
 .chapter-hero h1 {
@@ -624,7 +629,7 @@ main:focus-visible {
   margin-bottom: 0.75rem;
 }
 .breadcrumb a {
-  color: var(--ch-color);
+  color: var(--brand-dark);
   font-weight: bold;
 }
 
@@ -799,7 +804,7 @@ main:focus-visible {
 .step-card:nth-child(even) .num {
   background: var(--accent);
 }
-.step-card h3 {
+.step-card h2, .step-card h3 {
   margin: 0 0 0.25rem;
   font-size: 1.2rem;
   color: var(--brand-dark);
