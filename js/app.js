@@ -77,25 +77,60 @@ const altFor = (name) => ALT_TEXT[name] || `Illustration for this section`;
 
 /* ============ views ============ */
 
+const BAND_THUMBS = {
+  foundations: 'document',
+  rights: 'equality',
+  services: 'school',
+  systems: 'committee_people',
+  enforcement: 'justice_scales',
+};
+
 function renderHome() {
+  const tiles = BANDS.map((b) => {
+    const n = b.chapters.length;
+    return `
+      <a class="band-tile" href="#/map/${b.id}"
+         style="--tile-accent: var(--band-${b.id}-accent); --tile-tint: var(--band-${b.id}-tint)">
+        <span class="band-tile-thumb" aria-hidden="true">
+          <img src="img/illustrations/${BAND_THUMBS[b.id]}.png" alt="">
+        </span>
+        <span class="band-tile-name">${esc(b.name)}</span>
+        <span class="band-tile-count">${n} ${n === 1 ? 'chapter' : 'chapters'}</span>
+      </a>
+    `;
+  }).join('');
+
   return `
     <div class="hero">
-      <div class="hero-illustrations" aria-hidden="true">
-        <img src="img/illustrations/equality.png" alt="" class="hero-img hero-img-1">
-        <img src="img/illustrations/school.png" alt="" class="hero-img hero-img-2">
-        <img src="img/illustrations/bus.png" alt="" class="hero-img hero-img-3">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Nothing about us without us.</p>
+        <h1>Know your rights. In plain words.</h1>
+        <p class="hero-tagline">A plain-language guide to all 102 sections of India's disability rights law. One idea at a time, with a picture for each one.</p>
       </div>
-      <h1>${esc(CONTENT.meta.title)}</h1>
-      <p class="hero-subtitle">${esc(CONTENT.meta.subtitle)}</p>
-      <p class="hero-tagline">
-        Your rights, in plain words, with the law still attached.
-        <br>A complete reference for persons with intellectual and learning disabilities.
-      </p>
+      <figure class="hero-illus">
+        <img src="img/illustrations/${esc('book_learning')}.png" alt="${esc(altFor('book_learning'))}">
+      </figure>
       <div class="hero-actions">
-        <a href="#/map" class="btn btn-primary">Read the Act</a>
+        <a href="#/map" class="btn btn-primary">Read the Act →</a>
         <a href="#/about" class="btn">How this guide works</a>
       </div>
     </div>
+
+    <section class="band-row" aria-label="Choose a part of the law">
+      <h2>Choose a part of the law</h2>
+      <div class="band-tiles">${tiles}</div>
+    </section>
+
+    <a class="onramp" href="#/section/1">
+      <span class="onramp-thumb" aria-hidden="true">
+        <img src="img/illustrations/book_open.png" alt="">
+      </span>
+      <span class="onramp-body">
+        <strong class="onramp-title">New to the Act?</strong>
+        <span class="onramp-text">Start with 3 short pages on what this law is and who it is for.</span>
+        <span class="onramp-cta">Start here →</span>
+      </span>
+    </a>
 
     <section class="search" aria-label="Find a section">
       <label for="search-home">Find a section</label>
@@ -108,30 +143,6 @@ function renderHome() {
       </p>
       <div class="search-results" id="search-home-results" role="region" aria-live="polite"></div>
     </section>
-
-    <div class="home-features">
-      <div class="feature-card">
-        <img src="img/illustrations/shield.png" alt="" class="feature-img" aria-hidden="true">
-        <h2>Your rights</h2>
-        <p>Read each right in plain words. Every page keeps the official Section number — so you can use it in a complaint.</p>
-      </div>
-      <div class="feature-card">
-        <img src="img/illustrations/women_children.png" alt="" class="feature-img" aria-hidden="true">
-        <h2>Friendly pictures</h2>
-        <p>Every section has a simple drawing. Look at the picture if the words are hard.</p>
-      </div>
-      <div class="feature-card">
-        <img src="img/illustrations/megaphone.png" alt="" class="feature-img" aria-hidden="true">
-        <h2>Read out loud</h2>
-        <p>Tap the speak button on any section page to hear the words read out loud.</p>
-      </div>
-    </div>
-
-    <div class="hero-actions" style="margin-top: 2rem;">
-      <a href="#/about" class="btn">About this guide</a>
-      <a href="#/your-rights" class="btn">Your rights in one page</a>
-      <a href="#/help" class="btn">Who can help you</a>
-    </div>
   `;
 }
 
@@ -506,6 +517,7 @@ function renderRoute() {
 
   if (parts.length === 0) {
     html = renderHome();
+    title = 'Know your rights. In plain words.';
     nav = 'home';
     setupFn = () => setupSearch('search-home', 'search-home-results');
   } else if (parts[0] === 'map') {
