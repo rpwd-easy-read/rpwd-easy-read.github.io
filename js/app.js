@@ -125,19 +125,10 @@ const pictureCard = (href, img, name, accentVar, tintVar) => `
 `;
 
 function renderHome() {
-  const tiles = BANDS.map((b) => {
-    const n = b.chapters.length;
-    return `
-      <a class="band-tile" href="#/map/${b.id}"
-         style="--tile-accent: var(--band-${b.id}-accent); --tile-tint: var(--band-${b.id}-tint)">
-        <span class="band-tile-thumb" aria-hidden="true">
-          <img src="img/illustrations/${BAND_THUMBS[b.id]}.webp" alt="">
-        </span>
-        <span class="band-tile-name">${esc(b.name)}</span>
-        <span class="band-tile-count">${n} ${n === 1 ? 'chapter' : 'chapters'}</span>
-      </a>
-    `;
-  }).join('');
+  const tiles = BANDS.map((b) => pictureCard(
+    bandHref(b), BAND_THUMBS[b.id], b.name,
+    `var(--band-${b.id}-accent)`, `var(--band-${b.id}-tint)`
+  )).join('');
 
   return `
     <div class="hero">
@@ -157,7 +148,7 @@ function renderHome() {
 
     <section class="band-row" aria-label="Choose a part of the law">
       <h2>Choose a part of the law</h2>
-      <div class="band-tiles">${tiles}</div>
+      <div class="pcards">${tiles}</div>
     </section>
 
     <a class="onramp" href="#/section/1">
