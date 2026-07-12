@@ -1,5 +1,25 @@
 # Illustration regeneration worksheet (v2 second pass)
 
+STATUS: COMPLETE 2026-07-12. All 32 images (31 section illustrations
+plus globe_world for About) regenerated via the Recraft pipeline,
+shipped as WebP, alt text rewritten. Drafts and contact sheets in
+design-review\illustration-drafts\ (untracked).
+
+LESSONS for future images (learned the hard way this run):
+- The model's strongest bias is power dynamics, not style: it drew
+  wheelchair pushers, sheltering giant hands, and podium exclusion
+  again and again. Prohibitions barely help; what works is giving
+  every character a concrete activity as equals: chai glasses,
+  parcels, puzzle pieces, her own certificate.
+- Abstract symbolism fails; concrete everyday action succeeds
+  (equality became equal service at a shop counter).
+- Never name a word you do not want drawn (asking for "tick" boxes
+  produced the word TICK on screen).
+- Giant-object surrealism is the default for object concepts; say
+  "strictly natural realistic size as in everyday life".
+- Solo compositions are immune to relationship mistakes; when a
+  concept keeps failing, remove everyone but the subject.
+
 How to use: work band by band. For each row, paste the Prompt into your
 image tool, generate, judge against the dignity rules in
 design-review\claude design output\extracted\design_handoff_rpwd_easy_read\ILLUSTRATION_SPEC.md,
@@ -45,7 +65,7 @@ action big and central.
 
 ### 1. `book_simple.png` (used by S1, S2, S99, S102)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -61,7 +81,7 @@ lettering anywhere in the image, 16:9.
 
 ### 2. `disaster_safe.png` (used by S8)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -75,7 +95,7 @@ lettering anywhere in the image, 16:9.
 
 ### 3. `equality.png` (used by S3)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -89,7 +109,7 @@ lettering anywhere in the image, 16:9.
 
 ### 4. `friends_support.png` (used by S14, S27)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -103,7 +123,7 @@ lettering anywhere in the image, 16:9.
 
 ### 5. `heart.png` (used by S10, S29)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -117,7 +137,7 @@ lettering anywhere in the image, 16:9.
 
 ### 6. `house_family.png` (used by S5, S9)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -131,7 +151,7 @@ lettering anywhere in the image, 16:9.
 
 ### 7. `pencil_signing.png` (used by S13)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -145,7 +165,7 @@ lettering anywhere in the image, 16:9.
 
 ### 8. `shield.png` (used by S6, S7)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -159,7 +179,7 @@ lettering anywhere in the image, 16:9.
 
 ### 9. `vote.png` (used by S11)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -173,7 +193,7 @@ lettering anywhere in the image, 16:9.
 
 ### 10. `women_children.png` (used by S4)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -189,7 +209,7 @@ lettering anywhere in the image, 16:9.
 
 ### 11. `book_learning.png` (used by S18)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -203,7 +223,7 @@ lettering anywhere in the image, 16:9.
 
 ### 12. `book_open.png` (used by S17, S28)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -217,7 +237,7 @@ lettering anywhere in the image, 16:9.
 
 ### 13. `briefcase.png` (used by S19, S20, S36)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -231,7 +251,7 @@ lettering anywhere in the image, 16:9.
 
 ### 14. `certificate_star.png` (used by S30)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -245,7 +265,7 @@ lettering anywhere in the image, 16:9.
 
 ### 15. `chair_reserved.png` (used by S34)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -259,7 +279,7 @@ lettering anywhere in the image, 16:9.
 
 ### 16. `high_support_hands.png` (used by S38)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -273,7 +293,7 @@ lettering anywhere in the image, 16:9.
 
 ### 17. `medical_cross.png` (used by S25)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -287,7 +307,7 @@ lettering anywhere in the image, 16:9.
 
 ### 18. `school.png` (used by S16, S31, S32, S47)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -303,7 +323,7 @@ lettering anywhere in the image, 16:9.
 
 ### 19. `building_ramp.png` (used by S40, S44)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -317,7 +337,7 @@ lettering anywhere in the image, 16:9.
 
 ### 20. `bus.png` (used by S41)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -331,7 +351,7 @@ lettering anywhere in the image, 16:9.
 
 ### 21. `clipboard_check.png` (used by S22, S48, S56, S58, S87)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -345,7 +365,7 @@ lettering anywhere in the image, 16:9.
 
 ### 22. `clock.png` (used by S45, S46)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -359,7 +379,7 @@ lettering anywhere in the image, 16:9.
 
 ### 23. `commissioner_badge.png` (used by S74, S75, S79, S80)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -373,7 +393,7 @@ lettering anywhere in the image, 16:9.
 
 ### 24. `committee_people.png` (used by S23, S60, S64, S66, S70, S72)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -387,7 +407,7 @@ lettering anywhere in the image, 16:9.
 
 ### 25. `computer.png` (used by S42, S43)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -401,7 +421,7 @@ lettering anywhere in the image, 16:9.
 
 ### 26. `document.png` (used by S15, S21, S26, S33, S37, S49, S50, S51 and more)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -415,7 +435,7 @@ lettering anywhere in the image, 16:9.
 
 ### 27. `justice_scales.png` (used by S12, S53, S59, S77, S82, S95)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -429,7 +449,7 @@ lettering anywhere in the image, 16:9.
 
 ### 28. `megaphone.png` (used by S39)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -443,7 +463,7 @@ lettering anywhere in the image, 16:9.
 
 ### 29. `money_jar.png` (used by S24, S35, S55, S86, S88)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -459,7 +479,7 @@ lettering anywhere in the image, 16:9.
 
 ### 30. `courthouse.png` (used by S84, S85)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
@@ -473,7 +493,7 @@ lettering anywhere in the image, 16:9.
 
 ### 31. `warning.png` (used by S52, S89, S90, S91, S92, S93)
 
-- [ ] generated, judged, saved
+- [x] generated, judged, saved (2026-07-12 run)
 
 ```
 Flat vector illustration, single medium line weight, ink #1D1B16 outlines,
