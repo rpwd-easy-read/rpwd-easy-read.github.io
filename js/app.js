@@ -293,13 +293,23 @@ function renderSection(num) {
     </div>
 
     <div class="section-controls" aria-label="Page controls">
-      <button type="button" class="btn btn-primary" id="btn-speak">
-        ▶ Read this to me
-      </button>
-      <button type="button" class="btn" id="btn-stop" hidden>
-        ■ Stop reading
-      </button>
+      <div class="section-controls-group">
+        <button type="button" class="btn btn-primary" id="btn-speak">
+          ▶ Read this to me
+        </button>
+        <button type="button" class="btn" id="btn-stop" hidden>
+          ■ Stop reading
+        </button>
+      </div>
+      <div class="section-controls-group">
+        <a href="#/section/${s.num}/more" class="btn" id="btn-know-more"
+           aria-expanded="false" aria-controls="know-more-panel">
+          Know more
+        </a>
+      </div>
     </div>
+
+    ${renderKnowMorePanel(s)}
 
     ${band.id === 'enforcement' ? `
     <p class="using-act-line">Is this right being broken? <a href="#/help">See Using the Act →</a></p>
@@ -316,6 +326,62 @@ function renderSection(num) {
   `;
 }
 
+/* Verbatim gazette text, rendered as a quiet quoted block.
+ * Hidden by default. The Know more link opens it via the sub-route
+ * #/section/N/more; Escape or the Close button returns to #/section/N.
+ *
+ * If a section has signed-off `know_more_bullets` (v2.3b, per band),
+ * the plain-words layer renders ABOVE the verbatim quote. Sections
+ * without signed bullets show only the verbatim law: complete and
+ * honest from day one, no dead buttons, no coming soon. */
+function renderKnowMorePanel(s) {
+  const paragraphs = String(s.official_text || '')
+    .split('\n\n')
+    .map((p) => `<p>${esc(p)}</p>`)
+    .join('');
+  const bullets = Array.isArray(s.know_more_bullets) ? s.know_more_bullets : null;
+  const plainWordsLayer = bullets && bullets.length
+    ? `
+        <div class="know-more-plain">
+          <p class="know-more-kicker">More in plain words</p>
+          <ul class="know-more-bullets">
+            ${bullets.map((b) => `<li>${esc(b)}</li>`).join('')}
+          </ul>
+        </div>
+      `
+    : '';
+  return `
+    <section class="know-more-panel"
+             id="know-more-panel"
+             aria-labelledby="km-title"
+             hidden>
+      <div class="know-more-inner">
+        <div class="know-more-head">
+          <p class="know-more-kicker">Know more about Section ${s.num}</p>
+          <h2 id="km-title" class="know-more-title" tabindex="-1">
+            ${esc(s.official_title)}
+          </h2>
+        </div>
+        <p class="know-more-note">
+          The plain-language version above belongs to you first.
+          Below is more depth, then the verbatim statute so
+          nothing is withheld.
+        </p>
+        ${plainWordsLayer}
+        <p class="know-more-kicker">The law's actual words</p>
+        <blockquote class="know-more-quote" aria-label="Verbatim text of Section ${s.num}">
+          ${paragraphs}
+        </blockquote>
+        <div class="know-more-foot">
+          <a href="#/section/${s.num}" class="btn" id="btn-know-more-close">
+            ✕ Close
+          </a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 function setupSectionControls(s) {
   const btnSpeak = document.getElementById('btn-speak');
   const btnStop = document.getElementById('btn-stop');
@@ -326,11 +392,28 @@ function setupSectionControls(s) {
     return;
   }
 
+  /* Panel-aware text picker. When the Know more panel is open,
+   * read the panel content too (Deepa decision 2). Otherwise scope
+   * stays on the Easy Read plain text. */
+  const buildSpeechText = () => {
+    const panel = document.getElementById('know-more-panel');
+    const panelOpen = panel && !panel.hidden;
+    const base = `Section ${s.num}. ${s.official_title}. `
+      + `${s.plain_text} Use this when: ${s.use_when}`;
+    if (!panelOpen) return base;
+    const bullets = Array.isArray(s.know_more_bullets) ? s.know_more_bullets : null;
+    const bulletsPart = bullets && bullets.length
+      ? ` More in plain words. ${bullets.join(' ')}`
+      : '';
+    const verbatim = (s.official_text || '').replace(/\s+/g, ' ').trim();
+    return base + bulletsPart + ` The law's actual words. ${verbatim}`;
+  };
+
   let keepAlive = null;
   const speak = () => {
     const synth = window.speechSynthesis;
     synth.cancel();
-    const text = `Section ${s.num}. ${s.official_title}. ${s.plain_text} Use this when: ${s.use_when}`;
+    const text = buildSpeechText();
     const utter = new SpeechSynthesisUtterance(text);
     utter.rate = 0.9;
     utter.pitch = 1.0;
@@ -364,6 +447,58 @@ function setupSectionControls(s) {
     btnStop.hidden = true;
     btnSpeak.hidden = false;
   });
+}
+
+/* Know more panel: open/close via the sub-route #/section/N/more.
+ * Deepa decision 1 (sub-route) means Back always returns to the
+ * section page cleanly. Focus moves to the panel heading on open;
+ * Escape or Close returns focus to the Know more button. */
+function setupKnowMorePanel(s, openOnLoad) {
+  const panel = document.getElementById('know-more-panel');
+  const trigger = document.getElementById('btn-know-more');
+  const heading = document.getElementById('km-title');
+  const closeBtn = document.getElementById('btn-know-more-close');
+  if (!panel || !trigger) return;
+
+  const open = () => {
+    panel.hidden = false;
+    trigger.setAttribute('aria-expanded', 'true');
+    if (heading) {
+      heading.focus();
+      heading.scrollIntoView({ block: 'start' });
+    }
+  };
+  const close = () => {
+    panel.hidden = true;
+    trigger.setAttribute('aria-expanded', 'false');
+    /* Cancel any in-flight speech that was reading the panel. */
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    trigger.focus();
+  };
+
+  /* The Know more link and the Close link both flip the URL hash.
+   * We intercept them here so the panel state changes without a full
+   * route re-render, keeping focus and scroll stable. */
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+    history.pushState(null, '', `#/section/${s.num}/more`);
+    open();
+  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      history.pushState(null, '', `#/section/${s.num}`);
+      close();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !panel.hidden) {
+      history.pushState(null, '', `#/section/${s.num}`);
+      close();
+    }
+  });
+
+  if (openOnLoad) open();
 }
 
 function renderAbout() {
@@ -1018,10 +1153,16 @@ function renderRoute() {
   } else if (parts[0] === 'section' && parts[1]) {
     const s = byNum(parts[1]);
     if (s) {
+      const showMore = parts[2] === 'more';
       html = renderSection(s.num);
       ch = s.chapter;
-      title = `Section ${s.num}: ${s.official_title}`;
-      setupFn = () => setupSectionControls(s);
+      title = showMore
+        ? `Section ${s.num}, verbatim: ${s.official_title}`
+        : `Section ${s.num}: ${s.official_title}`;
+      setupFn = () => {
+        setupSectionControls(s);
+        setupKnowMorePanel(s, showMore);
+      };
     }
   } else if (parts[0] === 'about') {
     html = renderAbout();
