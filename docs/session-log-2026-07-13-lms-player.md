@@ -52,7 +52,27 @@ design-review\lms-player-2026-07-13\)
   8/3, 13/1 exceed 1100 chars; recommendation is extra `---` breaks
   in the signed markdown (chunking, not wording), Deepa's call.
 
+## Sign-off and slide splits (same session)
+
+Deepa reviewed the four screenshots and picked **slate** (the shipped
+default) and approved splitting the heavy slides. Two clean splits
+applied to the signed markdown, chunking only, wording proven
+byte-equivalent after rebuild (tag-stripped text per segment equal to
+the previous JSON):
+
+- Segment 5, Family 3: split after the S11 bullet (714px slide down
+  to 306px and 402px).
+- Segment 7, picking table: notes split off after the table (the
+  13-row table stays whole by design and scrolls in-stage).
+- NOT split, with reasons: 8/3 is one complaint-letter template that
+  should not be cut mid-letter; 13/1 carries the four endnote refs
+  that must stay on the same slide as the endnotes block (the jump
+  targets live there). Both scroll in-stage with the More-below hint.
+
+Deck is now 24 slides. Re-gate green: axe 0 on 259 routes, console
+clean, arrow walk 1 to 24, split-slide heights verified.
+
 ## Current status
 
-Committed locally, push held for Deepa's sign-off on the player look
-and colour theme. On sign-off: push, verify live, refresh claims.
+Signed off (slate theme, splits applied), pushed, live verification
+recorded in this session's close-out.
