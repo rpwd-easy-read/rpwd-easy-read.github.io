@@ -1050,10 +1050,20 @@ function setupTrainingModule() {
     stage.addEventListener('scroll', updateHint);
   }
 
-  /* Move focus to the slide heading on each render so screen readers pick
-   * up the new slide's title and keyboard users land on the right spot. */
+  /* Move focus to the slide heading on each render so screen readers
+   * pick up the new slide's title, but never let the focus jump move
+   * the page (Deepa 2026-07-13: every Next yanked the viewport up and
+   * forced a fresh scroll down to the stage, disorienting and heavy
+   * for users with limited mobility). Instead the viewport is pinned
+   * to the same spot on every slide: player strip at the top, stage
+   * in view, controls fixed at the bottom. Only the slide changes. */
   const heading = document.getElementById('segment-heading');
-  if (heading) heading.focus({ preventScroll: false });
+  if (heading) heading.focus({ preventScroll: true });
+  const playerEl = document.querySelector('.player');
+  if (playerEl) {
+    const target = Math.round(playerEl.getBoundingClientRect().top + window.scrollY - 8);
+    window.scrollTo(0, Math.max(0, target));
+  }
 
   /* Arrow-key slide navigation. Left goes to previous slide, right goes to
    * next. Hijacks only bare arrow keys, so text fields and the details

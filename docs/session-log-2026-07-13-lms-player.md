@@ -72,7 +72,21 @@ the previous JSON):
 Deck is now 24 slides. Re-gate green: axe 0 on 259 routes, console
 clean, arrow walk 1 to 24, split-slide heights verified.
 
+## Post-ship fix: steady viewport on Next (Deepa report, same day)
+
+Deepa on the live deck: every Next yanked the page up, forcing a
+fresh scroll down to the stage and another scroll inside the slide,
+disorienting and heavy for users with limited mobility. Cause: the
+router's scroll-to-top plus a scrolling focus call on each render.
+Fix in setupTrainingModule: focus the heading with preventScroll,
+then pin the viewport to the player top on every slide render, and
+the stage's own scroll starts at zero per slide. Verified: scrollY
+identical across consecutive Next presses (154 = 154 = 154), stage
+scroll resets, focus still lands on the heading, section routes keep
+their scroll-to-top. axe 0 on all 259 routes re-run. SW v27.
+
 ## Current status
 
-Signed off (slate theme, splits applied), pushed, live verification
-recorded in this session's close-out.
+Signed off (slate theme, splits applied), pushed and live. The
+steady-viewport fix is the shipped behaviour: only the slide content
+changes between slides.
