@@ -728,6 +728,12 @@ p {
   outline: 3px solid var(--action);
   outline-offset: 4px;
 }
+.know-more-subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  margin: 0.375rem 0 0;
+  color: var(--muted);
+}
 .know-more-note {
   font-size: 1rem;
   color: var(--muted);

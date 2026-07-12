@@ -304,7 +304,7 @@ function renderSection(num) {
       <div class="section-controls-group">
         <a href="#/section/${s.num}/more" class="btn" id="btn-know-more"
            aria-expanded="false" aria-controls="know-more-panel">
-          Know more
+          Section ${s.num} text from the RPwD Act
         </a>
       </div>
     </div>
@@ -357,10 +357,11 @@ function renderKnowMorePanel(s) {
              hidden>
       <div class="know-more-inner">
         <div class="know-more-head">
-          <p class="know-more-kicker">Know more about Section ${s.num}</p>
+          <p class="know-more-kicker">RPwD Act 2016</p>
           <h2 id="km-title" class="know-more-title" tabindex="-1">
-            ${esc(s.official_title)}
+            Section ${s.num} text from the RPwD Act
           </h2>
+          <p class="know-more-subtitle">${esc(s.official_title)}</p>
         </div>
         <p class="know-more-note">
           The plain-language version above belongs to you first.
@@ -1157,7 +1158,7 @@ function renderRoute() {
       html = renderSection(s.num);
       ch = s.chapter;
       title = showMore
-        ? `Section ${s.num}, verbatim: ${s.official_title}`
+        ? `Section ${s.num} text from the RPwD Act: ${s.official_title}`
         : `Section ${s.num}: ${s.official_title}`;
       setupFn = () => {
         setupSectionControls(s);
