@@ -301,11 +301,7 @@ function renderSection(num) {
     </div>
 
     ${band.id === 'enforcement' ? `
-    <aside class="using-act" aria-labelledby="using-act-h">
-      <h2 class="using-act-h" id="using-act-h">What can I do if this right is broken?</h2>
-      <p>Learn how the Act is used: who to tell, and the officers and courts the law sets up.</p>
-      <p><a href="#/help">Using the Act →</a></p>
-    </aside>
+    <p class="using-act-line">Is this right being broken? <a href="#/help">See Using the Act →</a></p>
     ` : ''}
 
     <div class="prev-next">
@@ -397,6 +393,10 @@ function renderAbout() {
       <p><a href="#/your-rights">Your rights in one page →</a></p>
 
       <p>This guide is not legal advice. For court matters, ask a lawyer or your State Commissioner.</p>
+
+      <h2>Credits</h2>
+      <p>Created and maintained by Deepa Palaniappan, accessibility professional (CPACC).</p>
+      <p>Part of the <a href="https://deepapalaniappan-a11y.github.io/disability-rights-repository-site/" target="_blank" rel="noopener">Disability Rights Repository</a>.</p>
     </div>
   `;
 }

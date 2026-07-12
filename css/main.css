@@ -800,20 +800,9 @@ p {
 }
 
 /* Using the Act panel (enforcement sections) */
-.using-act {
-  background: var(--band-tint);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-card);
-  padding: 1.5rem 1.75rem;
+.using-act-line {
   margin: 2rem 0;
-}
-.using-act-h {
-  color: var(--band-accent);
-  font-size: 1.3rem;
-  margin: 0 0 0.5rem;
-}
-.using-act p {
-  margin: 0.5rem 0 0;
+  font-weight: 600;
 }
 
 /* How-to list (About page) */
