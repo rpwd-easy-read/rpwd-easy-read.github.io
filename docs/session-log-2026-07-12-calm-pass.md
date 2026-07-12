@@ -57,7 +57,21 @@ and now authoritative.
   windows at 500px wide; the probe is
   design-review\calm-verify-2026-07-12\reflow-probe.html), glance test
   passes. SW v14.
-- (pending) home
-- (pending) footer and meta sweep
-- (pending) training landing
-- (pending) module slide-deck mode
+- DONE home (pass 2, 01c006f): band tiles are the same picture cards,
+  counts gone; hero, on-ramp and home search stay. SW v15.
+- DONE footer and meta sweep (pass 3, f0f2a92): two-line footer
+  everywhere; credits and repository link moved to About; Using-the-Act
+  aside slims to one sentence plus link. SW v16.
+- DONE training landing (pass 4, 1cd2111): 17 picture cards with plain
+  chapter names; ranges, subtitles and download stub lines out; filter
+  chips and progress line stay. SW v17.
+- DONE module slide-deck mode (pass 5, 63ea2ae): thin band strip, calm
+  slide surface, fixed Back and Next with global Slide N of 22 counter,
+  Contents overlay grouping slides under segment headings; stepper rail
+  and dots retired; sub-slides kept. SW v18.
+
+Gate evidence for all five passes:
+design-review\calm-verify-2026-07-12\AXE-VERIFICATION.md. Note for
+future verification: headless Chrome on this machine clamps windows at
+500px wide; 320px reflow is tested with the same-origin iframe probe
+in that folder, not with direct 320px screenshots.
