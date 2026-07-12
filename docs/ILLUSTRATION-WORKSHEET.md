@@ -11,6 +11,11 @@ for <band>': it resizes and compresses, updates ALT_TEXT in js/app.js
 where the new drawing differs, bumps the service worker cache, commits,
 pushes, and re-runs the ship gate.
 
+RECRAFT PIPELINE: custom style id f70155e7-5df2-4bac-90ce-9bdd8ee73bb7
+(model recraftv3, size 1820x1024, key at C:\Users\deepa\.recraft-api-key,
+User-Agent curl/8.9.1 to pass Cloudflare). Default one candidate per
+image, respin only on a miss.
+
 CAST LOCKED 2026-07-12: docs\cast-sheet.png (candidate P). Eight
 characters, mixed-India representation. All images draw from this cast.
 
