@@ -14,11 +14,11 @@ let CONTENT = null;
  * every chapter belongs to exactly one band; Section numbers stay
  * the citable anchor everywhere. */
 const BANDS = [
-  { id: 'foundations', name: 'Foundations & Definitions', chapters: ['I', 'XVII'] },
-  { id: 'rights', name: 'Rights & Entitlements', chapters: ['II'] },
-  { id: 'services', name: 'Services & Support', chapters: ['III', 'IV', 'V', 'VI', 'VII'] },
-  { id: 'systems', name: 'Systems & Authorities', chapters: ['VIII', 'IX', 'X', 'XI', 'XII', 'XIV', 'XV'] },
-  { id: 'enforcement', name: 'Enforcement', chapters: ['XIII', 'XVI'] },
+  { id: 'foundations', name: 'Foundations & Definitions', short: 'FOUNDATIONS', chapters: ['I', 'XVII'] },
+  { id: 'rights', name: 'Rights & Entitlements', short: 'RIGHTS', chapters: ['II'] },
+  { id: 'services', name: 'Services & Support', short: 'SERVICES', chapters: ['III', 'IV', 'V', 'VI', 'VII'] },
+  { id: 'systems', name: 'Systems & Authorities', short: 'SYSTEMS', chapters: ['VIII', 'IX', 'X', 'XI', 'XII', 'XIV', 'XV'] },
+  { id: 'enforcement', name: 'Enforcement', short: 'ENFORCEMENT', chapters: ['XIII', 'XVI'] },
 ];
 
 const bandForChapter = (chId) => BANDS.find((b) => b.chapters.includes(chId));
@@ -467,14 +467,67 @@ function renderHelp() {
 }
 
 function renderTraining() {
+  const filters = `
+    <div class="band-filters" role="group" aria-label="Show chapters from one part of the law">
+      <button type="button" class="filter-chip" data-filter="all" aria-pressed="true">All</button>
+      ${BANDS.map((b) => `
+        <button type="button" class="filter-chip" data-filter="${b.id}" aria-pressed="false">${esc(b.name)}</button>
+      `).join('')}
+    </div>
+    <p id="training-count" class="sr-only" aria-live="polite"></p>
+  `;
+
+  const rows = CONTENT.chapters.map((ch) => {
+    const band = bandForChapter(ch.id);
+    const first = ch.sections[0];
+    const last = ch.sections[ch.sections.length - 1];
+    const range = first === last ? `Section ${first}` : `Sections ${first} to ${last}`;
+    return `
+      <div class="training-row" data-band="${band.id}"
+           style="--row-accent: var(--band-${band.id}-accent)">
+        <div class="training-row-info">
+          <p class="training-eyebrow">${esc(band.short)} · ${esc(ch.kicker)}</p>
+          <h2 class="training-ch">${esc(ch.title)}</h2>
+          <p class="training-meta">${range} · ${esc(ch.subtitle)}</p>
+        </div>
+        <div class="training-downloads">
+          <p class="dl-coming">Deck and handout coming soon.</p>
+        </div>
+      </div>
+    `;
+  }).join('');
+
   return `
-    <div class="content-page">
+    <div class="training-page">
       <h1>Training Resources</h1>
-      <p>For trainers and support workers. Pick a chapter of the Act and download a ready-made slide deck and a printable handout. Free to use and share.</p>
-      <p>The decks and handouts are being prepared. They will appear here, chapter by chapter.</p>
-      <p><a href="#/map" class="btn">Read the Act</a></p>
+      <p class="page-intro">For trainers and support workers. Pick a chapter of the Act and download a ready-made slide deck and a printable handout. Free to use and share.</p>
+      ${filters}
+      <div class="training-rows">${rows}</div>
     </div>
   `;
+}
+
+function setupTrainingFilters() {
+  const chips = Array.from(document.querySelectorAll('.filter-chip'));
+  const rows = Array.from(document.querySelectorAll('.training-row'));
+  const count = document.getElementById('training-count');
+  if (!chips.length) return;
+
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const filter = chip.dataset.filter;
+      chips.forEach((c) => c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'));
+      let shown = 0;
+      rows.forEach((row) => {
+        const show = filter === 'all' || row.dataset.band === filter;
+        row.hidden = !show;
+        if (show) shown++;
+      });
+      if (count) {
+        count.textContent = `Showing ${shown} ${shown === 1 ? 'chapter' : 'chapters'}.`;
+      }
+    });
+  });
 }
 
 function renderYourRights() {
@@ -613,6 +666,7 @@ function renderRoute() {
     html = renderTraining();
     title = 'Training Resources';
     nav = 'training';
+    setupFn = setupTrainingFilters;
   } else if (parts[0] === 'complain') {
     html = renderComplain();
     title = 'How to file a complaint';

@@ -921,6 +921,89 @@ button.chip-more {
   margin-top: 0.25rem;
 }
 
+/* ============ training resources ============ */
+
+.training-page h1 {
+  margin: 0 0 0.5rem;
+}
+
+.band-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.filter-chip {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-pill);
+  padding: 0.5rem 1rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+.filter-chip:hover {
+  border-color: var(--ink);
+}
+.filter-chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--surface);
+}
+
+.training-rows {
+  display: grid;
+  gap: 0.75rem;
+}
+.training-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-left: 6px solid var(--row-accent);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+}
+.training-row-info {
+  flex: 1 1 24rem;
+}
+.training-eyebrow {
+  color: var(--row-accent);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.25rem;
+}
+.training-ch {
+  font-size: 1.3rem;
+  margin: 0 0 0.25rem;
+}
+.training-meta {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: none;
+}
+.training-downloads {
+  flex: 0 1 auto;
+}
+.dl-coming {
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
 /* ============ footer ============ */
 
 .site-footer {
