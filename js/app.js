@@ -383,6 +383,47 @@ function renderKnowMorePanel(s) {
   `;
 }
 
+/* Shared speech engine for Read this to me and the module player's
+ * Listen button. Carries the three Chrome TTS fixes in one place:
+ * pick a real installed voice (forcing a lang with no matching voice
+ * goes silent on some Windows and Android builds), defer speak() past
+ * cancel() (Chrome swallows a speak issued in the same tick), and a
+ * pause-resume keep-alive (desktop Chrome stalls long utterances
+ * after about 15s). onStateChange(true|false) drives the caller's
+ * play/stop button swap. */
+function createSpeaker(buildText, onStateChange) {
+  let keepAlive = null;
+  const done = () => {
+    if (keepAlive) { clearInterval(keepAlive); keepAlive = null; }
+    onStateChange(false);
+  };
+  const speak = () => {
+    const synth = window.speechSynthesis;
+    synth.cancel();
+    const utter = new SpeechSynthesisUtterance(buildText());
+    utter.rate = 0.9;
+    utter.pitch = 1.0;
+    const voices = synth.getVoices();
+    const voice = voices.find((v) => v.lang === 'en-IN')
+      || voices.find((v) => v.lang && v.lang.indexOf('en') === 0);
+    if (voice) { utter.voice = voice; utter.lang = voice.lang; }
+    utter.onstart = () => {
+      onStateChange(true);
+      keepAlive = setInterval(() => {
+        if (synth.speaking && !synth.paused) { synth.pause(); synth.resume(); }
+      }, 10000);
+    };
+    utter.onend = done;
+    utter.onerror = done;
+    setTimeout(() => synth.speak(utter), 80);
+  };
+  const stop = () => {
+    window.speechSynthesis.cancel();
+    done();
+  };
+  return { speak, stop };
+}
+
 function setupSectionControls(s) {
   const btnSpeak = document.getElementById('btn-speak');
   const btnStop = document.getElementById('btn-stop');
@@ -410,44 +451,13 @@ function setupSectionControls(s) {
     return base + bulletsPart + ` The law's actual words. ${verbatim}`;
   };
 
-  let keepAlive = null;
-  const speak = () => {
-    const synth = window.speechSynthesis;
-    synth.cancel();
-    const text = buildSpeechText();
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.rate = 0.9;
-    utter.pitch = 1.0;
-    /* Pick a real installed voice: forcing a lang with no matching
-       voice goes silent on some Windows and Android builds. */
-    const voices = synth.getVoices();
-    const voice = voices.find((v) => v.lang === 'en-IN')
-      || voices.find((v) => v.lang && v.lang.indexOf('en') === 0);
-    if (voice) { utter.voice = voice; utter.lang = voice.lang; }
-    const stopUI = () => {
-      btnStop.hidden = true; btnSpeak.hidden = false;
-      if (keepAlive) { clearInterval(keepAlive); keepAlive = null; }
-    };
-    utter.onstart = () => {
-      btnStop.hidden = false; btnSpeak.hidden = true;
-      /* Chrome desktop stalls long utterances after about 15s; a
-         periodic pause and resume keeps it talking. */
-      keepAlive = setInterval(() => {
-        if (synth.speaking && !synth.paused) { synth.pause(); synth.resume(); }
-      }, 10000);
-    };
-    utter.onend = stopUI;
-    utter.onerror = stopUI;
-    /* Chrome swallows a speak() issued in the same tick as cancel(). */
-    setTimeout(() => synth.speak(utter), 80);
-  };
-
-  btnSpeak.addEventListener('click', speak);
-  btnStop.addEventListener('click', () => {
-    window.speechSynthesis.cancel();
-    btnStop.hidden = true;
-    btnSpeak.hidden = false;
+  const speaker = createSpeaker(buildSpeechText, (speaking) => {
+    btnStop.hidden = !speaking;
+    btnSpeak.hidden = speaking;
   });
+
+  btnSpeak.addEventListener('click', speaker.speak);
+  btnStop.addEventListener('click', speaker.stop);
 }
 
 /* Know more panel: open/close via the sub-route #/section/N/more.
@@ -882,7 +892,12 @@ function renderTrainingModule(moduleId, segNumRaw, slideNumRaw) {
   const headingSuffix = slidesInSeg > 1 && slide.num > 1
     ? `<span class="segment-subhead"> &middot; slide ${slide.num}</span>`
     : '';
+  const progressPct = Math.round(((flatIdx + 1) / flat.length) * 100);
 
+  /* LMS player shell (2026-07-13, docs\LMS-PLAYER-SPEC.md): chrome
+   * strip above and control bar below a light slide stage, in the
+   * flash-simulated style of typical LMS modules. Routes, arrow keys,
+   * Contents overlay, mark-complete and endnotes are unchanged. */
   return `
     <div class="module-page" data-module-id="${esc(moduleId)}"
          data-flat-idx="${flatIdx}" data-flat-len="${flat.length}">
@@ -890,49 +905,68 @@ function renderTrainingModule(moduleId, segNumRaw, slideNumRaw) {
         <a href="#/training">&lsaquo; Training</a>
       </nav>
 
-      <header class="module-strip">
-        <div class="module-strip-text">
-          <h1>
-            <span class="module-strip-eyebrow">${esc(bandShort)} &middot; CHAPTER ${esc(data.chapter_id)} &middot;</span>
-            ${esc(data.title)}
-          </h1>
-          <p class="module-strip-meta">
-            ${esc(data.sections_range)} &middot; About ${data.duration_minutes} minutes
-            ${complete ? '<span class="module-complete-pill"> Complete on this device</span>' : ''}
-          </p>
+      <div class="player">
+        <header class="player-top">
+          <div class="module-strip-text">
+            <h1>
+              <span class="module-strip-eyebrow">${esc(bandShort)} &middot; CHAPTER ${esc(data.chapter_id)} &middot;</span>
+              ${esc(data.title)}
+            </h1>
+            <p class="module-strip-meta">
+              ${esc(data.sections_range)} &middot; About ${data.duration_minutes} minutes
+              ${complete ? '<span class="module-complete-pill"> Complete on this device</span>' : ''}
+            </p>
+          </div>
+          <button type="button" id="btn-contents" class="btn module-contents-btn"
+                  aria-expanded="false" aria-controls="module-contents">
+            Contents
+          </button>
+        </header>
+
+        <div class="module-contents" id="module-contents" hidden>
+          <nav aria-label="Module contents">
+            <ol class="mc-list">${contents}</ol>
+          </nav>
+          <p class="module-arrow-hint">Tip: the left and right arrow keys also walk the slides.</p>
         </div>
-        <button type="button" id="btn-contents" class="btn module-contents-btn"
-                aria-expanded="false" aria-controls="module-contents">
-          Contents
-        </button>
-      </header>
 
-      <div class="module-contents" id="module-contents" hidden>
-        <nav aria-label="Module contents">
-          <ol class="mc-list">${contents}</ol>
+        <div class="player-stage" id="player-stage" tabindex="0"
+             role="region" aria-label="Slide content">
+          <article class="module-segment"
+                   aria-labelledby="segment-heading"
+                   aria-roledescription="slide"
+                   aria-label="Slide ${flatIdx + 1} of ${flat.length}">
+            <h2 id="segment-heading" tabindex="-1">
+              <span class="segment-num" aria-hidden="true">${seg.num}.</span>
+              ${esc(seg.title)}${headingSuffix}
+            </h2>
+            ${takeawayBlock}
+            <div class="segment-body">${slide.html}</div>
+            ${markCompleteBlock}
+            ${endnotesBlock}
+          </article>
+        </div>
+        <p class="stage-more-hint" id="stage-more-hint" hidden>More below: scroll the slide.</p>
+
+        <nav class="module-prevnext player-controls" aria-label="Module navigation">
+          ${prevLink}
+          <div class="player-progress">
+            <span class="player-progress-track" aria-hidden="true">
+              <span class="player-progress-fill" style="width: ${progressPct}%"></span>
+            </span>
+            <span class="module-counter">Slide ${flatIdx + 1} of ${flat.length}</span>
+          </div>
+          <div class="player-audio">
+            <button type="button" class="btn-listen" id="btn-slide-listen">
+              &#9654; Listen
+            </button>
+            <button type="button" class="btn-listen" id="btn-slide-stop" hidden>
+              &#9632; Stop
+            </button>
+          </div>
+          ${nextLink}
         </nav>
-        <p class="module-arrow-hint">Tip: the left and right arrow keys also walk the slides.</p>
       </div>
-
-      <article class="module-segment"
-               aria-labelledby="segment-heading"
-               aria-roledescription="slide"
-               aria-label="Slide ${flatIdx + 1} of ${flat.length}">
-        <h2 id="segment-heading" tabindex="-1">
-          <span class="segment-num" aria-hidden="true">${seg.num}.</span>
-          ${esc(seg.title)}${headingSuffix}
-        </h2>
-        ${takeawayBlock}
-        <div class="segment-body">${slide.html}</div>
-        ${markCompleteBlock}
-        ${endnotesBlock}
-      </article>
-
-      <nav class="module-prevnext" aria-label="Module navigation">
-        ${prevLink}
-        <span class="module-counter">Slide ${flatIdx + 1} of ${flat.length}</span>
-        ${nextLink}
-      </nav>
     </div>
   `;
 }
@@ -975,6 +1009,45 @@ function setupTrainingModule() {
         }, 50);
       }
     });
+  }
+
+  /* Listen: read the visible slide (heading, then body) through the
+   * shared speech engine. User-initiated only, no autoplay; the router
+   * cancels speech on every slide or route change. */
+  const btnListen = document.getElementById('btn-slide-listen');
+  const btnListenStop = document.getElementById('btn-slide-stop');
+  if (btnListen && btnListenStop) {
+    if (!('speechSynthesis' in window)) {
+      btnListen.hidden = true;
+    } else {
+      const buildSlideText = () => {
+        const h = document.getElementById('segment-heading');
+        const body = document.querySelector('.segment-body');
+        const headPart = h ? h.textContent.replace(/\s+/g, ' ').trim() : '';
+        const bodyPart = body ? body.innerText.replace(/\s+/g, ' ').trim() : '';
+        return `${headPart}. ${bodyPart}`;
+      };
+      const speaker = createSpeaker(buildSlideText, (speaking) => {
+        btnListenStop.hidden = !speaking;
+        btnListen.hidden = speaking;
+      });
+      btnListen.addEventListener('click', speaker.speak);
+      btnListenStop.addEventListener('click', speaker.stop);
+    }
+  }
+
+  /* Long slides scroll inside the stage; say so out loud rather than
+   * letting content hide below the fold unannounced. */
+  const stage = document.getElementById('player-stage');
+  const moreHint = document.getElementById('stage-more-hint');
+  if (stage && moreHint) {
+    const updateHint = () => {
+      const overflowing = stage.scrollHeight - stage.clientHeight > 8;
+      const atBottom = stage.scrollTop + stage.clientHeight >= stage.scrollHeight - 8;
+      moreHint.hidden = !overflowing || atBottom;
+    };
+    updateHint();
+    stage.addEventListener('scroll', updateHint);
   }
 
   /* Move focus to the slide heading on each render so screen readers pick

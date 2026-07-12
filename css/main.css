@@ -1417,6 +1417,239 @@ p {
   .module-prevnext { position: static; }
 }
 
+/* ============ LMS player shell (docs/LMS-PLAYER-SPEC.md) ============ */
+/* Chrome strip above and control bar below a light slide stage, in the
+ * flash-simulated style of typical LMS modules. The chrome carries the
+ * player's own colour; the stage stays light for reading comfort.
+ * Themes: default slate; .theme-band and .theme-light are the two
+ * candidate variants kept for Deepa's pick. */
+
+.player {
+  --player-chrome: #263238;
+  --player-chrome-ink: #FFFFFF;
+  --player-chrome-soft: #C9D4DA;
+  --player-track: #51636D;
+  --player-focus: #FFD166;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+  overflow: hidden;
+}
+.player.theme-band {
+  --player-chrome: color-mix(in srgb, var(--band-accent) 72%, #14181B);
+  --player-track: color-mix(in srgb, var(--band-accent) 35%, #14181B);
+}
+.player.theme-light {
+  --player-chrome: #EFE9DD;
+  --player-chrome-ink: var(--ink);
+  --player-chrome-soft: var(--ink-soft);
+  --player-track: #D4C9B2;
+  --player-focus: var(--focus);
+}
+
+.player-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: var(--player-chrome);
+  color: var(--player-chrome-ink);
+  padding: 0.75rem 1.25rem;
+}
+.player-top h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: var(--player-chrome-ink);
+}
+.player-top .module-strip-eyebrow {
+  color: var(--player-chrome-soft);
+  letter-spacing: 0.04em;
+  font-size: 1rem;
+}
+.player-top .module-strip-meta {
+  margin: 0.1rem 0 0;
+  color: var(--player-chrome-soft);
+  font-size: 0.95rem;
+}
+.player-top .module-complete-pill {
+  background: var(--player-chrome-ink);
+  color: var(--player-chrome);
+}
+.player-top .module-contents-btn {
+  background: transparent;
+  border: 2px solid var(--player-chrome-ink);
+  color: var(--player-chrome-ink);
+}
+.player-top .module-contents-btn:hover {
+  background: var(--player-chrome-ink);
+  color: var(--player-chrome);
+}
+.player-top :focus-visible {
+  outline: 3px solid var(--player-focus);
+  outline-offset: 2px;
+}
+
+.player .module-contents {
+  border: 0;
+  border-bottom: 1px solid var(--hairline);
+  border-radius: 0;
+  margin: 0;
+}
+
+/* The stage: a light slide surface with a comfortable minimum, an
+ * internal scroll past the maximum, and the segment card flattened
+ * into it (the stage supplies the surface now). */
+.player-stage {
+  background: var(--surface);
+  min-height: 20rem;
+  max-height: max(20rem, calc(100vh - 24rem));
+  overflow-y: auto;
+}
+.player-stage:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: -3px;
+}
+.player-stage .module-segment {
+  border: 0;
+  border-radius: 0;
+  padding: 2rem 2.5rem 2.5rem;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.stage-more-hint {
+  max-width: none; /* full-width chrome bar, exempt from the global 60ch measure */
+  margin: 0;
+  padding: 0.4rem 1.25rem;
+  background: var(--band-tint);
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border-top: 1px solid var(--hairline);
+}
+
+/* Control bar: the fixed slide bar becomes player chrome. */
+.player-controls {
+  background: var(--player-chrome);
+  border-top: 0;
+}
+.player-controls .module-counter {
+  color: var(--player-chrome-ink);
+}
+.player-controls .btn-prev {
+  background: transparent;
+  border: 2px solid var(--player-chrome-ink);
+  color: var(--player-chrome-ink);
+}
+.player-controls .btn-prev:hover {
+  background: var(--player-chrome-ink);
+  color: var(--player-chrome);
+}
+.player-controls .btn-next {
+  background: var(--band-accent);
+  border: 2px solid var(--player-chrome-ink);
+  color: #FFFFFF;
+}
+.player-controls .btn-next:hover {
+  background: var(--player-chrome-ink);
+  border-color: var(--player-chrome-ink);
+  color: var(--player-chrome);
+}
+.player-controls :focus-visible {
+  outline: 3px solid var(--player-focus);
+  outline-offset: 2px;
+}
+.player.theme-light .player-controls .btn-prev,
+.player.theme-light .player-controls .btn-next {
+  border-color: var(--band-accent);
+}
+.player.theme-light .player-controls .btn-prev {
+  color: var(--band-accent);
+}
+
+.player-progress {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 8rem;
+  max-width: 24rem;
+}
+.player-progress-track {
+  display: block;
+  width: 100%;
+  height: 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--player-track);
+}
+.player-progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--player-chrome-ink);
+}
+.player-progress .module-counter {
+  font-size: 1rem;
+}
+
+.player-audio .btn-listen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 700;
+  background: transparent;
+  border: 2px solid var(--player-chrome-ink);
+  color: var(--player-chrome-ink);
+  border-radius: var(--radius-card);
+  padding: 0.7rem 1.2rem;
+  min-height: 3.25rem;
+  cursor: pointer;
+}
+.player-audio .btn-listen:hover {
+  background: var(--player-chrome-ink);
+  color: var(--player-chrome);
+}
+.player.theme-light .player-audio .btn-listen {
+  border-color: var(--band-accent);
+  color: var(--band-accent);
+}
+.player.theme-light .player-audio .btn-listen:hover {
+  background: var(--band-accent);
+  color: #FFFFFF;
+}
+
+@media (max-width: 600px) {
+  .player-stage .module-segment { padding: 1.25rem 1rem 1.75rem; }
+  .player-stage { max-height: none; }
+  .player-progress {
+    order: -1;
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  /* One row of Back, Listen, Next under the progress line, in DOM
+   * order, so focus order and visual order stay identical. */
+  .player-audio { flex: 0 1 auto; display: flex; }
+  .player-audio .btn-listen { padding: 0.7rem 0.8rem; font-size: 1rem; }
+  .module-prevnext .btn-prev,
+  .module-prevnext .btn-next {
+    flex: 1 1 28%;
+  }
+  .module-page { padding-bottom: 12rem; }
+}
+
+@media print {
+  .player-controls, .stage-more-hint { display: none; }
+  .player-stage { max-height: none; overflow: visible; }
+}
+
 /* ============ footer ============ */
 
 .site-footer {
