@@ -524,9 +524,7 @@ function renderAbout() {
       </div>
       <h1>About this guide</h1>
 
-      <h2>Who made this and why</h2>
-      <p>This guide was created by Deepa Palaniappan, an accessibility professional (CPACC).</p>
-      <p>It teaches India's disability rights law: the Rights of Persons with Disabilities Act 2016.</p>
+      <p>This guide teaches India's disability rights law: the Rights of Persons with Disabilities Act 2016.</p>
       <p>It explains all 102 sections in plain words. One idea at a time. A picture for each one.</p>
       <p>Every page keeps the official Section number and title from the Act. Citing the Section number gives your case real power, so it is never stripped out.</p>
       <p>Section titles are verified against the official Act text from the Ministry of Law and Justice.</p>
