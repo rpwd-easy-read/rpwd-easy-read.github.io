@@ -1,4 +1,4 @@
-/* RPwD Easy Read — single-page app
+/* RPwD Easy Read: single-page app
  * Loads content.json, hash-routes between views, renders HTML, wires TTS,
  * search and the big-text toggle. Registers the service worker for offline.
  * No framework. Plain vanilla JS.
@@ -580,7 +580,7 @@ function renderUsingTheAct() {
         <img src="img/illustrations/pencil_signing.webp" alt="" class="page-illus">
       </div>
       <h1>Using the Act</h1>
-      <p>The Act is not only for reading. It gives you ways to act when a right is broken.</p>
+      <p>The Act gives you ways to act when a right is broken.</p>
       <p>This page shows you how. Who to tell. The officers and courts the law sets up.</p>
 
       <h2>How to complain, in 5 steps</h2>
