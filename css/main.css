@@ -521,117 +521,97 @@ p {
   margin-bottom: 2rem;
 }
 
-/* Band accordions: band -> chapter -> section chips */
-.band-accordions {
+/* Picture cards: the layered map (bands, then chapters). One decision
+ * per screen; the illustration is the surface, the name is the caption. */
+.pcards {
   display: grid;
-  gap: 0.75rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   margin: 1.5rem 0;
 }
-
-.band-acc-h {
-  margin: 0;
+@media (min-width: 40rem) {
+  .pcards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.band-acc-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-  text-align: left;
-  font-family: var(--font-body);
-  font-size: 1.2rem;
-  font-weight: 600;
+@media (min-width: 60rem) {
+  .pcards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.pcard {
+  display: block;
+  background: var(--surface);
+  border: 2px solid var(--hairline);
+  border-radius: var(--radius-tile);
+  overflow: hidden;
+  text-decoration: none;
   color: var(--ink);
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-left: 6px solid var(--band-a);
-  border-radius: var(--radius-card);
-  padding: 1rem 1.25rem;
-  cursor: pointer;
-  min-height: 3.5rem;
-  flex-wrap: wrap;
+  box-shadow: var(--shadow);
 }
-.band-acc-btn .band-acc-marker {
-  color: var(--band-a);
-  flex: 0 0 auto;
+.pcard:hover {
+  border-color: var(--pcard-accent);
+  color: var(--ink);
 }
-.band-acc-btn .band-acc-name {
-  flex: 1 1 auto;
+.pcard-img {
+  display: flex;
+  justify-content: center;
+  background: var(--pcard-tint);
+  padding: 1.5rem;
 }
-.band-acc-btn .band-acc-count {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--ink-soft);
+.pcard-img img {
+  width: 9.5rem;
+  height: 9.5rem;
+  object-fit: contain;
 }
-.band-acc-btn:hover {
-  background: var(--band-t);
-}
-.band-acc-btn[aria-expanded="true"] {
-  background: var(--band-a);
-  border-color: var(--band-a);
-  color: white;
-  border-radius: var(--radius-card) var(--radius-card) 0 0;
-}
-.band-acc-btn[aria-expanded="true"] .band-acc-marker,
-.band-acc-btn[aria-expanded="true"] .band-acc-count {
-  color: white;
+.pcard-name {
+  display: block;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--pcard-accent);
+  padding: 0.9rem 1rem 1.1rem;
 }
 
-.band-acc-body {
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-top: none;
-  border-radius: 0 0 var(--radius-card) var(--radius-card);
-  padding: 1.25rem;
-}
-
-.band-chapter {
-  margin-bottom: 1.5rem;
-}
-.band-chapter:last-child {
-  margin-bottom: 0;
-}
-.band-ch-name {
+.back-link {
+  display: inline-block;
   font-size: 1.15rem;
-  margin: 0 0 0.75rem;
-}
-.band-ch-name a {
-  color: var(--band-a);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  font-weight: 700;
+  padding: 0.5rem 0.75rem 0.5rem 0;
 }
 
-.chip-list {
+/* Plain section rows: Section number plus plain title, nothing else. */
+.plain-rows {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+.plain-rows a {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.chip {
-  display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: var(--band-t);
-  border: 1px solid var(--hairline);
-  border-radius: 10px;
-  padding: 0.5rem 0.875rem;
-  font-size: 1rem;
-  color: var(--ink);
-  text-decoration: none;
-  min-height: 2.75rem;
-}
-.chip:hover {
-  border-color: var(--band-a);
-  color: var(--ink);
-}
-.chip strong {
-  font-weight: 700;
-}
-button.chip-more {
-  font-family: var(--font-body);
-  cursor: pointer;
+  gap: 1rem;
   background: var(--surface);
+  border: 2px solid var(--hairline);
+  border-left: 6px solid var(--band-accent);
+  border-radius: var(--radius-card);
+  padding: 0.9rem 1.1rem;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.plain-rows a:hover {
+  background: var(--band-tint);
+  color: var(--ink);
+}
+.plain-rows .snum {
+  flex: none;
+  min-width: 3.2rem;
+  font-weight: 800;
+  color: var(--band-accent);
+}
+.plain-rows .stitle {
   font-weight: 600;
 }
 
@@ -661,46 +641,6 @@ button.chip-more {
   margin: 0.5rem 0 0;
   font-size: 1.1875rem;
   color: var(--ink-soft);
-}
-
-.section-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.75rem;
-}
-.section-list a {
-  display: block;
-  padding: 1.1rem 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-left: 6px solid var(--band-accent);
-  border-radius: var(--radius-chip);
-  text-decoration: none;
-  color: var(--ink);
-  box-shadow: var(--shadow);
-}
-.section-list a:hover {
-  background: var(--band-tint);
-  color: var(--ink);
-}
-.section-list .num {
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-}
-.section-list .title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin: 0.3rem 0;
-  line-height: 1.3;
-}
-.section-list .desc {
-  font-size: 1rem;
-  color: var(--ink-soft);
-  margin: 0;
 }
 
 /* ============ section page ============ */

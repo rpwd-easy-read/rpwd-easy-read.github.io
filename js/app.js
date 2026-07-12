@@ -85,6 +85,45 @@ const BAND_THUMBS = {
   enforcement: 'justice_scales',
 };
 
+/* One curated thumb per chapter (D-P51 decision 4); every pick unique so
+ * the 17 cards on one screen never repeat an image. */
+const CHAPTER_THUMBS = {
+  I: 'book_simple',
+  II: 'equality',
+  III: 'school',
+  IV: 'briefcase',
+  V: 'heart',
+  VI: 'chair_reserved',
+  VII: 'high_support_hands',
+  VIII: 'building_ramp',
+  IX: 'clipboard_check',
+  X: 'certificate_star',
+  XI: 'committee_people',
+  XII: 'commissioner_badge',
+  XIII: 'courthouse',
+  XIV: 'money_jar',
+  XV: 'house_family',
+  XVI: 'warning',
+  XVII: 'document',
+};
+
+/* A band holding one chapter skips its band page (D-P51 decision 1,
+ * data-driven: an amendment adding a chapter restores the band page by
+ * itself). */
+const bandHref = (band) => band.chapters.length === 1
+  ? `#/chapter/${band.chapters[0]}`
+  : `#/map/${band.id}`;
+
+const pictureCard = (href, img, name, accentVar, tintVar) => `
+  <a class="pcard" href="${href}"
+     style="--pcard-accent: ${accentVar}; --pcard-tint: ${tintVar}">
+    <span class="pcard-img" aria-hidden="true">
+      <img src="img/illustrations/${img}.webp" alt="" loading="lazy">
+    </span>
+    <span class="pcard-name">${esc(name)}</span>
+  </a>
+`;
+
 function renderHome() {
   const tiles = BANDS.map((b) => {
     const n = b.chapters.length;
@@ -146,123 +185,73 @@ function renderHome() {
   `;
 }
 
-const CHIPS_SHOWN = 5;
-
 function renderMap() {
-  const accordions = BANDS.map((band) => {
-    const chapters = band.chapters.map((chId) => chapterById(chId));
-    const sectionCount = chapters.reduce((n, ch) => n + ch.sections.length, 0);
-    const chapterBlocks = chapters.map((ch) => {
-      const sections = byChapter(ch.id);
-      const chips = sections.map((s, i) => `
-        <li${i >= CHIPS_SHOWN ? ' hidden' : ''}>
-          <a class="chip" href="#/section/${s.num}">
-            <strong>S${s.num}</strong> ${esc(s.official_title)}
-          </a>
-        </li>
-      `).join('');
-      const more = sections.length > CHIPS_SHOWN ? `
-        <li class="chip-more-holder">
-          <button type="button" class="chip chip-more">+ ${sections.length - CHIPS_SHOWN} more</button>
-        </li>
-      ` : '';
-      return `
-        <div class="band-chapter">
-          <h3 class="band-ch-name"><a href="#/chapter/${esc(ch.id)}">Chapter ${esc(ch.id)}: ${esc(ch.title)}</a></h3>
-          <ul class="chip-list">${chips}${more}</ul>
-        </div>
-      `;
-    }).join('');
-    return `
-      <section class="band-acc"
-        style="--band-a: var(--band-${band.id}-accent); --band-t: var(--band-${band.id}-tint)">
-        <h2 class="band-acc-h">
-          <button type="button" class="band-acc-btn" data-band="${band.id}"
-                  aria-expanded="false" aria-controls="band-body-${band.id}">
-            <span class="band-acc-marker" aria-hidden="true">▸</span>
-            <span class="band-acc-name">${esc(band.name)}</span>
-            <span class="band-acc-count">${band.chapters.length} ${band.chapters.length === 1 ? 'chapter' : 'chapters'} · ${sectionCount} sections</span>
-          </button>
-        </h2>
-        <div class="band-acc-body" id="band-body-${band.id}" hidden>${chapterBlocks}</div>
-      </section>
-    `;
-  }).join('');
+  const cards = BANDS.map((b) => pictureCard(
+    bandHref(b), BAND_THUMBS[b.id], b.name,
+    `var(--band-${b.id}-accent)`, `var(--band-${b.id}-tint)`
+  )).join('');
 
   return `
     <h1 class="page-title">All sections</h1>
+    <div class="pcards" aria-label="Parts of the law">${cards}</div>
     <section class="search" aria-label="Find a section">
-      <label for="search-map">Search for a word, like "school" or "job"</label>
+      <label for="search-map">Find a section</label>
       <input type="search" id="search-map"
-             placeholder="Type a word..."
+             placeholder="Type a word like school, job, bus, money..."
              autocomplete="off">
       <div class="search-results" id="search-map-results" role="region" aria-live="polite"></div>
     </section>
-    <div class="band-accordions">${accordions}</div>
   `;
 }
 
-function setupMapAccordions(initialBand) {
-  const buttons = Array.from(document.querySelectorAll('.band-acc-btn'));
+function renderBand(bandId) {
+  const band = BANDS.find((b) => b.id === bandId);
+  if (!band) return '';
+  const cards = band.chapters.map((chId) => {
+    const ch = chapterById(chId);
+    return pictureCard(
+      `#/chapter/${chId}`, CHAPTER_THUMBS[chId], ch.plain_caption,
+      `var(--band-${band.id}-accent)`, `var(--band-${band.id}-tint)`
+    );
+  }).join('');
 
-  const setOpen = (bandId) => {
-    buttons.forEach((btn) => {
-      const open = btn.dataset.band === bandId;
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      btn.querySelector('.band-acc-marker').textContent = open ? '▾' : '▸';
-      document.getElementById('band-body-' + btn.dataset.band).hidden = !open;
-    });
-  };
-
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-      setOpen(isOpen ? null : btn.dataset.band);
-    });
-  });
-
-  document.querySelectorAll('.chip-more').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const list = btn.closest('.chip-list');
-      const hiddenItems = list.querySelectorAll('li[hidden]');
-      hiddenItems.forEach((li) => { li.hidden = false; });
-      btn.closest('.chip-more-holder').hidden = true;
-      const firstRevealed = hiddenItems[0] && hiddenItems[0].querySelector('a');
-      if (firstRevealed) firstRevealed.focus();
-    });
-  });
-
-  if (initialBand && BANDS.some((b) => b.id === initialBand)) {
-    setOpen(initialBand);
-    const target = document.querySelector(`.band-acc-btn[data-band="${initialBand}"]`);
-    if (target) target.scrollIntoView();
-  }
+  return `
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a class="back-link" href="#/map">← All sections</a>
+    </nav>
+    <h1 class="page-title">${esc(band.name)}</h1>
+    <div class="pcards" aria-label="Chapters in this part">${cards}</div>
+  `;
 }
 
 function renderChapter(chId) {
   const chapter = chapterById(chId);
   if (!chapter) return '<p>Chapter not found.</p>';
+  const band = bandForChapter(chId);
   const sections = byChapter(chId);
   const items = sections.map((s) => `
     <li>
       <a href="#/section/${s.num}">
-        <div class="num">SECTION ${s.num}</div>
-        <div class="title">${esc(s.official_title)}</div>
-        <p class="desc">${esc(firstTwoSentences(s.plain_text, 160))}</p>
+        <span class="snum">S${s.num}</span>
+        <span class="stitle">${esc(s.plain_title)}</span>
       </a>
     </li>
   `).join('');
 
+  const backTarget = band.chapters.length === 1
+    ? { href: '#/map', label: 'All sections' }
+    : { href: `#/map/${band.id}`, label: band.name };
+
   return `
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="#/">Home</a> · <a href="#/map">All sections</a>
+      <a class="back-link" href="${backTarget.href}">← ${esc(backTarget.label)}</a>
     </nav>
     <div class="chapter-hero">
-      <div class="kicker">${esc(chapter.kicker)}</div>
-      <h1>${esc(chapter.title)}</h1>
-      <p>${esc(chapter.subtitle)}</p>
+      <div class="kicker">${esc(band.name)} · ${esc(chapter.kicker)}</div>
+      <h1>${esc(chapter.plain_caption)}</h1>
+      ${chapter.plain_caption === chapter.title ? '' : `<p>In the Act: ${esc(chapter.title)}</p>`}
     </div>
-    <ul class="section-list">${items}</ul>
+    <ul class="plain-rows">${items}</ul>
   `;
 }
 
@@ -278,8 +267,11 @@ function renderSection(num) {
 
   return `
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="#/map">${esc(band.name)}</a> ›
-      <a href="#/chapter/${esc(s.chapter)}">Chapter ${esc(s.chapter)}</a> ›
+      <a href="#/map">All sections</a> ›
+      ${band.chapters.length === 1
+        ? `<a href="#/chapter/${esc(s.chapter)}">${esc(band.name)}</a>`
+        : `<a href="#/map/${band.id}">${esc(band.name)}</a> ›
+           <a href="#/chapter/${esc(s.chapter)}">${esc(ch.plain_caption)}</a>`} ›
       Section ${s.num}
     </nav>
 
@@ -913,7 +905,7 @@ function searchSections(q) {
   if (!q || q.length < 2) return [];
   const query = q.toLowerCase();
   return CONTENT.sections.filter((s) => {
-    const hay = `${s.title} ${s.plain_text} ${s.use_when}`.toLowerCase();
+    const hay = `${s.title} ${s.plain_title} ${s.plain_text} ${s.use_when}`.toLowerCase();
     return hay.includes(query);
   }).slice(0, 25);
 }
@@ -935,7 +927,7 @@ function setupSearch(inputId, resultsId) {
     }
     results.innerHTML = hits.map((s) => `
       <a href="#/section/${s.num}" class="search-result">
-        <strong>Section ${s.num}: ${esc(s.official_title)}</strong>
+        <strong>Section ${s.num}: ${esc(s.plain_title)}</strong>
         ${esc(firstTwoSentences(s.plain_text, 150))}
       </a>
     `).join('');
@@ -980,14 +972,19 @@ function renderRoute() {
     title = 'Know your rights. In plain words.';
     nav = 'home';
     setupFn = () => setupSearch('search-home', 'search-home-results');
+  } else if (parts[0] === 'map' && parts[1]) {
+    const band = BANDS.find((b) => b.id === parts[1]);
+    if (band) {
+      html = renderBand(band.id);
+      ch = band.chapters[0];
+      title = band.name;
+      nav = 'map';
+    }
   } else if (parts[0] === 'map') {
     html = renderMap();
     title = 'All sections';
     nav = 'map';
-    setupFn = () => {
-      setupSearch('search-map', 'search-map-results');
-      setupMapAccordions(parts[1] || null);
-    };
+    setupFn = () => setupSearch('search-map', 'search-map-results');
   } else if (parts[0] === 'chapter' && parts[1]) {
     const chapter = chapterById(parts[1]);
     if (chapter) {

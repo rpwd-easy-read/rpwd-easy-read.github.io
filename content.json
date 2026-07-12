@@ -25,7 +25,8 @@
       "sections": [
         1,
         2
-      ]
+      ],
+      "plain_caption": "The basics"
     },
     {
       "id": "II",
@@ -48,7 +49,8 @@
         13,
         14,
         15
-      ]
+      ],
+      "plain_caption": "Rights and Entitlements"
     },
     {
       "id": "III",
@@ -61,7 +63,8 @@
         16,
         17,
         18
-      ]
+      ],
+      "plain_caption": "Education"
     },
     {
       "id": "IV",
@@ -76,7 +79,8 @@
         21,
         22,
         23
-      ]
+      ],
+      "plain_caption": "Training and jobs"
     },
     {
       "id": "V",
@@ -93,7 +97,8 @@
         28,
         29,
         30
-      ]
+      ],
+      "plain_caption": "Support, health and leisure"
     },
     {
       "id": "VI",
@@ -110,7 +115,8 @@
         35,
         36,
         37
-      ]
+      ],
+      "plain_caption": "Extra rights at 40% or more"
     },
     {
       "id": "VII",
@@ -121,7 +127,8 @@
       "color": "#00897B",
       "sections": [
         38
-      ]
+      ],
+      "plain_caption": "High support needs"
     },
     {
       "id": "VIII",
@@ -141,7 +148,8 @@
         46,
         47,
         48
-      ]
+      ],
+      "plain_caption": "What governments must do"
     },
     {
       "id": "IX",
@@ -158,7 +166,8 @@
         53,
         54,
         55
-      ]
+      ],
+      "plain_caption": "Registering disability organisations"
     },
     {
       "id": "X",
@@ -172,7 +181,8 @@
         57,
         58,
         59
-      ]
+      ],
+      "plain_caption": "Getting a disability certificate"
     },
     {
       "id": "XI",
@@ -196,7 +206,8 @@
         71,
         72,
         73
-      ]
+      ],
+      "plain_caption": "Advisory boards"
     },
     {
       "id": "XII",
@@ -216,7 +227,8 @@
         81,
         82,
         83
-      ]
+      ],
+      "plain_caption": "The Commissioners"
     },
     {
       "id": "XIII",
@@ -228,7 +240,8 @@
       "sections": [
         84,
         85
-      ]
+      ],
+      "plain_caption": "Special Court"
     },
     {
       "id": "XIV",
@@ -240,7 +253,8 @@
       "sections": [
         86,
         87
-      ]
+      ],
+      "plain_caption": "The National Fund"
     },
     {
       "id": "XV",
@@ -251,7 +265,8 @@
       "color": "#4E342E",
       "sections": [
         88
-      ]
+      ],
+      "plain_caption": "State Funds"
     },
     {
       "id": "XVI",
@@ -268,7 +283,8 @@
         93,
         94,
         95
-      ]
+      ],
+      "plain_caption": "Breaking the rules"
     },
     {
       "id": "XVII",
@@ -285,7 +301,8 @@
         100,
         101,
         102
-      ]
+      ],
+      "plain_caption": "The closing rules"
     }
   ],
   "sections": [
@@ -297,7 +314,8 @@
       "plain_text": "This section gives the Act its name and tells when it started. The Act began on 19 April 2017 and applies to all of India.",
       "use_when": "(For reference. This section is the Act's name plate.)",
       "illustration": "book_simple",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "This law's name and start date"
     },
     {
       "num": 2,
@@ -307,7 +325,8 @@
       "plain_text": "The Act lists 21 disabilities. If you have one of them, you are covered. If your disability is 40% or more, you are called a person with benchmark disability — you get extra rights.",
       "use_when": "You are not sure if the Act covers you, or whether you have a benchmark disability. Look at the list of 21 disabilities and the 40% rule.",
       "illustration": "book_simple",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "What the words mean"
     },
     {
       "num": 3,
@@ -317,7 +336,8 @@
       "plain_text": "You have the right to be treated equally. No one can treat you badly because you have a disability.",
       "use_when": "Someone refused you a service, a job, or a place because of your disability. Cite Section 3 in your complaint.",
       "illustration": "equality",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "You are equal"
     },
     {
       "num": 4,
@@ -327,7 +347,8 @@
       "plain_text": "Women and children with disabilities have the same rights as everyone else. The government must protect them from extra harm.",
       "use_when": "A girl or woman is denied school, work, or safety because of her disability. Or a child is being kept out of school.",
       "illustration": "women_children",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Women and children with disabilities"
     },
     {
       "num": 5,
@@ -337,7 +358,8 @@
       "plain_text": "You have the right to live in your own home and your own community. No one can force you into an institution against your will.",
       "use_when": "Someone is forcing a person with a disability to live in a hostel or institution they do not want to live in.",
       "illustration": "house_family",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "You can live in the community"
     },
     {
       "num": 6,
@@ -347,7 +369,8 @@
       "plain_text": "No one can hurt you or treat you in a cruel way. The government must keep you safe.",
       "use_when": "A person with a disability is being treated cruelly at home, in school, in a hospital, or in care.",
       "illustration": "shield",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "No one may treat you cruelly"
     },
     {
       "num": 7,
@@ -357,7 +380,8 @@
       "plain_text": "No one can hit you, hurt you, or use you for their gain. You can tell the police. They must help. You can also ask a magistrate for protection.",
       "use_when": "Someone is hurting, abusing, or exploiting a person with a disability.",
       "illustration": "shield",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "No one may hurt or use you"
     },
     {
       "num": 8,
@@ -367,7 +391,8 @@
       "plain_text": "The government must keep persons with disabilities safe in disasters, fires, floods, armed conflict, and other emergencies.",
       "use_when": "A relief camp, shelter, or evacuation plan does not include or is not safe for persons with disabilities.",
       "illustration": "disaster_safe",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Kept safe in danger and disasters"
     },
     {
       "num": 9,
@@ -377,7 +402,8 @@
       "plain_text": "Persons with disabilities have the right to a home and a family. No child can be taken from a parent only because the parent has a disability.",
       "use_when": "A child welfare worker tries to take your child away because of your disability.",
       "illustration": "house_family",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Your home and family"
     },
     {
       "num": 10,
@@ -387,7 +413,8 @@
       "plain_text": "Persons with disabilities have the right to decide about marriage and children. No one can force you to have an operation that stops you from having children.",
       "use_when": "A doctor, family member, or institution wants to sterilise a person with a disability without their full free consent.",
       "illustration": "heart",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Your choice about having children"
     },
     {
       "num": 11,
@@ -397,7 +424,8 @@
       "plain_text": "You have the right to vote in private. Polling stations must have ramps, easy ballots, and help if you need it.",
       "use_when": "A polling station has no ramp, no Braille ballot, or no help for voters with disabilities.",
       "illustration": "vote",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "You can vote"
     },
     {
       "num": 12,
@@ -407,7 +435,8 @@
       "plain_text": "You have the right to go to court. Courts must let you take part. They must give you a sign language interpreter or a support person if you need one.",
       "use_when": "A court, police station, or tribunal does not let you take part because of your disability.",
       "illustration": "justice_scales",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "You can go to court"
     },
     {
       "num": 13,
@@ -417,7 +446,8 @@
       "plain_text": "You can make your own decisions. You can own things. You can run a bank account. No one can take that away because of your disability.",
       "use_when": "Someone says you cannot sign a document, open a bank account, or own property because of your disability.",
       "illustration": "pencil_signing",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "You make your own decisions"
     },
     {
       "num": 14,
@@ -427,7 +457,8 @@
       "plain_text": "Guardianship can only be a last step. It must be limited and end when you can decide for yourself again. You always have the right to support to make your own choices.",
       "use_when": "Someone wants to put a person with a disability under full guardianship without trying support first.",
       "illustration": "friends_support",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Guardians only as a last step"
     },
     {
       "num": 15,
@@ -437,7 +468,8 @@
       "plain_text": "The government must name offices that help persons with disabilities make their own decisions.",
       "use_when": "(For reference. This section sets up the support system for decision-making.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Offices that support your decisions"
     },
     {
       "num": 16,
@@ -447,7 +479,8 @@
       "plain_text": "All schools must welcome children with disabilities. Schools must give the help each child needs to learn.",
       "use_when": "A school refused to take a child because of disability, or refuses to give support.",
       "illustration": "school",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Schools must welcome every child"
     },
     {
       "num": 17,
@@ -457,7 +490,8 @@
       "plain_text": "The government must train teachers, make books in accessible formats, and make schools easy to enter and use.",
       "use_when": "A school does not have ramps, accessible books, sign language support, or trained teachers.",
       "illustration": "book_open",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Help to make schools inclusive"
     },
     {
       "num": 18,
@@ -467,7 +501,8 @@
       "plain_text": "The government must run adult education programmes that include adults with disabilities.",
       "use_when": "An adult literacy or skills programme has no place for persons with disabilities.",
       "illustration": "book_learning",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Learning as an adult"
     },
     {
       "num": 19,
@@ -477,7 +512,8 @@
       "plain_text": "The government must run job training programmes and help persons with disabilities start their own work.",
       "use_when": "A skill training programme refused you, or did not have an accessible course.",
       "illustration": "briefcase",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Job training and starting your own work"
     },
     {
       "num": 20,
@@ -487,7 +523,8 @@
       "plain_text": "A government job cannot say no to you because you have a disability. You must be treated fairly at work.",
       "use_when": "You did not get a job, a promotion, or a fair review because of your disability.",
       "illustration": "briefcase",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Fair treatment in government jobs"
     },
     {
       "num": 21,
@@ -497,7 +534,8 @@
       "plain_text": "Every workplace with 20 or more workers must write down how they will treat workers with disabilities fairly. They must show this paper if you ask.",
       "use_when": "You want to know your workplace's rules for disability support. Ask to see the equal opportunity policy.",
       "illustration": "document",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Workplaces must have a fairness plan"
     },
     {
       "num": 22,
@@ -507,7 +545,8 @@
       "plain_text": "Every workplace must keep records of how many workers with disabilities they have, and what support each one needs.",
       "use_when": "You ask your workplace for these records and they refuse, or they say no records are kept.",
       "illustration": "clipboard_check",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Workplaces must keep records"
     },
     {
       "num": 23,
@@ -517,7 +556,8 @@
       "plain_text": "Every government workplace must name an officer to handle complaints from workers with disabilities.",
       "use_when": "Your workplace has no Grievance Redressal Officer, or the officer is not doing the job.",
       "illustration": "committee_people",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "An officer for work complaints"
     },
     {
       "num": 24,
@@ -527,7 +567,8 @@
       "plain_text": "The government must help you with food, clothes, a home, and other support if you need it to live.",
       "use_when": "You need a disability pension, ration card, or housing scheme but were turned away.",
       "illustration": "money_jar",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Help to live: food, clothes, a home"
     },
     {
       "num": 25,
@@ -537,7 +578,8 @@
       "plain_text": "You should get free healthcare close to where you live. Healthcare must work for people with disabilities too.",
       "use_when": "A government hospital or clinic refused you, charged you, or had no accessible service.",
       "illustration": "medical_cross",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Healthcare near you, free for low-income families"
     },
     {
       "num": 26,
@@ -547,7 +589,8 @@
       "plain_text": "The government must run insurance schemes for persons with disabilities.",
       "use_when": "An insurance company refused you because of your disability, or you cannot find any disability insurance.",
       "illustration": "document",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Insurance for government staff with disabilities"
     },
     {
       "num": 27,
@@ -557,7 +600,8 @@
       "plain_text": "The government must run rehabilitation programmes covering health, mind, social skills, and work.",
       "use_when": "A government rehab centre is not available, is too far, or refused to take you.",
       "illustration": "friends_support",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Help to rebuild skills"
     },
     {
       "num": 28,
@@ -567,7 +611,8 @@
       "plain_text": "The government must support research on disability, including new tools and treatments.",
       "use_when": "(For reference. This section funds research on assistive technology and disability services.)",
       "illustration": "book_open",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Research on disability"
     },
     {
       "num": 29,
@@ -577,7 +622,8 @@
       "plain_text": "Persons with disabilities have the right to take part in art, music, films, libraries, and leisure.",
       "use_when": "A museum, cinema, library, or cultural event refused you or had no accessible entry.",
       "illustration": "heart",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Taking part in art, music and fun"
     },
     {
       "num": 30,
@@ -587,7 +633,8 @@
       "plain_text": "The government must support sports for persons with disabilities.",
       "use_when": "A sports facility, training programme, or competition refused to include persons with disabilities.",
       "illustration": "certificate_star",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Sport for everyone"
     },
     {
       "num": 31,
@@ -597,7 +644,8 @@
       "plain_text": "Children with benchmark disabilities aged 6 to 18 have the right to free education in any government or government-aided school.",
       "use_when": "A government school asked a child with benchmark disability to pay fees, or refused to admit them.",
       "illustration": "school",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Free school, ages 6 to 18, at 40% disability or more"
     },
     {
       "num": 32,
@@ -607,7 +655,8 @@
       "plain_text": "Government colleges and universities must keep 5 seats out of every 100 for students with benchmark disabilities.",
       "use_when": "A college denied you a reserved seat or did not have a 5% disability quota in admissions.",
       "illustration": "school",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "5 in 100 college seats reserved"
     },
     {
       "num": 33,
@@ -617,7 +666,8 @@
       "plain_text": "The government must list out which jobs are open to persons with benchmark disabilities under the reservation.",
       "use_when": "(For reference. This section is the basis for the 4% reservation in Section 34.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Listing the jobs kept for you"
     },
     {
       "num": 34,
@@ -627,7 +677,8 @@
       "plain_text": "The government must keep 4 jobs out of every 100 for persons with benchmark disabilities. The 4% is split across categories of disability.",
       "use_when": "A government office did not follow the 4% job quota, or did not let you apply under the disability category.",
       "illustration": "chair_reserved",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "4 in 100 government jobs reserved"
     },
     {
       "num": 35,
@@ -637,7 +688,8 @@
       "plain_text": "The government can give private companies incentives like grants and tax breaks if they hire workers with disabilities.",
       "use_when": "(For reference. This section encourages private sector hiring of persons with disabilities.)",
       "illustration": "money_jar",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Rewards for companies that hire you"
     },
     {
       "num": 36,
@@ -647,7 +699,8 @@
       "plain_text": "The government must set up special job centres that help persons with disabilities find work.",
       "use_when": "You cannot find a special employment exchange in your district, or the one you found is not helping you.",
       "illustration": "briefcase",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Special job centres"
     },
     {
       "num": 37,
@@ -657,7 +710,8 @@
       "plain_text": "The government must run schemes that help persons with benchmark disabilities live, study, and work.",
       "use_when": "(For reference. This section is the basis for many disability welfare schemes.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Special schemes for living, study and work"
     },
     {
       "num": 38,
@@ -667,7 +721,8 @@
       "plain_text": "Persons with disabilities who need a lot of support get extra help. They have the right to ask for support, and the help must be reviewed often.",
       "use_when": "A person needs daily personal support but is not getting it from any government scheme.",
       "illustration": "high_support_hands",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Extra help for high support needs"
     },
     {
       "num": 39,
@@ -677,7 +732,8 @@
       "plain_text": "The government must run programmes to teach people about disability rights and accessibility.",
       "use_when": "(For reference. This section requires public awareness of the Act.)",
       "illustration": "megaphone",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Teaching everyone about disability rights"
     },
     {
       "num": 40,
@@ -687,7 +743,8 @@
       "plain_text": "Buildings, places, transport, and information must be made easy to use for everyone, including persons with disabilities.",
       "use_when": "A public building has no ramp, no lift, no accessible toilet, or no clear signs.",
       "illustration": "building_ramp",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Everything must be accessible"
     },
     {
       "num": 41,
@@ -697,7 +754,8 @@
       "plain_text": "Buses, trains, stations, and airports must have ramps, accessible signs, and trained staff to help.",
       "use_when": "A bus, train, or station did not let you board, had no ramp or lift, or had no accessible toilet.",
       "illustration": "bus",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Transport must be accessible"
     },
     {
       "num": 42,
@@ -707,7 +765,8 @@
       "plain_text": "Websites, apps, TV, and phones must work for people with disabilities. Books, forms, and notices must come in accessible formats too.",
       "use_when": "A government website, app, TV news, or printed form is not accessible to you.",
       "illustration": "computer",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Information and phones must be accessible"
     },
     {
       "num": 43,
@@ -717,7 +776,8 @@
       "plain_text": "Things sold in shops — like phones, TVs, and household goods — should be made so that persons with disabilities can use them.",
       "use_when": "A product you bought is not usable because of your disability and the maker did not provide an accessible version.",
       "illustration": "computer",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Everyday goods everyone can use"
     },
     {
       "num": 44,
@@ -727,7 +787,8 @@
       "plain_text": "No new building, transport, or service can get a permit unless it follows the accessibility rules.",
       "use_when": "A new building or service has been approved but does not meet the accessibility standards.",
       "illustration": "building_ramp",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "No permit without accessibility"
     },
     {
       "num": 45,
@@ -737,7 +798,8 @@
       "plain_text": "Old buildings and services must be made accessible within five years. This is the law, not a request.",
       "use_when": "A public building or service is still inaccessible long after the law required it to be fixed.",
       "illustration": "clock",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Five years to fix old buildings"
     },
     {
       "num": 46,
@@ -747,7 +809,8 @@
       "plain_text": "Service providers — like banks, hospitals, and shops — must make their services accessible within a fixed time set by the government.",
       "use_when": "A service provider has not made its service accessible within the time the government set.",
       "illustration": "clock",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Deadlines for accessible services"
     },
     {
       "num": 47,
@@ -757,7 +820,8 @@
       "plain_text": "The government must train enough teachers, doctors, and other staff to support persons with disabilities.",
       "use_when": "There are no trained special educators, sign language interpreters, or rehab workers in your area.",
       "illustration": "school",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Training teachers, doctors and staff"
     },
     {
       "num": 48,
@@ -767,7 +831,8 @@
       "plain_text": "The government must check, at least every five years, if the schemes for persons with disabilities are working — and persons with disabilities themselves should be part of that check.",
       "use_when": "A scheme is not being audited, or persons with disabilities were not part of the audit.",
       "illustration": "clipboard_check",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Checking the schemes every five years"
     },
     {
       "num": 49,
@@ -777,7 +842,8 @@
       "plain_text": "The government must name the office that handles registration of organisations working with persons with disabilities.",
       "use_when": "(For reference. This sets up the registration system for disability organisations.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "The registration office"
     },
     {
       "num": 50,
@@ -787,7 +853,8 @@
       "plain_text": "Any institution that wants to work with persons with disabilities must be registered. Without registration, they cannot legally provide services.",
       "use_when": "An institution is offering disability services without being registered.",
       "illustration": "document",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Organisations must register"
     },
     {
       "num": 51,
@@ -797,7 +864,8 @@
       "plain_text": "An institution must apply for a registration certificate. The competent authority gives the certificate after checking that the rules are met.",
       "use_when": "Your application for a registration certificate is taking too long, or was unfairly refused.",
       "illustration": "document",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "How to get registered"
     },
     {
       "num": 52,
@@ -807,7 +875,8 @@
       "plain_text": "If a registered institution breaks the rules or harms persons with disabilities, its registration can be cancelled.",
       "use_when": "A registered institution is treating persons with disabilities badly. You can ask the authority to cancel its registration.",
       "illustration": "warning",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Registration can be cancelled"
     },
     {
       "num": 53,
@@ -817,7 +886,8 @@
       "plain_text": "If your registration is refused or cancelled, you have the right to appeal to a higher authority.",
       "use_when": "Your institution's registration was refused or cancelled and you want to challenge that decision.",
       "illustration": "justice_scales",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Appealing a registration decision"
     },
     {
       "num": 54,
@@ -827,7 +897,8 @@
       "plain_text": "Government-run institutions for persons with disabilities do not need to register under this chapter — different rules apply to them.",
       "use_when": "(For reference. Government institutions are exempt from this registration requirement.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Government institutions have separate rules"
     },
     {
       "num": 55,
@@ -837,7 +908,8 @@
       "plain_text": "The government can give grants and other help to registered organisations that serve persons with disabilities.",
       "use_when": "(For reference. This section is the basis for funding disability organisations.)",
       "illustration": "money_jar",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Help for registered organisations"
     },
     {
       "num": 56,
@@ -847,7 +919,8 @@
       "plain_text": "The government must publish clear guidelines on how to assess each of the 21 specified disabilities.",
       "use_when": "(For reference. The assessment guidelines are issued by the central government.)",
       "illustration": "clipboard_check",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Clear rules for assessing disability"
     },
     {
       "num": 57,
@@ -857,7 +930,8 @@
       "plain_text": "The government must name the doctors and offices that can issue a disability certificate.",
       "use_when": "(For reference. This sets up the disability certification system.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Who can certify a disability"
     },
     {
       "num": 58,
@@ -867,7 +941,8 @@
       "plain_text": "There must be a clear, fair process to get a disability certificate. The certificate is valid all over India.",
       "use_when": "A doctor or office is making the certificate process hard, slow, or unclear.",
       "illustration": "clipboard_check",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "How to get your certificate"
     },
     {
       "num": 59,
@@ -877,7 +952,8 @@
       "plain_text": "If you are refused a disability certificate or get the wrong one, you can appeal.",
       "use_when": "Your application for a disability certificate was refused, or the percentage was wrong.",
       "illustration": "justice_scales",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Appealing a certificate decision"
     },
     {
       "num": 60,
@@ -887,7 +963,8 @@
       "plain_text": "The central government must set up a Central Advisory Board on Disability to advise on disability matters.",
       "use_when": "(For reference. This sets up the national disability advisory body.)",
       "illustration": "committee_people",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "The Central Advisory Board"
     },
     {
       "num": 61,
@@ -897,7 +974,8 @@
       "plain_text": "The rules say how Central Advisory Board members are paid and how long they serve.",
       "use_when": "(For reference. Administrative rule for Central Advisory Board members.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Central Board members: pay and term"
     },
     {
       "num": 62,
@@ -907,7 +985,8 @@
       "plain_text": "Some people cannot be members of the Central Advisory Board — for example, people convicted of serious crimes.",
       "use_when": "(For reference. Lists who cannot be a Central Advisory Board member.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Who cannot be a Central Board member"
     },
     {
       "num": 63,
@@ -917,7 +996,8 @@
       "plain_text": "If a Central Advisory Board member misses too many meetings or breaks the rules, they lose their seat.",
       "use_when": "(For reference. Administrative rule for Central Advisory Board.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Losing a Central Board seat"
     },
     {
       "num": 64,
@@ -927,7 +1007,8 @@
       "plain_text": "The Central Advisory Board must meet at least once every six months.",
       "use_when": "(For reference. The Central Advisory Board has not met in over six months.)",
       "illustration": "committee_people",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "The Central Board meets twice a year"
     },
     {
       "num": 65,
@@ -937,7 +1018,8 @@
       "plain_text": "The Central Advisory Board advises the central government on disability rules, schemes, and reports.",
       "use_when": "(For reference. Lists what the Central Advisory Board does.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "What the Central Board does"
     },
     {
       "num": 66,
@@ -947,7 +1029,8 @@
       "plain_text": "Every state must set up its own State Advisory Board on Disability.",
       "use_when": "Your state does not have a State Advisory Board on Disability.",
       "illustration": "committee_people",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Every state has an Advisory Board"
     },
     {
       "num": 67,
@@ -957,7 +1040,8 @@
       "plain_text": "Rules for State Advisory Board members — pay, term, and conditions.",
       "use_when": "(For reference. Administrative rule for State Advisory Board members.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "State Board members: pay and term"
     },
     {
       "num": 68,
@@ -967,7 +1051,8 @@
       "plain_text": "Same kind of rules as the Central Board: who cannot be a State Advisory Board member.",
       "use_when": "(For reference. Administrative rule for State Advisory Board.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Who cannot be a State Board member"
     },
     {
       "num": 69,
@@ -977,7 +1062,8 @@
       "plain_text": "When a State Advisory Board member loses their seat — missed meetings, broken rules, etc.",
       "use_when": "(For reference. Administrative rule for State Advisory Board.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Losing a State Board seat"
     },
     {
       "num": 70,
@@ -987,7 +1073,8 @@
       "plain_text": "The State Advisory Board must meet at least once every six months.",
       "use_when": "Your State Advisory Board has not met in over six months.",
       "illustration": "committee_people",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "The State Board meets twice a year"
     },
     {
       "num": 71,
@@ -997,7 +1084,8 @@
       "plain_text": "The State Advisory Board advises the state government on disability rules, schemes, and reports.",
       "use_when": "(For reference. Lists what the State Advisory Board does.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "What the State Board does"
     },
     {
       "num": 72,
@@ -1007,7 +1095,8 @@
       "plain_text": "Every district must have a committee that handles disability matters at the district level.",
       "use_when": "Your district has no disability committee, or the committee is not working.",
       "illustration": "committee_people",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "A committee in every district"
     },
     {
       "num": 73,
@@ -1017,7 +1106,8 @@
       "plain_text": "Even if some seats on the Boards or committees are empty, their decisions are still valid.",
       "use_when": "(For reference. Administrative rule.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Empty seats do not stop decisions"
     },
     {
       "num": 74,
@@ -1027,7 +1117,8 @@
       "plain_text": "The central government appoints a Chief Commissioner for Persons with Disabilities and two Commissioners under the Chief Commissioner.",
       "use_when": "(For reference. This sets up the national disability complaints office.)",
       "illustration": "commissioner_badge",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "The Chief Commissioner is appointed"
     },
     {
       "num": 75,
@@ -1037,7 +1128,8 @@
       "plain_text": "The Chief Commissioner watches over how the Act is being followed across India and takes action when rights are broken.",
       "use_when": "(For reference. The Chief Commissioner is who you escalate to after the State Commissioner.)",
       "illustration": "commissioner_badge",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "What the Chief Commissioner does"
     },
     {
       "num": 76,
@@ -1047,7 +1139,8 @@
       "plain_text": "When the Chief Commissioner makes a recommendation, the government office must act on it within a fixed time and report back.",
       "use_when": "The Chief Commissioner gave a recommendation and the office did not act on it.",
       "illustration": "document",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Offices must act on the recommendations"
     },
     {
       "num": 77,
@@ -1057,7 +1150,8 @@
       "plain_text": "The Chief Commissioner can call witnesses, ask for documents, and act like a civil court when looking into a complaint.",
       "use_when": "You filed a complaint with the Chief Commissioner and they have not used their powers.",
       "illustration": "justice_scales",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "The Chief Commissioner's powers"
     },
     {
       "num": 78,
@@ -1067,7 +1161,8 @@
       "plain_text": "The Chief Commissioner must publish a yearly report. The report goes to Parliament.",
       "use_when": "The Chief Commissioner has not published a yearly report.",
       "illustration": "document",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "The Chief Commissioner's yearly report"
     },
     {
       "num": 79,
@@ -1077,7 +1172,8 @@
       "plain_text": "Every state must appoint a State Commissioner for Persons with Disabilities.",
       "use_when": "Your state does not have a State Commissioner for Persons with Disabilities.",
       "illustration": "commissioner_badge",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Every state has a Commissioner"
     },
     {
       "num": 80,
@@ -1087,7 +1183,8 @@
       "plain_text": "The State Commissioner handles complaints in the state and watches over the Act in the state.",
       "use_when": "Use the State Commissioner as your first stop for complaints inside your state.",
       "illustration": "commissioner_badge",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "What the State Commissioner does"
     },
     {
       "num": 81,
@@ -1097,7 +1194,8 @@
       "plain_text": "When the State Commissioner makes a recommendation, the office must act on it and report back within a fixed time.",
       "use_when": "The State Commissioner gave a recommendation and the office did not act on it.",
       "illustration": "document",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Offices must act on the State recommendations"
     },
     {
       "num": 82,
@@ -1107,7 +1205,8 @@
       "plain_text": "The State Commissioner can call witnesses, ask for documents, and act like a civil court when looking into a complaint.",
       "use_when": "You filed a complaint and the State Commissioner has not used their powers.",
       "illustration": "justice_scales",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "The State Commissioner's powers"
     },
     {
       "num": 83,
@@ -1117,7 +1216,8 @@
       "plain_text": "The State Commissioner must publish a yearly report. The report goes to the state government.",
       "use_when": "The State Commissioner in your state has not published a yearly report.",
       "illustration": "document",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "The State Commissioner's yearly report"
     },
     {
       "num": 84,
@@ -1127,7 +1227,8 @@
       "plain_text": "Each state must have a Special Court to handle serious offences against persons with disabilities under this Act.",
       "use_when": "A serious case under this Act is not being heard in a Special Court.",
       "illustration": "courthouse",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "A Special Court for serious cases"
     },
     {
       "num": 85,
@@ -1137,7 +1238,8 @@
       "plain_text": "Each Special Court must have a Special Public Prosecutor to argue the case for the victim.",
       "use_when": "A case is being heard in the Special Court without a Special Public Prosecutor.",
       "illustration": "courthouse",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "A special prosecutor for these cases"
     },
     {
       "num": 86,
@@ -1147,7 +1249,8 @@
       "plain_text": "There is a National Fund for Persons with Disabilities. The Fund pays for schemes, support, and grants.",
       "use_when": "(For reference. The Fund pays for many disability programmes.)",
       "illustration": "money_jar",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "The National Fund"
     },
     {
       "num": 87,
@@ -1157,7 +1260,8 @@
       "plain_text": "The National Fund must keep clear accounts. The accounts must be audited every year.",
       "use_when": "(For reference. Audit rule for the National Fund.)",
       "illustration": "clipboard_check",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "The Fund keeps clear accounts"
     },
     {
       "num": 88,
@@ -1167,7 +1271,8 @@
       "plain_text": "Every state must set up a State Fund for Persons with Disabilities, like the National Fund.",
       "use_when": "Your state has no State Fund, or the State Fund is not being used for persons with disabilities.",
       "illustration": "money_jar",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Every state has its own Fund"
     },
     {
       "num": 89,
@@ -1177,7 +1282,8 @@
       "plain_text": "If anyone breaks the rules of this Act, they can be fined. The first time: up to Rs 10,000. The next time: Rs 50,000 to Rs 5 lakh.",
       "use_when": "Someone or some office is breaking the rules of this Act and you want them to be punished.",
       "illustration": "warning",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Fines for breaking this law"
     },
     {
       "num": 90,
@@ -1187,7 +1293,8 @@
       "plain_text": "If a company breaks the rules of this Act, the people running the company can also be punished.",
       "use_when": "A company has broken the rules and you want the managers to be held responsible too.",
       "illustration": "warning",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "When a company breaks the rules"
     },
     {
       "num": 91,
@@ -1197,7 +1304,8 @@
       "plain_text": "If a person fakes a disability to get benefits meant for persons with benchmark disabilities, they can be jailed for up to 2 years and fined up to Rs 1 lakh.",
       "use_when": "Someone is faking a disability certificate to get a job, seat, or benefit reserved for persons with disabilities.",
       "illustration": "warning",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Faking a disability is a crime"
     },
     {
       "num": 92,
@@ -1207,7 +1315,8 @@
       "plain_text": "If someone insults you, hurts you, or humiliates you because of your disability, they can go to jail for 6 months to 5 years.",
       "use_when": "Someone publicly insults, beats, denies food, or sexually abuses a person with a disability because of their disability.",
       "illustration": "warning",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Jail for cruel acts against you"
     },
     {
       "num": 93,
@@ -1217,7 +1326,8 @@
       "plain_text": "If anyone refuses to give information that the Chief Commissioner or State Commissioner asks for, they can be fined.",
       "use_when": "An office refused to send information to the Chief Commissioner or State Commissioner.",
       "illustration": "warning",
-      "is_reference": false
+      "is_reference": false,
+      "plain_title": "Punishment for hiding information"
     },
     {
       "num": 94,
@@ -1227,7 +1337,8 @@
       "plain_text": "Some cases under this Act need permission from the government before they can be filed in court.",
       "use_when": "(For reference. Procedural rule for filing certain cases.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Some cases need government permission"
     },
     {
       "num": 95,
@@ -1237,7 +1348,8 @@
       "plain_text": "The court can give other punishments — like community service or training — instead of fine or jail in some cases.",
       "use_when": "(For reference. Court has flexibility on punishment in some cases.)",
       "illustration": "justice_scales",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Other punishments the court can give"
     },
     {
       "num": 96,
@@ -1247,7 +1359,8 @@
       "plain_text": "This Act does not stop you from using other laws too. You can use this Act and other laws together.",
       "use_when": "(For reference. You can use multiple legal protections at once.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Other laws still apply"
     },
     {
       "num": 97,
@@ -1257,7 +1370,8 @@
       "plain_text": "Government officers and others cannot be sued for actions they take honestly under this Act.",
       "use_when": "(For reference. Protects officers acting in good faith.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Honest officers are protected"
     },
     {
       "num": 98,
@@ -1267,7 +1381,8 @@
       "plain_text": "If something in this Act is unclear or hard to do, the central government can issue an order to fix it within three years of the Act starting.",
       "use_when": "(For reference. Allows the central government to issue clarifications.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Fixing problems in the Act"
     },
     {
       "num": 99,
@@ -1277,7 +1392,8 @@
       "plain_text": "The central government can change the list of 21 specified disabilities — add, remove, or change them.",
       "use_when": "(For reference. The list of disabilities can be updated by the central government.)",
       "illustration": "book_simple",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "The disability list can change"
     },
     {
       "num": 100,
@@ -1287,7 +1403,8 @@
       "plain_text": "The central government can make rules to put this Act into action.",
       "use_when": "(For reference. Many parts of the Act work through rules made under Section 100.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "Central government can make rules"
     },
     {
       "num": 101,
@@ -1297,7 +1414,8 @@
       "plain_text": "Each state government can make its own rules to put this Act into action in the state.",
       "use_when": "(For reference. State governments make their own rules under Section 101.)",
       "illustration": "document",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "State governments can make rules"
     },
     {
       "num": 102,
@@ -1307,7 +1425,8 @@
       "plain_text": "This Act replaces the older 1995 Persons with Disabilities Act, but actions already taken under the old Act are still valid.",
       "use_when": "(For reference. The 1995 PWD Act is repealed and replaced by this 2016 Act.)",
       "illustration": "book_simple",
-      "is_reference": true
+      "is_reference": true,
+      "plain_title": "The old 1995 law is replaced"
     }
   ]
 }
