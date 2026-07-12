@@ -538,28 +538,24 @@ function renderTraining() {
     ? `<p class="training-progress"><strong>${ready} of ${total}</strong> chapter modules are ready. You have marked <strong>${completedCount}</strong> complete on this device.</p>`
     : '';
 
-  const rows = CONTENT.chapters.map((ch) => {
+  const cards = CONTENT.chapters.map((ch) => {
     const band = bandForChapter(ch.id);
-    const first = ch.sections[0];
-    const last = ch.sections[ch.sections.length - 1];
-    const range = first === last ? `Section ${first}` : `Sections ${first} to ${last}`;
     const moduleId = `ch-${String(romanToNum(ch.id)).padStart(2, '0')}`;
     const hasModule = !!TRAINING_MODULES[moduleId];
     const done = hasModule && trainingModuleComplete(moduleId);
     const actions = hasModule
-      ? `<a href="#/training/${moduleId}/1" class="btn btn-primary training-open">Open module</a>
-         ${done ? '<p class="dl-complete" aria-label="You have marked this module complete">Marked complete on this device</p>' : ''}
-         <p class="dl-coming">Deck and handout coming soon.</p>`
-      : `<p class="dl-coming">Module, deck and handout coming soon.</p>`;
+      ? `<a href="#/training/${moduleId}/1" class="btn btn-primary">Open module</a>
+         ${done ? '<p class="dl-complete">Marked complete on this device</p>' : ''}`
+      : `<p class="dl-coming">Coming soon.</p>`;
     return `
-      <div class="training-row" data-band="${band.id}" data-module="${moduleId}"
-           style="--row-accent: var(--band-${band.id}-accent)">
-        <div class="training-row-info">
-          <p class="training-eyebrow">${esc(band.short)} · ${esc(ch.kicker)}</p>
-          <h2 class="training-ch">${esc(ch.title)}</h2>
-          <p class="training-meta">${range} · ${esc(ch.subtitle)}</p>
-        </div>
-        <div class="training-downloads">
+      <div class="tcard" data-band="${band.id}"
+           style="--pcard-accent: var(--band-${band.id}-accent); --pcard-tint: var(--band-${band.id}-tint)">
+        <span class="pcard-img" aria-hidden="true">
+          <img src="img/illustrations/${CHAPTER_THUMBS[ch.id]}.webp" alt="" loading="lazy">
+        </span>
+        <div class="tcard-body">
+          <p class="tcard-eyebrow">Chapter ${esc(ch.id)}</p>
+          <h2 class="tcard-name">${esc(ch.plain_caption)}</h2>
           ${actions}
         </div>
       </div>
@@ -569,10 +565,10 @@ function renderTraining() {
   return `
     <div class="training-page">
       <h1>Training Resources</h1>
-      <p class="page-intro">For trainers and support workers. Pick a chapter of the Act, open the module in the browser, and hand out the deck or the printable handout in your session. Free to use and share.</p>
+      <p class="page-intro">For trainers and support workers. Pick a chapter of the Act and open its module in the browser. Free to use and share.</p>
       ${progressLine}
       ${filters}
-      <div class="training-rows">${rows}</div>
+      <div class="pcards training-cards">${cards}</div>
     </div>
   `;
 }
@@ -838,7 +834,7 @@ function setupTrainingModule() {
 
 function setupTrainingFilters() {
   const chips = Array.from(document.querySelectorAll('.filter-chip'));
-  const rows = Array.from(document.querySelectorAll('.training-row'));
+  const rows = Array.from(document.querySelectorAll('.tcard'));
   const count = document.getElementById('training-count');
   if (!chips.length) return;
 

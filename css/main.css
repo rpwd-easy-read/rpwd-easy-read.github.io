@@ -864,63 +864,44 @@ p {
   color: var(--surface);
 }
 
-.training-rows {
-  display: grid;
-  gap: 0.75rem;
-}
-.training-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+/* Training chapter cards: same picture-card surface, plus a body with
+ * the Open module action or a status line. */
+.tcard {
   background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-left: 6px solid var(--row-accent);
-  border-radius: var(--radius-card);
-  padding: 1.25rem 1.5rem;
+  border: 2px solid var(--hairline);
+  border-radius: var(--radius-tile);
+  overflow: hidden;
   box-shadow: var(--shadow);
 }
-.training-row-info {
-  flex: 1 1 24rem;
+.tcard .pcard-img img {
+  width: 7.5rem;
+  height: 7.5rem;
 }
-.training-eyebrow {
-  color: var(--row-accent);
+.tcard-body {
+  padding: 0.9rem 1.25rem 1.25rem;
+  text-align: center;
+}
+.tcard-eyebrow {
+  color: var(--pcard-accent);
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.04em;
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.15rem;
 }
-.training-ch {
-  font-size: 1.3rem;
-  margin: 0 0 0.25rem;
+.tcard-name {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
 }
-.training-meta {
+.dl-coming {
   font-size: 1rem;
   color: var(--ink-soft);
   margin: 0;
-  max-width: none;
-}
-.training-downloads {
-  flex: 0 1 auto;
-}
-.dl-coming {
-  background: var(--paper);
-  border: 1px solid var(--hairline);
-  border-radius: 12px;
-  padding: 0.75rem 1.25rem;
-  font-size: 1rem;
-  color: var(--ink-soft);
-  margin: 0.5rem 0 0;
 }
 .dl-complete {
   margin: 0.5rem 0 0;
   font-size: 1rem;
   color: var(--action-dark);
   font-weight: 600;
-}
-.training-open {
-  margin: 0;
 }
 .training-progress {
   background: var(--paper);
