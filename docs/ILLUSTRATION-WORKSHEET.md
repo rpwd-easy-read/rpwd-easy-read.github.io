@@ -11,7 +11,10 @@ for <band>': it resizes and compresses, updates ALT_TEXT in js/app.js
 where the new drawing differs, bumps the service worker cache, commits,
 pushes, and re-runs the ship gate.
 
-Aspect: 16:9 for section headers. The three home hero images (equality,
+Work inside ONE conversation in your image tool and generate the cast
+sheet first (prompt from the tower session); then every image request
+adds: same style and characters as the lineup. Aspect: 16:9 for
+section headers. The three home hero images (equality,
 school, bus) and band thumbnails also render small: keep the focal
 action big and central.
 
@@ -27,7 +30,8 @@ no shadows, no gradient. ONE ACTION: A closed blue book titled RPwD ACT with a g
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #3A3D8F plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ## Rights & Entitlements band, accent #2F6B34
@@ -42,7 +46,8 @@ no shadows, no gradient. ONE ACTION: A red umbrella protecting a person from rai
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #2F6B34 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 3. `equality.png` (used by S3)
@@ -55,7 +60,8 @@ no shadows, no gradient. ONE ACTION: Two people side by side — one standing in
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #2F6B34 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 4. `friends_support.png` (used by S14, S27)
@@ -68,7 +74,8 @@ no shadows, no gradient. ONE ACTION: Two people standing close with arms around 
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #2F6B34 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 5. `heart.png` (used by S10, S29)
@@ -81,7 +88,8 @@ no shadows, no gradient. ONE ACTION: A large pink heart.
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #2F6B34 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 6. `house_family.png` (used by S5, S9)
@@ -94,7 +102,8 @@ no shadows, no gradient. ONE ACTION: A house with a red roof, brown door, blue w
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #2F6B34 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 7. `pencil_signing.png` (used by S13)
@@ -107,7 +116,8 @@ no shadows, no gradient. ONE ACTION: A yellow pencil writing a signature on a wh
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #2F6B34 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 8. `shield.png` (used by S6, S7)
@@ -120,7 +130,8 @@ no shadows, no gradient. ONE ACTION: A blue shield with a white check mark insid
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #2F6B34 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 9. `vote.png` (used by S11)
@@ -133,7 +144,8 @@ no shadows, no gradient. ONE ACTION: A ballot paper with a green tick being plac
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #2F6B34 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 10. `women_children.png` (used by S4)
@@ -146,7 +158,8 @@ no shadows, no gradient. ONE ACTION: A taller person in pink holding hands with 
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #2F6B34 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ## Services & Support band, accent #8A5200
@@ -161,7 +174,8 @@ no shadows, no gradient. ONE ACTION: A person sitting and reading a book in thei
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #8A5200 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 12. `book_open.png` (used by S17, S28)
@@ -174,7 +188,8 @@ no shadows, no gradient. ONE ACTION: An open book with pages spread wide and a r
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #8A5200 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 13. `briefcase.png` (used by S19, S20, S36)
@@ -187,7 +202,8 @@ no shadows, no gradient. ONE ACTION: A brown briefcase with a handle and clasp.
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #8A5200 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 14. `certificate_star.png` (used by S30)
@@ -200,7 +216,8 @@ no shadows, no gradient. ONE ACTION: A gold star on red ribbons, like a medal or
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #8A5200 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 15. `chair_reserved.png` (used by S34)
@@ -213,7 +230,8 @@ no shadows, no gradient. ONE ACTION: A blue chair with a yellow RESERVED sign on
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #8A5200 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 16. `high_support_hands.png` (used by S38)
@@ -226,7 +244,8 @@ no shadows, no gradient. ONE ACTION: Two large hands gently holding and supporti
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #8A5200 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 17. `medical_cross.png` (used by S25)
@@ -239,7 +258,8 @@ no shadows, no gradient. ONE ACTION: A large red plus-sign cross inside a white 
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #8A5200 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 18. `school.png` (used by S16, S31, S32, S47)
@@ -252,7 +272,8 @@ no shadows, no gradient. ONE ACTION: A school building with an orange roof, a gr
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #8A5200 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ## Systems & Authorities band, accent #7A3B86
@@ -267,7 +288,8 @@ no shadows, no gradient. ONE ACTION: A building with windows and a green accessi
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 20. `bus.png` (used by S41)
@@ -280,7 +302,8 @@ no shadows, no gradient. ONE ACTION: A bright blue bus with four smiling passeng
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 21. `clipboard_check.png` (used by S22, S48, S56, S58, S87)
@@ -293,7 +316,8 @@ no shadows, no gradient. ONE ACTION: A clipboard with a checklist showing four i
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 22. `clock.png` (used by S45, S46)
@@ -306,7 +330,8 @@ no shadows, no gradient. ONE ACTION: A round yellow clock face with black hands 
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 23. `commissioner_badge.png` (used by S74, S75, S79, S80)
@@ -319,7 +344,8 @@ no shadows, no gradient. ONE ACTION: A person in a dark blue formal suit with a 
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 24. `committee_people.png` (used by S23, S60, S64, S66, S70, S72)
@@ -332,7 +358,8 @@ no shadows, no gradient. ONE ACTION: Four people sitting around a table, wearing
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 25. `computer.png` (used by S42, S43)
@@ -345,7 +372,8 @@ no shadows, no gradient. ONE ACTION: A computer screen showing a checklist: Big 
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 26. `document.png` (used by S15, S21, S26, S33, S37, S49, S50, S51 and more)
@@ -358,7 +386,8 @@ no shadows, no gradient. ONE ACTION: A white paper document with text lines, a f
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 27. `justice_scales.png` (used by S12, S53, S59, S77, S82, S95)
@@ -371,7 +400,8 @@ no shadows, no gradient. ONE ACTION: A wooden balance scale with two golden pans
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 28. `megaphone.png` (used by S39)
@@ -384,7 +414,8 @@ no shadows, no gradient. ONE ACTION: An orange megaphone with blue sound waves c
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 29. `money_jar.png` (used by S24, S35, S55, S86, S88)
@@ -397,7 +428,8 @@ no shadows, no gradient. ONE ACTION: A glass jar filled with coins marked with t
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #7A3B86 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ## Enforcement band, accent #9B2F45
@@ -412,7 +444,8 @@ no shadows, no gradient. ONE ACTION: A grand building with four tall columns, an
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #9B2F45 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
 
 ### 31. `warning.png` (used by S52, S89, S90, S91, S92, S93)
@@ -425,5 +458,6 @@ no shadows, no gradient. ONE ACTION: A yellow triangle with a black exclamation 
 Adult Indian characters drawn with adult proportions and dignity, disability
 shown naturally, neutral-positive expressions, equal eye level. Warm limited
 palette: #9B2F45 plus warm neutrals on a #FBF7F1 background. Uncluttered,
-one or two context props, centred, generous negative space, 16:9.
+one or two context props, centred, generous negative space, no text or
+lettering anywhere in the image, 16:9.
 ```
