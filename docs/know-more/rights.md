@@ -21,8 +21,8 @@ Voice rules and batch flow: see `README.md` in this folder.
   way to reach that reason. The law calls this "a proportionate
   means of achieving a legitimate aim". Otherwise saying no is
   discrimination.
-- No one can put you in jail, in an institution, or restrict your
-  freedom only because you have a disability.
+- No one can lock you up or take away your freedom only because
+  you have a disability.
 - If a small change would let you take part (a ramp, extra time, a
   different format, a support person), the government or the
   service has to make that change. The law calls this "reasonable
@@ -185,8 +185,8 @@ Voice rules and batch flow: see `README.md` in this folder.
 - The law does not assume there is a clash just because your
   helper is a family member by blood, marriage, or adoption.
 - You can change or stop a support arrangement whenever you want.
-  You can pick a new helper. Any deal you signed with a previous
-  helper still stands.
+  You can pick a new helper. Deals you already made with other
+  people, while that helper supported you, still stand.
 - Anyone helping you with your decisions must not push you or
   force you, and has to respect what you want, who you are, and
   your privacy.
