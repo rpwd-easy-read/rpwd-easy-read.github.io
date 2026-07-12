@@ -170,14 +170,32 @@ def parse_module(md_text: str, module_id: str) -> dict:
         if seg_num_match:
             num = int(seg_num_match.group(1))
             seg_title = seg_num_match.group(2).strip()
-            html = md_lib.markdown(body,
-                                   extensions=MD_EXTENSIONS,
-                                   extension_configs=MD_EXTENSION_CONFIGS,
-                                   output_format="html5")
+            # Split each segment body on mid-body `---` thematic breaks into
+            # slides so long segments read as a slide deck instead of a wall
+            # of text. If there is no `---` inside the body, the segment
+            # renders as one slide (unchanged shape for short segments).
+            slide_bodies = re.split(r"\n[ \t]*---[ \t]*\n", body)
+            slide_bodies = [sb.strip() for sb in slide_bodies if sb.strip()]
+            if not slide_bodies:
+                slide_bodies = [""]
+            slides = []
+            for i, sb in enumerate(slide_bodies, start=1):
+                slide_html = md_lib.markdown(
+                    sb,
+                    extensions=MD_EXTENSIONS,
+                    extension_configs=MD_EXTENSION_CONFIGS,
+                    output_format="html5",
+                )
+                slides.append({"num": i, "html": slide_html})
+            # Concatenation for printable handout paths; also lets any older
+            # caller that reads .html still work while the renderer moves to
+            # `slides`.
+            full_html = "\n".join(s["html"] for s in slides)
             segments.append({
                 "num": num,
                 "title": seg_title,
-                "html": html,
+                "slides": slides,
+                "html": full_html,
                 "hidden": num in hidden_set,
                 "is_mark_complete": num == MARK_COMPLETE_SEGMENT,
             })
@@ -228,6 +246,8 @@ def parse_module(md_text: str, module_id: str) -> dict:
 
     for seg in segments:
         seg["html"] = _linkify_footnotes(seg["html"])
+        for sl in seg.get("slides", []):
+            sl["html"] = _linkify_footnotes(sl["html"])
     takeaway_html = _linkify_footnotes(takeaway_html)
 
     return {

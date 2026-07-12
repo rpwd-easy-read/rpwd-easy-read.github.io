@@ -1191,6 +1191,62 @@ button.chip-more {
   border-radius: var(--radius-card);
   padding: 1.5rem 1.75rem;
 }
+.module-segment:focus-within h2 { outline: none; }
+.module-segment h2:focus { outline: none; }
+.module-segment h2:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.segment-subhead {
+  color: var(--band-accent);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-left: 0.25rem;
+}
+
+.slide-dots {
+  margin: 0 0 1.25rem;
+}
+.slide-dots ol {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+.slide-dot a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--band-tint);
+  color: var(--band-accent);
+  border: 1px solid var(--band-accent);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.slide-dot a:hover {
+  background: var(--surface);
+}
+.slide-dot.active a {
+  background: var(--band-accent);
+  color: var(--surface);
+}
+
+.module-arrow-hint {
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-style: normal;
+}
 .segment-position {
   margin: 0 0 0.25rem;
   color: var(--band-accent);

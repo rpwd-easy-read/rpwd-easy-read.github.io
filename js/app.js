@@ -594,33 +594,67 @@ const ROMAN_TO_NUM = { I:1, II:2, III:3, IV:4, V:5, VI:6, VII:7, VIII:8, IX:9,
   X:10, XI:11, XII:12, XIII:13, XIV:14, XV:15, XVI:16, XVII:17 };
 const romanToNum = (r) => ROMAN_TO_NUM[r] || 0;
 
-function renderTrainingModule(moduleId, segNumRaw) {
+/* Build a flat list of (segment, slide) tuples across all visible segments,
+ * so prev/next can walk one slide at a time and cross segment boundaries at
+ * the edges. Also normalises segment data so segments authored before the
+ * slides split (single `html` string, no `slides` array) still work. */
+function flattenSlides(data) {
+  const flat = [];
+  data.segments.forEach((seg) => {
+    if (seg.hidden) return;
+    const slides = (seg.slides && seg.slides.length)
+      ? seg.slides
+      : [{ num: 1, html: seg.html || '' }];
+    slides.forEach((sl) => {
+      flat.push({ seg, slide: sl, slidesInSeg: slides.length });
+    });
+  });
+  return flat;
+}
+
+function slideHref(moduleId, segNum, slideNum) {
+  return slideNum > 1
+    ? `#/training/${moduleId}/${segNum}/${slideNum}`
+    : `#/training/${moduleId}/${segNum}`;
+}
+
+function renderTrainingModule(moduleId, segNumRaw, slideNumRaw) {
   const meta = TRAINING_MODULES[moduleId];
   if (!meta) return null;
   const data = TRAINING_MODULE_CACHE[moduleId];
   if (!data) {
     return `
       <div class="module-page">
-        <p class="loading">Loading module…</p>
+        <p class="loading">Loading module&hellip;</p>
       </div>
     `;
   }
 
-  const visible = data.segments.filter((s) => !s.hidden);
-  if (visible.length === 0) return null;
-  const first = visible[0];
-  const last = visible[visible.length - 1];
+  const flat = flattenSlides(data);
+  if (flat.length === 0) return null;
 
-  const wantNum = Number(segNumRaw) || first.num;
-  let seg = visible.find((s) => s.num === wantNum);
-  if (!seg) seg = first;
+  const visibleSegs = data.segments.filter((s) => !s.hidden);
+  const lastSeg = visibleSegs[visibleSegs.length - 1];
+  const wantSegNum = Number(segNumRaw) || visibleSegs[0].num;
+  const wantSlideNum = Math.max(1, Number(slideNumRaw) || 1);
 
-  const idx = visible.indexOf(seg);
-  const prev = idx > 0 ? visible[idx - 1] : null;
-  const next = idx < visible.length - 1 ? visible[idx + 1] : null;
+  let flatIdx = flat.findIndex((f) => f.seg.num === wantSegNum && f.slide.num === wantSlideNum);
+  if (flatIdx === -1) {
+    flatIdx = flat.findIndex((f) => f.seg.num === wantSegNum);
+  }
+  if (flatIdx === -1) flatIdx = 0;
+
+  const current = flat[flatIdx];
+  const seg = current.seg;
+  const slide = current.slide;
+  const slidesInSeg = current.slidesInSeg;
+  const prev = flatIdx > 0 ? flat[flatIdx - 1] : null;
+  const next = flatIdx < flat.length - 1 ? flat[flatIdx + 1] : null;
+  const isFirstSlideOfSeg = slide.num === 1;
+  const isLastSlideOfSeg = slide.num === slidesInSeg;
   const complete = trainingModuleComplete(moduleId);
 
-  const stepper = visible.map((s) => {
+  const stepper = visibleSegs.map((s) => {
     const active = s.num === seg.num;
     return `
       <li class="module-step ${active ? 'active' : ''}">
@@ -633,9 +667,32 @@ function renderTrainingModule(moduleId, segNumRaw) {
     `;
   }).join('');
 
+  /* Slide dots: one per slide within the current segment. Kept small; the
+   * numbered stepper above is the primary navigation. Dots exist mainly so
+   * the trainer can see "there are more ideas in this segment". */
+  const dots = slidesInSeg > 1
+    ? `<nav class="slide-dots" aria-label="Slides in this segment">
+         <ol>
+           ${Array.from({ length: slidesInSeg }, (_, i) => {
+             const n = i + 1;
+             const active = n === slide.num;
+             return `
+               <li class="slide-dot ${active ? 'active' : ''}">
+                 <a href="${slideHref(moduleId, seg.num, n)}"
+                    ${active ? 'aria-current="true"' : ''}
+                    aria-label="Slide ${n} of ${slidesInSeg} in this segment">
+                   <span aria-hidden="true">${n}</span>
+                 </a>
+               </li>
+             `;
+           }).join('')}
+         </ol>
+       </nav>`
+    : '';
+
   let markCompleteBlock = '';
   let takeawayBlock = '';
-  if (seg.is_mark_complete) {
+  if (seg.is_mark_complete && isLastSlideOfSeg) {
     if (data.takeaway_html) {
       takeawayBlock = `
         <section class="module-takeaway" aria-labelledby="takeaway-heading">
@@ -659,7 +716,7 @@ function renderTrainingModule(moduleId, segNumRaw) {
   }
 
   let endnotesBlock = '';
-  if (seg.num === 13 && data.endnotes_html) {
+  if (seg.num === 13 && isLastSlideOfSeg && data.endnotes_html) {
     endnotesBlock = `
       <section class="module-endnotes" aria-labelledby="endnotes-heading">
         <h3 id="endnotes-heading">Endnotes</h3>
@@ -669,15 +726,15 @@ function renderTrainingModule(moduleId, segNumRaw) {
   }
 
   const prevLink = prev
-    ? `<a href="#/training/${esc(moduleId)}/${prev.num}" class="btn-prev" rel="prev">
-         <span class="prev-label">Previous</span>
-         <span class="prev-title">${prev.num}. ${esc(prev.title)}</span>
+    ? `<a href="${slideHref(moduleId, prev.seg.num, prev.slide.num)}" class="btn-prev" rel="prev">
+         <span class="prev-label">${prev.seg === seg ? 'Previous slide' : 'Previous segment'}</span>
+         <span class="prev-title">${prev.seg.num}. ${esc(prev.seg.title)}${prev.slidesInSeg > 1 ? ` (slide ${prev.slide.num})` : ''}</span>
        </a>`
     : '<span class="btn-prev btn-prev-empty" aria-hidden="true"></span>';
   const nextLink = next
-    ? `<a href="#/training/${esc(moduleId)}/${next.num}" class="btn-next" rel="next">
-         <span class="next-label">Next</span>
-         <span class="next-title">${next.num}. ${esc(next.title)}</span>
+    ? `<a href="${slideHref(moduleId, next.seg.num, next.slide.num)}" class="btn-next" rel="next">
+         <span class="next-label">${next.seg === seg ? 'Next slide' : 'Next segment'}</span>
+         <span class="next-title">${next.seg.num}. ${esc(next.seg.title)}${next.slidesInSeg > 1 ? ` (slide ${next.slide.num})` : ''}</span>
        </a>`
     : `<a href="#/training" class="btn-next" rel="next">
          <span class="next-label">Finish</span>
@@ -685,9 +742,16 @@ function renderTrainingModule(moduleId, segNumRaw) {
        </a>`;
 
   const bandShort = (BANDS.find((b) => b.id === data.band_id) || {}).short || '';
+  const positionLine = slidesInSeg > 1
+    ? `Segment ${seg.num} of ${lastSeg.num} &middot; Slide ${slide.num} of ${slidesInSeg}`
+    : `Segment ${seg.num} of ${lastSeg.num}`;
+  const headingSuffix = slidesInSeg > 1 && slide.num > 1
+    ? `<span class="segment-subhead"> &middot; slide ${slide.num}</span>`
+    : '';
 
   return `
-    <div class="module-page">
+    <div class="module-page" data-module-id="${esc(moduleId)}"
+         data-flat-idx="${flatIdx}" data-flat-len="${flat.length}">
       <nav class="module-crumb" aria-label="Breadcrumb">
         <a href="#/training">Training</a>
         <span class="crumb-sep" aria-hidden="true"> &rsaquo; </span>
@@ -707,17 +771,25 @@ function renderTrainingModule(moduleId, segNumRaw) {
         <ol>${stepper}</ol>
       </nav>
 
-      <article class="module-segment" aria-labelledby="segment-heading">
-        <p class="segment-position">Segment ${seg.num} of ${last.num}</p>
-        <h2 id="segment-heading"><span class="segment-num" aria-hidden="true">${seg.num}.</span> ${esc(seg.title)}</h2>
+      <article class="module-segment"
+               aria-labelledby="segment-heading"
+               aria-roledescription="slide"
+               aria-label="Slide ${flatIdx + 1} of ${flat.length}">
+        <p class="segment-position">${positionLine}</p>
+        <h2 id="segment-heading" tabindex="-1">
+          <span class="segment-num" aria-hidden="true">${seg.num}.</span>
+          ${esc(seg.title)}${headingSuffix}
+        </h2>
+        ${dots}
         ${takeawayBlock}
-        <div class="segment-body">${seg.html}</div>
+        <div class="segment-body">${slide.html}</div>
         ${markCompleteBlock}
         ${endnotesBlock}
         <nav class="module-prevnext" aria-label="Module navigation">
           ${prevLink}
           ${nextLink}
         </nav>
+        <p class="module-arrow-hint">Tip: press the left and right arrow keys to walk the slides.</p>
       </article>
     </div>
   `;
@@ -725,26 +797,56 @@ function renderTrainingModule(moduleId, segNumRaw) {
 
 function setupTrainingModule() {
   const btn = document.getElementById('btn-mark-complete');
-  if (!btn) return;
-  btn.addEventListener('click', () => {
-    const moduleId = btn.dataset.moduleId;
-    const nowComplete = btn.dataset.complete !== '1';
-    setTrainingModuleComplete(moduleId, nowComplete);
-    btn.dataset.complete = nowComplete ? '1' : '0';
-    btn.setAttribute('aria-pressed', nowComplete ? 'true' : 'false');
-    btn.textContent = nowComplete
-      ? 'Marked complete. Click to clear.'
-      : 'Mark this module complete';
-    const announcer = document.getElementById('sr-announce');
-    if (announcer) {
-      announcer.textContent = '';
-      setTimeout(() => {
-        announcer.textContent = nowComplete
-          ? 'Module marked complete on this device.'
-          : 'Complete mark cleared.';
-      }, 50);
-    }
-  });
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const moduleId = btn.dataset.moduleId;
+      const nowComplete = btn.dataset.complete !== '1';
+      setTrainingModuleComplete(moduleId, nowComplete);
+      btn.dataset.complete = nowComplete ? '1' : '0';
+      btn.setAttribute('aria-pressed', nowComplete ? 'true' : 'false');
+      btn.textContent = nowComplete
+        ? 'Marked complete. Click to clear.'
+        : 'Mark this module complete';
+      const announcer = document.getElementById('sr-announce');
+      if (announcer) {
+        announcer.textContent = '';
+        setTimeout(() => {
+          announcer.textContent = nowComplete
+            ? 'Module marked complete on this device.'
+            : 'Complete mark cleared.';
+        }, 50);
+      }
+    });
+  }
+
+  /* Move focus to the slide heading on each render so screen readers pick
+   * up the new slide's title and keyboard users land on the right spot. */
+  const heading = document.getElementById('segment-heading');
+  if (heading) heading.focus({ preventScroll: false });
+
+  /* Arrow-key slide navigation. Left goes to previous slide, right goes to
+   * next. Hijacks only bare arrow keys, so text fields and the details
+   * disclosure keep their native behaviour. */
+  if (!window._rpwdModuleArrows) {
+    window._rpwdModuleArrows = true;
+    document.addEventListener('keydown', (ev) => {
+      if (!location.hash.startsWith('#/training/')) return;
+      if (ev.altKey || ev.ctrlKey || ev.metaKey || ev.shiftKey) return;
+      const tag = (ev.target && ev.target.tagName) || '';
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(tag)) return;
+      if (ev.target && ev.target.isContentEditable) return;
+      let target = null;
+      if (ev.key === 'ArrowRight' || ev.key === 'PageDown') {
+        target = document.querySelector('.module-prevnext .btn-next');
+      } else if (ev.key === 'ArrowLeft' || ev.key === 'PageUp') {
+        target = document.querySelector('.module-prevnext .btn-prev');
+      }
+      if (target && target.getAttribute('href')) {
+        ev.preventDefault();
+        location.hash = target.getAttribute('href').replace(/^#/, '');
+      }
+    });
+  }
 }
 
 function setupTrainingFilters() {
@@ -905,6 +1007,7 @@ function renderRoute() {
   } else if (parts[0] === 'training' && parts[1] && TRAINING_MODULES[parts[1]]) {
     const moduleId = parts[1];
     const segNum = parts[2] ? Number(parts[2]) : 1;
+    const slideNum = parts[3] ? Number(parts[3]) : 1;
     const meta = TRAINING_MODULES[moduleId];
     const cached = TRAINING_MODULE_CACHE[moduleId];
     if (!cached) {
@@ -923,13 +1026,17 @@ function renderRoute() {
           `;
         });
     }
-    html = renderTrainingModule(moduleId, segNum);
+    html = renderTrainingModule(moduleId, segNum, slideNum);
     const bandForModule = BANDS.find((b) => b.id === meta.band_id);
     ch = bandForModule ? bandForModule.chapters[0] : null;
     title = cached ? cached.title : 'Training module';
     if (cached) {
       const seg = cached.segments.find((s) => s.num === segNum);
-      if (seg) title = `${seg.num}. ${seg.title}: ${cached.title}`;
+      if (seg) {
+        const nSlides = (seg.slides && seg.slides.length) || 1;
+        const slidePart = nSlides > 1 ? ` (slide ${Math.min(Math.max(slideNum, 1), nSlides)})` : '';
+        title = `${seg.num}. ${seg.title}${slidePart}: ${cached.title}`;
+      }
     }
     nav = 'training';
     setupFn = setupTrainingModule;
