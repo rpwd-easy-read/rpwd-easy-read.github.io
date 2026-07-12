@@ -508,7 +508,11 @@ async function loadTrainingModule(moduleId) {
   if (TRAINING_MODULE_CACHE[moduleId]) return TRAINING_MODULE_CACHE[moduleId];
   const meta = TRAINING_MODULES[moduleId];
   if (!meta) return null;
-  const res = await fetch(meta.json_url);
+  // cache: 'no-cache' revalidates with the server on every fetch so a
+  // trainer whose browser has an older ch-NN.json in HTTP cache still gets
+  // the current content on the next visit. The service worker still serves
+  // the file when offline.
+  const res = await fetch(meta.json_url, { cache: 'no-cache' });
   if (!res.ok) throw new Error(`Could not load training module ${moduleId}`);
   const data = await res.json();
   TRAINING_MODULE_CACHE[moduleId] = data;
