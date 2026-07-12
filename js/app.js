@@ -317,6 +317,14 @@ function renderSection(num) {
       </button>
     </div>
 
+    ${band.id === 'enforcement' ? `
+    <aside class="using-act" aria-labelledby="using-act-h">
+      <h2 class="using-act-h" id="using-act-h">What can I do if this right is broken?</h2>
+      <p>Learn how the Act is used: who to tell, and the officers and courts the law sets up.</p>
+      <p><a href="#/help">Using the Act →</a></p>
+    </aside>
+    ` : ''}
+
     <div class="prev-next">
       ${prev
         ? `<a href="#/section/${prev.num}" class="btn" rel="prev">← Section ${prev.num}</a>`
@@ -366,30 +374,51 @@ function renderAbout() {
         <img src="img/illustrations/book_open.png" alt="" class="page-illus">
       </div>
       <h1>About this guide</h1>
-      <ul>
-        <li>This guide explains all 102 sections of India's Rights of Persons with Disabilities Act 2016.</li>
-        <li>It is written in plain words for people who find legal language hard.</li>
-        <li>Every page keeps the official Section number and title from the Act. The plain words sit below.</li>
-        <li>Some sections give you rights you can claim. Others explain how the system works behind the scenes — those say "For reference" in the Use this when box.</li>
-        <li>Each chapter has its own colour, so you can tell at a glance which chapter you are in.</li>
-        <li>Section titles in this guide were verified against the official Act text from the Ministry of Law and Justice.</li>
-        <li>This guide is not legal advice. For court matters, please ask a lawyer or your State Commissioner.</li>
-      </ul>
-      <h2>Why the legal headings stay</h2>
-      <p>When you raise a complaint, citing the Section number gives your case real power. We never strip it out.</p>
+
+      <h2>Who made this and why</h2>
+      <p>This guide was created by Deepa Palaniappan, an accessibility professional (CPACC).</p>
+      <p>It teaches India's disability rights law: the Rights of Persons with Disabilities Act 2016.</p>
+      <p>It explains all 102 sections in plain words. One idea at a time. A picture for each one.</p>
+      <p>Every page keeps the official Section number and title from the Act. Citing the Section number gives your case real power, so it is never stripped out.</p>
+      <p>Section titles are verified against the official Act text from the Ministry of Law and Justice.</p>
+
       <h2>How to use this guide</h2>
-      <ol>
-        <li><strong>Chapter and Section number</strong> — tells you exactly where in the Act you are.</li>
-        <li><strong>Official Section title</strong> — the exact name from the Act. Use this in complaints.</li>
-        <li><strong>Picture</strong> — a simple drawing to help you remember the idea.</li>
-        <li><strong>Plain words</strong> — the same idea in easy English.</li>
-        <li><strong>Use this when…</strong> — real-life examples of when this section helps you.</li>
-      </ol>
+      <ul class="howto-list">
+        <li>
+          <img src="img/illustrations/megaphone.png" alt="" aria-hidden="true">
+          <span><strong>Read this to me.</strong> Press the button on any section page. Your device reads the words out loud.</span>
+        </li>
+        <li>
+          <img src="img/illustrations/book_learning.png" alt="" aria-hidden="true">
+          <span><strong>Big text.</strong> Press Big text at the top. All the words get bigger.</span>
+        </li>
+        <li>
+          <img src="img/illustrations/document.png" alt="" aria-hidden="true">
+          <span><strong>Search.</strong> Type a word like school or job. The matching sections appear.</span>
+        </li>
+        <li>
+          <img src="img/illustrations/computer.png" alt="" aria-hidden="true">
+          <span><strong>Add to your phone.</strong> Your browser can install this guide on your home screen.</span>
+        </li>
+        <li>
+          <img src="img/illustrations/globe_world.png" alt="" aria-hidden="true">
+          <span><strong>Works offline.</strong> After your first visit, the guide works without internet.</span>
+        </li>
+      </ul>
+
+      <h2>Using the Act</h2>
+      <p>Is a right in this guide being broken? Learn who to tell, and the officers and courts the law sets up.</p>
+      <p><a href="#/help">Using the Act →</a></p>
+
+      <h2>Remember your rights</h2>
+      <p><a href="#/your-rights">Your rights in one page →</a></p>
+
+      <p>This guide is not legal advice. For court matters, ask a lawyer or your State Commissioner.</p>
     </div>
   `;
 }
 
-function renderComplain() {
+function renderUsingTheAct() {
   const steps = [
     ['Write down what happened.',
      'Date, place, names if you know them. Two or three lines is fine.'],
@@ -407,61 +436,57 @@ function renderComplain() {
       <div class="page-hero-illus" aria-hidden="true">
         <img src="img/illustrations/pencil_signing.png" alt="" class="page-illus">
       </div>
-      <h1>How to file a complaint</h1>
-      <p>Five simple steps to raise a complaint under the RPwD Act:</p>
+      <h1>Using the Act</h1>
+      <p>The Act is not only for reading. It gives you ways to act when a right is broken.</p>
+      <p>This page shows you how. Who to tell. The officers and courts the law sets up.</p>
+
+      <h2>How to complain, in 5 steps</h2>
       ${steps.map((st, i) => `
         <div class="step-card">
-          <div class="num">${i + 1}</div>
+          <div class="num" aria-hidden="true">${i + 1}</div>
           <div>
-            <h2>${esc(st[0])}</h2>
+            <h3>${esc(st[0])}</h3>
             <p>${esc(st[1])}</p>
           </div>
         </div>
       `).join('')}
-      <p><a href="#/help" class="btn">Who can help you →</a></p>
-    </div>
-  `;
-}
 
-function renderHelp() {
-  return `
-    <div class="content-page">
-      <div class="page-hero-illus" aria-hidden="true">
-        <img src="img/illustrations/friends_support.png" alt="" class="page-illus">
-      </div>
-      <h1>Who can help you</h1>
-      <p>If your rights are not respected, these offices and organisations can help:</p>
-
-      <h2>Government offices</h2>
+      <h2>The officers and courts the law sets up</h2>
       <div class="step-card">
         <div>
           <h3>State Commissioner for Persons with Disabilities</h3>
           <p>Every state in India has one. They handle complaints inside the state. Look up your state's office or ask the state social welfare department.</p>
-          <p><em>First place to go for most complaints.</em></p>
+          <p>First place to go for most complaints.</p>
         </div>
       </div>
       <div class="step-card">
         <div>
           <h3>Chief Commissioner for Persons with Disabilities</h3>
           <p>A national office for cases that go beyond one state, or when the State Commissioner has not helped within 60 days.</p>
-          <p><em>Office of the Chief Commissioner, New Delhi.</em></p>
+          <p>Office of the Chief Commissioner, New Delhi.</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div>
+          <h3>Special Court</h3>
+          <p>Every district has a court named to hear cases under this Act. See Sections 84 and 85.</p>
         </div>
       </div>
       <div class="step-card">
         <div>
           <h3>National Human Rights Commission</h3>
-          <p>For very serious cases — cruelty, abuse, denial of basic rights.</p>
-          <p><em>Especially under Sections 6, 7, and 92.</em></p>
+          <p>For very serious cases: cruelty, abuse, denial of basic rights.</p>
+          <p>Especially under Sections 6, 7, and 92.</p>
         </div>
       </div>
 
-      <h2>Disabled People's Organisations (DPOs)</h2>
+      <h2>People who can stand with you</h2>
       <div class="step-card">
         <div>
+          <h3>Disabled People's Organisations (DPOs)</h3>
           <p>DPOs are local groups led by persons with disabilities. They can help you write your complaint and stand with you. Look for a DPO in your city or district.</p>
         </div>
       </div>
-
     </div>
   `;
 }
@@ -667,12 +692,9 @@ function renderRoute() {
     title = 'Training Resources';
     nav = 'training';
     setupFn = setupTrainingFilters;
-  } else if (parts[0] === 'complain') {
-    html = renderComplain();
-    title = 'How to file a complaint';
-  } else if (parts[0] === 'help') {
-    html = renderHelp();
-    title = 'Who can help you';
+  } else if (parts[0] === 'complain' || parts[0] === 'help' || parts[0] === 'using-the-act') {
+    html = renderUsingTheAct();
+    title = 'Using the Act';
   } else if (parts[0] === 'your-rights') {
     html = renderYourRights();
     title = 'Your rights in one page';

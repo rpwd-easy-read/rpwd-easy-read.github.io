@@ -4,7 +4,7 @@
  * network-first for HTML/JS/CSS.
  */
 
-const CACHE_NAME = 'rpwd-easy-read-v8';
+const CACHE_NAME = 'rpwd-easy-read-v9';
 const SHELL = [
   './',
   'index.html',

@@ -116,6 +116,11 @@ img {
   display: block;
 }
 
+/* The hidden attribute always wins, even over display rules on .btn etc. */
+[hidden] {
+  display: none !important;
+}
+
 /* Skip link */
 .skip {
   position: absolute;
@@ -919,6 +924,49 @@ button.chip-more {
   display: inline-block;
   font-size: 1rem;
   margin-top: 0.25rem;
+}
+
+/* Using the Act panel (enforcement sections) */
+.using-act {
+  background: var(--band-tint);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+}
+.using-act-h {
+  color: var(--band-accent);
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+}
+.using-act p {
+  margin: 0.5rem 0 0;
+}
+
+/* How-to list (About page) */
+.howto-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  gap: 1rem;
+  max-width: 44rem;
+}
+.howto-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-card);
+  padding: 1rem 1.25rem;
+  margin: 0;
+}
+.howto-list img {
+  flex: 0 0 auto;
+  width: 3.5rem;
+  height: 3.5rem;
+  object-fit: contain;
 }
 
 /* ============ training resources ============ */
