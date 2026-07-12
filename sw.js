@@ -4,7 +4,7 @@
  * network-first for HTML/JS/CSS.
  */
 
-const CACHE_NAME = 'rpwd-easy-read-v9';
+const CACHE_NAME = 'rpwd-easy-read-v10';
 const SHELL = [
   './',
   'index.html',
@@ -14,6 +14,7 @@ const SHELL = [
   'manifest.webmanifest',
   'img/icon-192.png',
   'img/icon-512.png',
+  'content/training/ch-02.json',
 ];
 
 self.addEventListener('install', (event) => {
