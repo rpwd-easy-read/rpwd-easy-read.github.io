@@ -326,17 +326,36 @@ function setupSectionControls(s) {
     return;
   }
 
+  let keepAlive = null;
   const speak = () => {
-    window.speechSynthesis.cancel();
+    const synth = window.speechSynthesis;
+    synth.cancel();
     const text = `Section ${s.num}. ${s.official_title}. ${s.plain_text} Use this when: ${s.use_when}`;
     const utter = new SpeechSynthesisUtterance(text);
     utter.rate = 0.9;
     utter.pitch = 1.0;
-    utter.lang = 'en-IN';
-    utter.onstart = () => { btnStop.hidden = false; btnSpeak.hidden = true; };
-    utter.onend = () => { btnStop.hidden = true; btnSpeak.hidden = false; };
-    utter.onerror = () => { btnStop.hidden = true; btnSpeak.hidden = false; };
-    window.speechSynthesis.speak(utter);
+    /* Pick a real installed voice: forcing a lang with no matching
+       voice goes silent on some Windows and Android builds. */
+    const voices = synth.getVoices();
+    const voice = voices.find((v) => v.lang === 'en-IN')
+      || voices.find((v) => v.lang && v.lang.indexOf('en') === 0);
+    if (voice) { utter.voice = voice; utter.lang = voice.lang; }
+    const stopUI = () => {
+      btnStop.hidden = true; btnSpeak.hidden = false;
+      if (keepAlive) { clearInterval(keepAlive); keepAlive = null; }
+    };
+    utter.onstart = () => {
+      btnStop.hidden = false; btnSpeak.hidden = true;
+      /* Chrome desktop stalls long utterances after about 15s; a
+         periodic pause and resume keeps it talking. */
+      keepAlive = setInterval(() => {
+        if (synth.speaking && !synth.paused) { synth.pause(); synth.resume(); }
+      }, 10000);
+    };
+    utter.onend = stopUI;
+    utter.onerror = stopUI;
+    /* Chrome swallows a speak() issued in the same tick as cancel(). */
+    setTimeout(() => synth.speak(utter), 80);
   };
 
   btnSpeak.addEventListener('click', speak);
