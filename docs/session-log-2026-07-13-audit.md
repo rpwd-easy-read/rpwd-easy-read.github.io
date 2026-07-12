@@ -59,7 +59,8 @@ evidence: `design-review\audit-2026-07-13\`.
 
 ## Current status
 
-Live site audited end to end and green. Fixes pushed and live pending
-GitHub Pages deploy verification (recorded in the audit report).
+Live site audited end to end and green. Fixes pushed, deploy verified
+on the live origin: served files hash-match HEAD, the skip link keeps
+the page, and the live service worker cache is rpwd-easy-read-v24.
 Nothing left open in this repo from the audit except the three flags
 awaiting Deepa's call.
