@@ -934,105 +934,109 @@ p {
   padding: 0 0.25rem;
 }
 
-.module-header {
-  background: var(--surface);
-  border: 1px solid var(--hairline);
+/* Slide-deck mode (D-P51 decision 6): thin band strip, calm slide
+ * surface, fixed Next and Back, Contents overlay instead of a rail. */
+.module-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: var(--band-tint);
   border-left: 6px solid var(--band-accent);
   border-radius: var(--radius-card);
-  padding: 1.25rem 1.5rem;
-  margin: 0 0 1.5rem;
+  padding: 0.6rem 1rem;
+  margin: 0 0 1.25rem;
 }
-.module-eyebrow {
-  color: var(--band-accent);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-  margin: 0 0 0.25rem;
-}
-.module-header h1 {
-  margin: 0 0 0.25rem;
-  font-size: 1.8rem;
-  line-height: 1.2;
-  max-width: 40ch;
-}
-.module-meta {
+.module-strip h1 {
   margin: 0;
-  color: var(--ink-soft);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+.module-strip-eyebrow {
+  color: var(--band-accent);
+  letter-spacing: 0.04em;
   font-size: 1rem;
+}
+.module-strip-meta {
+  margin: 0.1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
 }
 .module-complete-pill {
   display: inline-block;
-  background: var(--band-tint);
+  background: var(--surface);
   color: var(--band-accent);
   font-weight: 700;
   padding: 0.125rem 0.625rem;
   border-radius: var(--radius-pill);
   margin-left: 0.5rem;
 }
+.module-contents-btn {
+  flex: none;
+}
 
-.module-stepper {
-  background: var(--band-tint);
+.module-contents {
+  background: var(--surface);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-card);
-  padding: 0.75rem;
-  margin: 0 0 1.5rem;
-  overflow-x: auto;
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 1.25rem;
 }
-.module-stepper ol {
-  display: flex;
-  gap: 0.5rem;
+.mc-list {
   list-style: none;
-  padding: 0;
   margin: 0;
-  min-width: min-content;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
 }
-.module-step a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-pill);
-  padding: 0.5rem 0.875rem;
+.mc-seg > a {
+  display: inline-block;
   color: var(--ink);
-  text-decoration: none;
-  font-size: 1rem;
-  white-space: nowrap;
-  min-height: 2.75rem;
   font-weight: 600;
+  text-decoration: none;
+  padding: 0.3rem 0.4rem;
+  border-radius: 6px;
 }
-.module-step a:hover {
-  border-color: var(--band-accent);
-  color: var(--band-accent);
-}
-.module-step .step-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 1.75rem;
-  height: 1.75rem;
-  padding: 0 0.375rem;
+.mc-seg > a:hover {
   background: var(--band-tint);
+  color: var(--ink);
+}
+.mc-seg .mc-num {
   color: var(--band-accent);
-  border-radius: var(--radius-pill);
   font-weight: 800;
+}
+.mc-seg.active > a {
+  background: var(--band-tint);
+}
+.mc-slides {
+  list-style: none;
+  margin: 0 0 0.25rem;
+  padding: 0 0 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+}
+.mc-slides a {
   font-size: 1rem;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0.2rem 0;
+  display: inline-block;
 }
-.module-step.active a {
-  background: var(--band-accent);
-  border-color: var(--band-accent);
-  color: var(--surface);
-}
-.module-step.active .step-num {
-  background: var(--surface);
+.mc-slides a[aria-current],
+.mc-seg > a[aria-current] {
   color: var(--band-accent);
+  font-weight: 700;
 }
 
 .module-segment {
   background: var(--surface);
   border: 1px solid var(--hairline);
   border-radius: var(--radius-card);
-  padding: 1.5rem 1.75rem;
+  padding: 2rem 2.25rem 2.5rem;
 }
 .module-segment:focus-within h2 { outline: none; }
 .module-segment h2:focus { outline: none; }
@@ -1050,52 +1054,11 @@ p {
   margin-left: 0.25rem;
 }
 
-.slide-dots {
-  margin: 0 0 1.25rem;
-}
-.slide-dots ol {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-}
-.slide-dot a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2.25rem;
-  min-height: 2.25rem;
-  padding: 0.25rem 0.5rem;
-  background: var(--band-tint);
-  color: var(--band-accent);
-  border: 1px solid var(--band-accent);
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1rem;
-}
-.slide-dot a:hover {
-  background: var(--surface);
-}
-.slide-dot.active a {
-  background: var(--band-accent);
-  color: var(--surface);
-}
-
 .module-arrow-hint {
   margin: 1rem 0 0;
   color: var(--ink-soft);
   font-size: 1rem;
   font-style: normal;
-}
-.segment-position {
-  margin: 0 0 0.25rem;
-  color: var(--band-accent);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
 }
 .module-segment h2 {
   margin: 0 0 1rem;
@@ -1272,65 +1235,90 @@ p {
 }
 .module-endnotes hr { display: none; }
 
+/* Fixed slide navigation bar: big Back and Next, always in the same
+ * place, with a plain global counter between them. */
 .module-prevnext {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin: 2rem 0 0;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--hairline);
+  gap: 0.75rem;
+  background: var(--surface);
+  border-top: 2px solid var(--hairline);
+  padding: 0.65rem max(1.25rem, calc((100vw - 68rem) / 2));
+}
+.module-page {
+  padding-bottom: 7.5rem;
 }
 .module-prevnext .btn-prev,
 .module-prevnext .btn-next {
-  display: flex;
-  flex-direction: column;
-  gap: 0.125rem;
-  padding: 0.75rem 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--band-accent);
-  border-radius: var(--radius-card);
-  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
   text-decoration: none;
-  min-height: 3rem;
-  max-width: 22rem;
-  flex: 1 1 12rem;
+  border-radius: var(--radius-card);
+  padding: 0.8rem 1.6rem;
+  min-width: 8.5rem;
+  min-height: 3.25rem;
 }
-.module-prevnext .btn-next {
-  text-align: right;
-  align-items: flex-end;
+.module-prevnext .btn-prev {
+  background: var(--surface);
+  border: 2px solid var(--band-accent);
+  color: var(--band-accent);
 }
-.module-prevnext .btn-prev:hover,
-.module-prevnext .btn-next:hover {
+.module-prevnext .btn-prev:hover {
   background: var(--band-tint);
 }
-.module-prevnext .prev-label,
-.module-prevnext .next-label {
-  font-size: 0.9375rem;
-  color: var(--band-accent);
-  font-weight: 700;
-  letter-spacing: 0.05em;
+.module-prevnext .btn-next {
+  background: var(--band-accent);
+  border: 2px solid var(--band-accent);
+  color: var(--surface);
 }
-.module-prevnext .prev-title,
-.module-prevnext .next-title {
-  font-weight: 600;
-  font-size: 1.0625rem;
+.module-prevnext .btn-next:hover {
+  background: var(--action-dark);
+  border-color: var(--action-dark);
+  color: var(--surface);
 }
-.module-prevnext .btn-prev::before { content: "\2190\00A0"; color: var(--band-accent); }
-.module-prevnext .btn-next::after  { content: "\00A0\2192";  color: var(--band-accent); }
 .module-prevnext .btn-prev-empty {
-  flex: 1 1 12rem;
-  max-width: 22rem;
+  min-width: 8.5rem;
+}
+.module-counter {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 1.0625rem;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
-  .module-header h1 { font-size: 1.5rem; }
-  .module-segment { padding: 1.25rem 1rem; }
+  .module-segment { padding: 1.25rem 1rem 1.75rem; }
   .module-segment h2 { font-size: 1.35rem; }
   .segment-body th, .segment-body td { padding: 0.5rem; font-size: 1rem; }
+  .module-prevnext {
+    flex-wrap: wrap;
+    padding: 0.5rem 1rem 0.75rem;
+  }
+  .module-counter {
+    order: -1;
+    flex: 1 1 100%;
+    font-size: 1rem;
+  }
   .module-prevnext .btn-prev,
-  .module-prevnext .btn-next { flex: 1 1 100%; max-width: 100%; text-align: left; align-items: flex-start; }
-  .module-prevnext .btn-next { text-align: left; }
+  .module-prevnext .btn-next {
+    flex: 1 1 40%;
+    min-width: 0;
+  }
+  .module-prevnext .btn-prev-empty { flex: 1 1 40%; min-width: 0; }
+  .module-page { padding-bottom: 9rem; }
+}
+
+@media print {
+  .module-prevnext { position: static; }
 }
 
 /* ============ footer ============ */
