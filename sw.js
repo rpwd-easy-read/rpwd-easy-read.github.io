@@ -1,10 +1,10 @@
 /* RPwD Easy Read — service worker for offline support.
- * Caches the app shell, content.json, and all illustration PNGs on first
+ * Caches the app shell, content.json, and all illustration images on first
  * load so the app works offline. Uses a cache-first strategy for images,
  * network-first for HTML/JS/CSS.
  */
 
-const CACHE_NAME = 'rpwd-easy-read-v10';
+const CACHE_NAME = 'rpwd-easy-read-v11';
 const SHELL = [
   './',
   'index.html',
@@ -25,7 +25,7 @@ self.addEventListener('install', (event) => {
         const res = await fetch('content.json');
         const content = await res.json();
         const illustrationURLs = [...new Set(
-          content.sections.map((s) => `img/illustrations/${s.illustration}.png`)
+          content.sections.map((s) => `img/illustrations/${s.illustration}.webp`)
         )];
         await cache.addAll(illustrationURLs);
       })

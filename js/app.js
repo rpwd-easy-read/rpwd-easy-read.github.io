@@ -39,38 +39,38 @@ const firstTwoSentences = (text, max = 140) => {
 };
 
 const ALT_TEXT = {
-  book_learning: "A person sitting and reading a book in their lap, smiling",
-  book_open: "An open book with pages spread wide and a red bookmark ribbon",
-  book_simple: "A closed blue book titled RPwD ACT with a gold star",
-  briefcase: "A brown briefcase with a handle and clasp",
-  building_ramp: "A building with windows and a green accessibility ramp, a person in a wheelchair going up the ramp",
-  bus: "A bright blue bus with four smiling passengers in the windows and an accessibility ramp at the door",
-  certificate_star: "A gold star on red ribbons, like a medal or award",
-  chair_reserved: "A blue chair with a yellow RESERVED sign on the backrest",
-  clipboard_check: "A clipboard with a checklist showing four items, all ticked with green check marks",
-  clock: "A round yellow clock face with black hands showing the time",
-  commissioner_badge: "A person in a dark blue formal suit with a red tie and a gold star badge on their chest",
-  committee_people: "Four people sitting around a table, wearing blue, pink, green, and orange clothes",
-  computer: "A computer screen showing a checklist: Big text, Easy words, Pictures — all ticked",
-  courthouse: "A grand building with four tall columns, an orange roof, and wide steps",
-  disaster_safe: "A red umbrella protecting a person from rain drops falling from above",
-  document: "A white paper document with text lines, a folded corner, and a round red seal stamp",
-  equality: "Two people side by side — one standing in blue, one in a wheelchair in pink — with a green equals sign between them",
-  friends_support: "Two people standing close with arms around each other, a red heart above them",
-  globe_world: "A globe showing green land and blue water",
-  heart: "A large pink heart",
-  high_support_hands: "Two large hands gently holding and supporting a smaller person in the middle",
-  house_family: "A house with a red roof, brown door, blue windows, and a pink heart on the wall",
-  justice_scales: "A wooden balance scale with two golden pans hanging evenly",
-  medical_cross: "A large red plus-sign cross inside a white circle — the healthcare symbol",
-  megaphone: "An orange megaphone with blue sound waves coming out of it",
-  money_jar: "A glass jar filled with coins marked with the rupee symbol",
-  pencil_signing: "A yellow pencil writing a signature on a white document",
-  school: "A school building with an orange roof, a green flag, four windows, and an ABC sign above the door",
-  shield: "A blue shield with a white check mark inside — the protection symbol",
-  vote: "A ballot paper with a green tick being placed into a blue ballot box marked VOTE",
-  warning: "A yellow triangle with a black exclamation mark — a warning sign",
-  women_children: "A taller person in pink holding hands with a child in purple, with a heart between them",
+  book_learning: "A person sitting cross-legged on the floor, reading a book",
+  book_open: "Three people reading one open book together",
+  book_simple: "A closed book with a star on its cover, lying on a table",
+  briefcase: "A wheelchair user with a briefcase on her lap arriving at the office; a colleague waves hello",
+  building_ramp: "A person wheels up a ramp into a building on their own",
+  bus: "A bus with a fold-out ramp at the door; a wheelchair user boards by herself",
+  certificate_star: "A woman wheelchair user holds her star certificate above her head in celebration",
+  chair_reserved: "A row of waiting chairs; one carries a wheelchair symbol and is kept free",
+  clipboard_check: "Hands holding a clipboard, ticking items on a checklist",
+  clock: "A wall clock; two people check the time together",
+  commissioner_badge: "An official with a star badge meets a wheelchair user across his desk",
+  committee_people: "A committee around a table; a wheelchair user sits as one of its members",
+  computer: "A desktop computer and keyboard on an office desk",
+  courthouse: "A courthouse building with wide steps and columns; people arriving",
+  disaster_safe: "Two people sharing one umbrella in the rain",
+  document: "An official document with ruled lines, a round seal stamp, and a pen beside it",
+  equality: "A shopkeeper serves a wheelchair user and another customer equally at the counter",
+  friends_support: "Four young friends drinking tea together; one uses a wheelchair, each holds their own glass",
+  globe_world: "A desk globe of the world on a stand",
+  heart: "Two people holding hands, a heart above them",
+  high_support_hands: "Two people solving a jigsaw puzzle together at a table",
+  house_family: "A family at the door of their home, a heart on the wall",
+  justice_scales: "A balance scale with two pans hanging perfectly equal",
+  medical_cross: "A doctor and a wheelchair user talk face to face at the clinic",
+  megaphone: "A group of advocates raise their voices together; one holds a megaphone, one uses a wheelchair",
+  money_jar: "A woman drops a coin into a jar of savings",
+  pencil_signing: "A woman seated at a table, signing a document with a pen",
+  school: "A school building; students arrive, one using a wheelchair",
+  shield: "Two people holding up a shield together",
+  vote: "A woman places her ballot paper into the ballot box",
+  warning: "A large warning triangle sign beside a woman using a wheelchair",
+  women_children: "Parents holding hands with their child, a heart between them",
 };
 
 const altFor = (name) => ALT_TEXT[name] || `Illustration for this section`;
@@ -92,7 +92,7 @@ function renderHome() {
       <a class="band-tile" href="#/map/${b.id}"
          style="--tile-accent: var(--band-${b.id}-accent); --tile-tint: var(--band-${b.id}-tint)">
         <span class="band-tile-thumb" aria-hidden="true">
-          <img src="img/illustrations/${BAND_THUMBS[b.id]}.png" alt="">
+          <img src="img/illustrations/${BAND_THUMBS[b.id]}.webp" alt="">
         </span>
         <span class="band-tile-name">${esc(b.name)}</span>
         <span class="band-tile-count">${n} ${n === 1 ? 'chapter' : 'chapters'}</span>
@@ -108,7 +108,7 @@ function renderHome() {
         <p class="hero-tagline">A plain-language guide to all 102 sections of India's disability rights law. One idea at a time, with a picture for each one.</p>
       </div>
       <figure class="hero-illus">
-        <img src="img/illustrations/${esc('book_learning')}.png" alt="${esc(altFor('book_learning'))}">
+        <img src="img/illustrations/${esc('book_learning')}.webp" alt="${esc(altFor('book_learning'))}">
       </figure>
       <div class="hero-actions">
         <a href="#/map" class="btn btn-primary">Read the Act →</a>
@@ -123,7 +123,7 @@ function renderHome() {
 
     <a class="onramp" href="#/section/1">
       <span class="onramp-thumb" aria-hidden="true">
-        <img src="img/illustrations/book_open.png" alt="">
+        <img src="img/illustrations/book_open.webp" alt="">
       </span>
       <span class="onramp-body">
         <strong class="onramp-title">New to the Act?</strong>
@@ -294,7 +294,7 @@ function renderSection(num) {
 
     <div class="section-grid">
       <figure class="section-illus">
-        <img src="img/illustrations/${esc(s.illustration)}.png"
+        <img src="img/illustrations/${esc(s.illustration)}.webp"
              alt="${esc(altFor(s.illustration))}"
              loading="lazy">
       </figure>
@@ -371,7 +371,7 @@ function renderAbout() {
   return `
     <div class="content-page">
       <div class="page-hero-illus" aria-hidden="true">
-        <img src="img/illustrations/book_open.png" alt="" class="page-illus">
+        <img src="img/illustrations/book_open.webp" alt="" class="page-illus">
       </div>
       <h1>About this guide</h1>
 
@@ -385,23 +385,23 @@ function renderAbout() {
       <h2>How to use this guide</h2>
       <ul class="howto-list">
         <li>
-          <img src="img/illustrations/megaphone.png" alt="" aria-hidden="true">
+          <img src="img/illustrations/megaphone.webp" alt="" aria-hidden="true">
           <span><strong>Read this to me.</strong> Press the button on any section page. Your device reads the words out loud.</span>
         </li>
         <li>
-          <img src="img/illustrations/book_learning.png" alt="" aria-hidden="true">
+          <img src="img/illustrations/book_learning.webp" alt="" aria-hidden="true">
           <span><strong>Big text.</strong> Press Big text at the top. All the words get bigger.</span>
         </li>
         <li>
-          <img src="img/illustrations/document.png" alt="" aria-hidden="true">
+          <img src="img/illustrations/document.webp" alt="" aria-hidden="true">
           <span><strong>Search.</strong> Type a word like school or job. The matching sections appear.</span>
         </li>
         <li>
-          <img src="img/illustrations/computer.png" alt="" aria-hidden="true">
+          <img src="img/illustrations/computer.webp" alt="" aria-hidden="true">
           <span><strong>Add to your phone.</strong> Your browser can install this guide on your home screen.</span>
         </li>
         <li>
-          <img src="img/illustrations/globe_world.png" alt="" aria-hidden="true">
+          <img src="img/illustrations/globe_world.webp" alt="" aria-hidden="true">
           <span><strong>Works offline.</strong> After your first visit, the guide works without internet.</span>
         </li>
       </ul>
@@ -434,7 +434,7 @@ function renderUsingTheAct() {
   return `
     <div class="content-page">
       <div class="page-hero-illus" aria-hidden="true">
-        <img src="img/illustrations/pencil_signing.png" alt="" class="page-illus">
+        <img src="img/illustrations/pencil_signing.webp" alt="" class="page-illus">
       </div>
       <h1>Using the Act</h1>
       <p>The Act is not only for reading. It gives you ways to act when a right is broken.</p>
@@ -784,7 +784,7 @@ function renderYourRights() {
   return `
     <div class="content-page">
       <div class="page-hero-illus" aria-hidden="true">
-        <img src="img/illustrations/equality.png" alt="" class="page-illus">
+        <img src="img/illustrations/equality.webp" alt="" class="page-illus">
       </div>
       <h1>Remember: your rights in one page</h1>
       <ul class="rights-list">
