@@ -11,6 +11,24 @@ for <band>': it resizes and compresses, updates ALT_TEXT in js/app.js
 where the new drawing differs, bumps the service worker cache, commits,
 pushes, and re-runs the ship gate.
 
+CAST LOCKED 2026-07-12: docs\cast-sheet.png (candidate P). Eight
+characters, mixed-India representation. All images draw from this cast.
+
+DEVICE ACCURACY RULES (Deepa, 2026-07-12, apply to every image):
+- Prosthetic legs are Jaipur Foot style: below-knee, near-natural look,
+  a simple join line, natural foot, sandal-friendly. Never robotic,
+  never exposed metal pylons or blades.
+- Long white cane per O and M practice: held at waist height in front
+  of the body, index finger along the grip, cane diagonal with the tip
+  on the ground ahead of the feet. Standing rest: cane upright at the
+  side, tip grounded, reaching chest height. Never leaned on like a
+  walking stick. Folded canes: four or five thin segments in one slim
+  parallel bundle, never fanned.
+- Sign language is ISL: predominantly two-handed, signed in front of
+  the torso, face engaged and friendly.
+- Hearing aids are small and discreet; do not distort ears to show
+  them.
+
 Work inside ONE conversation in your image tool and generate the cast
 sheet first (prompt from the tower session); then every image request
 adds: same style and characters as the lineup. Aspect: 16:9 for
