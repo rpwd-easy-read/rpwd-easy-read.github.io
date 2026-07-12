@@ -57,6 +57,7 @@ const ALT_TEXT = {
   document: "An official document with ruled lines, a round seal stamp, and a pen beside it",
   equality: "A shopkeeper serves a wheelchair user and another customer equally at the counter",
   friends_support: "Four young friends drinking tea together; one uses a wheelchair, each holds their own glass",
+  fund_box: "An open cash box on a table with coins beside it",
   globe_world: "A desk globe of the world on a stand",
   heart: "Two people holding hands, a heart above them",
   high_support_hands: "Two people solving a jigsaw puzzle together at a table",
@@ -102,7 +103,7 @@ const CHAPTER_THUMBS = {
   XII: 'commissioner_badge',
   XIII: 'courthouse',
   XIV: 'money_jar',
-  XV: 'house_family',
+  XV: 'fund_box',
   XVI: 'warning',
   XVII: 'document',
 };
