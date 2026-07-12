@@ -946,7 +946,12 @@ function renderTrainingModule(moduleId, segNumRaw, slideNumRaw) {
             ${endnotesBlock}
           </article>
         </div>
-        <p class="stage-more-hint" id="stage-more-hint" hidden>More below: scroll the slide.</p>
+        <div class="stage-more-hint" id="stage-more-hint" hidden>
+          <span>More below.</span>
+          <button type="button" class="btn-stage-scroll" id="btn-stage-scroll">
+            Scroll down &#9662;
+          </button>
+        </div>
 
         <nav class="module-prevnext player-controls" aria-label="Module navigation">
           ${prevLink}
@@ -958,7 +963,8 @@ function renderTrainingModule(moduleId, segNumRaw, slideNumRaw) {
           </div>
           <div class="player-audio">
             <button type="button" class="btn-listen" id="btn-slide-listen">
-              &#9654; Listen
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M3 9v6h4l5 5V4L7 9H3z" fill="currentColor"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18.5 5.5a8.5 8.5 0 0 1 0 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Read aloud
             </button>
             <button type="button" class="btn-listen" id="btn-slide-stop" hidden>
               &#9632; Stop
@@ -1036,20 +1042,6 @@ function setupTrainingModule() {
     }
   }
 
-  /* Long slides scroll inside the stage; say so out loud rather than
-   * letting content hide below the fold unannounced. */
-  const stage = document.getElementById('player-stage');
-  const moreHint = document.getElementById('stage-more-hint');
-  if (stage && moreHint) {
-    const updateHint = () => {
-      const overflowing = stage.scrollHeight - stage.clientHeight > 8;
-      const atBottom = stage.scrollTop + stage.clientHeight >= stage.scrollHeight - 8;
-      moreHint.hidden = !overflowing || atBottom;
-    };
-    updateHint();
-    stage.addEventListener('scroll', updateHint);
-  }
-
   /* Move focus to the slide heading on each render so screen readers
    * pick up the new slide's title, but never let the focus jump move
    * the page (Deepa 2026-07-13: every Next yanked the viewport up and
@@ -1063,6 +1055,74 @@ function setupTrainingModule() {
   if (playerEl) {
     const target = Math.round(playerEl.getBoundingClientRect().top + window.scrollY - 8);
     window.scrollTo(0, Math.max(0, target));
+  }
+
+  /* Stage sizing and the long-slide affordances. On laptop widths the
+   * stage grows to meet the control bar, so short and medium slides
+   * show whole and in-stage scrolling is reserved for genuinely large
+   * content. When a slide does overflow, a chrome bar appears with a
+   * Scroll down button (Deepa 2026-07-13: an on-screen button beats a
+   * scroll gesture for users with limited mobility). On phones the
+   * stage has no height cap and the page scrolls naturally. */
+  const stage = document.getElementById('player-stage');
+  const moreHint = document.getElementById('stage-more-hint');
+  const scrollBtn = document.getElementById('btn-stage-scroll');
+  if (stage && moreHint) {
+    const updateHint = () => {
+      const overflowing = stage.scrollHeight - stage.clientHeight > 8;
+      const atBottom = stage.scrollTop + stage.clientHeight >= stage.scrollHeight - 8;
+      const show = overflowing && !atBottom;
+      if (!show && scrollBtn && document.activeElement === scrollBtn) stage.focus();
+      moreHint.style.visibility = show ? 'visible' : 'hidden';
+    };
+    const sizeStage = () => {
+      if (!stage.isConnected) return;
+      const bar = document.querySelector('.player-controls');
+      if (window.matchMedia('(max-width: 600px)').matches || !bar) {
+        stage.style.height = '';
+        stage.style.maxHeight = '';
+        moreHint.hidden = true;
+        return;
+      }
+      stage.style.maxHeight = 'none';
+      stage.style.height = 'auto';
+      const room = Math.floor(bar.getBoundingClientRect().top
+        - stage.getBoundingClientRect().top - 12);
+      const overflowing = stage.scrollHeight > room;
+      moreHint.hidden = !overflowing;
+      const hintSpace = overflowing ? moreHint.offsetHeight : 0;
+      stage.style.height = Math.max(280, room - hintSpace) + 'px';
+      updateHint();
+    };
+    sizeStage();
+    stage.addEventListener('scroll', updateHint);
+    if (scrollBtn) {
+      scrollBtn.addEventListener('click', () => {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        stage.scrollBy({
+          top: Math.round(stage.clientHeight * 0.8),
+          behavior: reduce ? 'auto' : 'smooth',
+        });
+      });
+    }
+    /* Re-size on window resize and on the Big text toggle; the hooks
+     * are installed once and call through a per-render pointer so
+     * stale closures from earlier slides never run. */
+    window._rpwdSizeStage = sizeStage;
+    if (!window._rpwdStageHooks) {
+      window._rpwdStageHooks = true;
+      window.addEventListener('resize', () => {
+        if (window._rpwdSizeStage) window._rpwdSizeStage();
+      });
+      const btnBig = document.getElementById('btn-big-text');
+      if (btnBig) {
+        btnBig.addEventListener('click', () => {
+          setTimeout(() => {
+            if (window._rpwdSizeStage) window._rpwdSizeStage();
+          }, 50);
+        });
+      }
+    }
   }
 
   /* Arrow-key slide navigation. Left goes to previous slide, right goes to

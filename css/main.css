@@ -1524,13 +1524,32 @@ p {
 .stage-more-hint {
   max-width: none; /* full-width chrome bar, exempt from the global 60ch measure */
   margin: 0;
-  padding: 0.4rem 1.25rem;
+  padding: 0.35rem 1.25rem;
   background: var(--band-tint);
   color: var(--ink);
   font-size: 1rem;
   font-weight: 600;
-  text-align: center;
   border-top: 1px solid var(--hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.btn-stage-scroll {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  background: var(--surface);
+  border: 2px solid var(--band-accent);
+  color: var(--band-accent);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 1rem;
+  min-height: 2.5rem;
+  cursor: pointer;
+}
+.btn-stage-scroll:hover {
+  background: var(--band-accent);
+  color: #FFFFFF;
 }
 
 /* Control bar: the fixed slide bar becomes player chrome. */
@@ -1598,32 +1617,36 @@ p {
   font-size: 1rem;
 }
 
+/* Read aloud: filled so it reads as a first-class option on the bar,
+ * speaker icon carried inline (aria-hidden, text names the action). */
 .player-audio .btn-listen {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   font-family: var(--font-body);
   font-size: 1.125rem;
   font-weight: 700;
-  background: transparent;
+  background: var(--player-chrome-ink);
   border: 2px solid var(--player-chrome-ink);
-  color: var(--player-chrome-ink);
+  color: var(--player-chrome);
   border-radius: var(--radius-card);
   padding: 0.7rem 1.2rem;
   min-height: 3.25rem;
   cursor: pointer;
 }
 .player-audio .btn-listen:hover {
-  background: var(--player-chrome-ink);
-  color: var(--player-chrome);
+  background: transparent;
+  color: var(--player-chrome-ink);
 }
 .player.theme-light .player-audio .btn-listen {
+  background: var(--band-accent);
   border-color: var(--band-accent);
-  color: var(--band-accent);
+  color: #FFFFFF;
 }
 .player.theme-light .player-audio .btn-listen:hover {
-  background: var(--band-accent);
-  color: #FFFFFF;
+  background: var(--surface);
+  color: var(--band-accent);
 }
 
 @media (max-width: 600px) {
@@ -1647,7 +1670,8 @@ p {
 
 @media print {
   .player-controls, .stage-more-hint { display: none; }
-  .player-stage { max-height: none; overflow: visible; }
+  /* !important beats the inline height the stage sizer sets */
+  .player-stage { height: auto !important; max-height: none !important; overflow: visible; }
 }
 
 /* ============ footer ============ */

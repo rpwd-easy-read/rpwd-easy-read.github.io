@@ -85,8 +85,27 @@ identical across consecutive Next presses (154 = 154 = 154), stage
 scroll resets, focus still lands on the heading, section routes keep
 their scroll-to-top. axe 0 on all 259 routes re-run. SW v27.
 
+## Round 2 refinements (Deepa, same day): full-height stage, Scroll
+down button, Read aloud
+
+- Stage sizing: on laptop widths the stage now grows to meet the
+  control bar (measured per render, re-measured on window resize and
+  the Big text toggle), so short and medium slides display whole and
+  in-stage scrolling only happens for genuinely large content. On
+  phones the cap stays off and the page scrolls naturally. Print gets
+  height auto with !important over the inline size.
+- The More-below bar gained a Scroll down button (pill, band accent):
+  one click advances the stage by 80 percent of its height, honouring
+  prefers-reduced-motion; at the bottom the bar hides and focus moves
+  to the stage if the button held it.
+- Listen renamed Read aloud, filled (white on dark chrome, band
+  accent fill on the light theme) with an inline speaker icon
+  (aria-hidden; the text names the action).
+- Gate: axe 0 on 259 routes re-run, console clean, stage-fill and
+  button behaviours verified short and long, mobile uncapped. SW v28.
+
 ## Current status
 
-Signed off (slate theme, splits applied), pushed and live. The
-steady-viewport fix is the shipped behaviour: only the slide content
-changes between slides.
+Signed off (slate theme, splits applied), pushed and live with the
+steady-viewport fix and the round 2 refinements: full-height stage,
+Scroll down button, Read aloud.
