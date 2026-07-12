@@ -493,6 +493,10 @@ function setupKnowMorePanel(s, openOnLoad) {
     });
   }
   document.addEventListener('keydown', (e) => {
+    /* This listener outlives its render: a re-render leaves the old
+     * panel detached but still captured here. Without the isConnected
+     * guard, Escape on a later page rewrites the URL to this section. */
+    if (!panel.isConnected) return;
     if (e.key === 'Escape' && !panel.hidden) {
       history.pushState(null, '', `#/section/${s.num}`);
       close();
@@ -1115,8 +1119,22 @@ function setActiveNav(nav) {
   });
 }
 
+let hasRenderedOnce = false;
+
 function renderRoute() {
   const main = document.getElementById('main');
+
+  /* In-page fragments are not routes. The skip link (#main) and the
+   * training endnote jumps (#fn:N, #fnref:N) land here: leave the
+   * rendered page alone so the browser's own jump and focus work.
+   * On a fresh page load with a fragment URL, fall through to home. */
+  const fragment = location.hash.slice(1);
+  if (fragment && fragment.charAt(0) !== '/') {
+    if (hasRenderedOnce && document.getElementById(fragment)) return;
+    history.replaceState(null, '', '#/');
+  }
+  hasRenderedOnce = true;
+
   const { parts } = parseRoute();
 
   let html = '';

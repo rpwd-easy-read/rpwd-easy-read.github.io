@@ -4,7 +4,7 @@
  * network-first for HTML/JS/CSS.
  */
 
-const CACHE_NAME = 'rpwd-easy-read-v23';
+const CACHE_NAME = 'rpwd-easy-read-v24';
 const SHELL = [
   './',
   'index.html',
@@ -15,6 +15,11 @@ const SHELL = [
   'img/icon-192.png',
   'img/icon-512.png',
   'content/training/ch-02.json',
+  /* UI-only illustrations no section references: the chapter XV thumb
+     and the About page how-to icon are not in the content.json derive
+     below, so they must be precached by name or they break offline. */
+  'img/illustrations/fund_box.webp',
+  'img/illustrations/globe_world.webp',
 ];
 
 self.addEventListener('install', (event) => {
@@ -43,7 +48,7 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
-  if (url.pathname.endsWith('.png') || url.pathname.endsWith('.jpg')) {
+  if (url.pathname.endsWith('.png') || url.pathname.endsWith('.jpg') || url.pathname.endsWith('.webp')) {
     event.respondWith(
       caches.match(event.request).then((cached) =>
         cached || fetch(event.request).then((response) => {

@@ -780,6 +780,7 @@ p {
 
 .prev-next {
   display: flex;
+  flex-wrap: wrap; /* big text at 320px: the two buttons stack instead of overflowing */
   justify-content: space-between;
   gap: 1rem;
   margin: 2.5rem 0 0;
