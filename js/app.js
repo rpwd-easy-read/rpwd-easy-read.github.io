@@ -146,36 +146,97 @@ function renderHome() {
   `;
 }
 
+const CHIPS_SHOWN = 5;
+
 function renderMap() {
-  const cards = CONTENT.chapters.map((ch) => {
-    const first = ch.sections[0];
-    const last = ch.sections[ch.sections.length - 1];
-    const range = first === last ? `Section ${first}` : `Sections ${first} to ${last}`;
-    const band = bandForChapter(ch.id);
+  const accordions = BANDS.map((band) => {
+    const chapters = band.chapters.map((chId) => chapterById(chId));
+    const sectionCount = chapters.reduce((n, ch) => n + ch.sections.length, 0);
+    const chapterBlocks = chapters.map((ch) => {
+      const sections = byChapter(ch.id);
+      const chips = sections.map((s, i) => `
+        <li${i >= CHIPS_SHOWN ? ' hidden' : ''}>
+          <a class="chip" href="#/section/${s.num}">
+            <strong>S${s.num}</strong> ${esc(s.official_title)}
+          </a>
+        </li>
+      `).join('');
+      const more = sections.length > CHIPS_SHOWN ? `
+        <li class="chip-more-holder">
+          <button type="button" class="chip chip-more">+ ${sections.length - CHIPS_SHOWN} more</button>
+        </li>
+      ` : '';
+      return `
+        <div class="band-chapter">
+          <h3 class="band-ch-name"><a href="#/chapter/${esc(ch.id)}">Chapter ${esc(ch.id)}: ${esc(ch.title)}</a></h3>
+          <ul class="chip-list">${chips}${more}</ul>
+        </div>
+      `;
+    }).join('');
     return `
-      <a href="#/chapter/${esc(ch.id)}" class="chapter-card"
-         style="--card-accent: var(--band-${band.id}-accent); --card-tint: var(--band-${band.id}-tint)">
-        <div class="band-label">${esc(band.name)}</div>
-        <div class="num">${esc(ch.kicker)}</div>
-        <div class="title">${esc(ch.title)}</div>
-        <div class="range">${esc(range)}</div>
-      </a>
+      <section class="band-acc"
+        style="--band-a: var(--band-${band.id}-accent); --band-t: var(--band-${band.id}-tint)">
+        <h2 class="band-acc-h">
+          <button type="button" class="band-acc-btn" data-band="${band.id}"
+                  aria-expanded="false" aria-controls="band-body-${band.id}">
+            <span class="band-acc-marker" aria-hidden="true">▸</span>
+            <span class="band-acc-name">${esc(band.name)}</span>
+            <span class="band-acc-count">${band.chapters.length} ${band.chapters.length === 1 ? 'chapter' : 'chapters'} · ${sectionCount} sections</span>
+          </button>
+        </h2>
+        <div class="band-acc-body" id="band-body-${band.id}" hidden>${chapterBlocks}</div>
+      </section>
     `;
   }).join('');
 
   return `
     <h1 class="page-title">All sections</h1>
-    <p class="page-intro">All 102 sections, in 17 chapters. Chapters are grouped into 5 colour bands.</p>
-    <div class="chapter-grid">${cards}</div>
-
     <section class="search" aria-label="Find a section">
-      <label for="search-map">Or search by word</label>
+      <label for="search-map">Search for a word, like "school" or "job"</label>
       <input type="search" id="search-map"
              placeholder="Type a word..."
              autocomplete="off">
       <div class="search-results" id="search-map-results" role="region" aria-live="polite"></div>
     </section>
+    <div class="band-accordions">${accordions}</div>
   `;
+}
+
+function setupMapAccordions(initialBand) {
+  const buttons = Array.from(document.querySelectorAll('.band-acc-btn'));
+
+  const setOpen = (bandId) => {
+    buttons.forEach((btn) => {
+      const open = btn.dataset.band === bandId;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.querySelector('.band-acc-marker').textContent = open ? '▾' : '▸';
+      document.getElementById('band-body-' + btn.dataset.band).hidden = !open;
+    });
+  };
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      setOpen(isOpen ? null : btn.dataset.band);
+    });
+  });
+
+  document.querySelectorAll('.chip-more').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const list = btn.closest('.chip-list');
+      const hiddenItems = list.querySelectorAll('li[hidden]');
+      hiddenItems.forEach((li) => { li.hidden = false; });
+      btn.closest('.chip-more-holder').hidden = true;
+      const firstRevealed = hiddenItems[0] && hiddenItems[0].querySelector('a');
+      if (firstRevealed) firstRevealed.focus();
+    });
+  });
+
+  if (initialBand && BANDS.some((b) => b.id === initialBand)) {
+    setOpen(initialBand);
+    const target = document.querySelector(`.band-acc-btn[data-band="${initialBand}"]`);
+    if (target) target.scrollIntoView();
+  }
 }
 
 function renderChapter(chId) {
@@ -524,7 +585,10 @@ function renderRoute() {
     html = renderMap();
     title = 'All sections';
     nav = 'map';
-    setupFn = () => setupSearch('search-map', 'search-map-results');
+    setupFn = () => {
+      setupSearch('search-map', 'search-map-results');
+      setupMapAccordions(parts[1] || null);
+    };
   } else if (parts[0] === 'chapter' && parts[1]) {
     const chapter = chapterById(parts[1]);
     if (chapter) {

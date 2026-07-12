@@ -516,59 +516,118 @@ p {
   margin-bottom: 2rem;
 }
 
-.chapter-grid {
+/* Band accordions: band -> chapter -> section chips */
+.band-accordions {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0.75rem;
   margin: 1.5rem 0;
 }
-@media (min-width: 40rem) {
-  .chapter-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (min-width: 60rem) {
-  .chapter-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
 
-.chapter-card {
-  display: block;
-  padding: 1.25rem;
-  border-radius: var(--radius-card);
+.band-acc-h {
+  margin: 0;
+}
+.band-acc-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
   background: var(--surface);
   border: 1px solid var(--hairline);
-  border-left: 6px solid var(--card-accent, var(--action));
-  text-decoration: none;
-  color: var(--ink);
-  box-shadow: var(--shadow);
+  border-left: 6px solid var(--band-a);
+  border-radius: var(--radius-card);
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  min-height: 3.5rem;
+  flex-wrap: wrap;
 }
-.chapter-card:hover {
-  background: var(--card-tint, var(--paper));
-  color: var(--ink);
+.band-acc-btn .band-acc-marker {
+  color: var(--band-a);
+  flex: 0 0 auto;
 }
-.chapter-card .band-label {
+.band-acc-btn .band-acc-name {
+  flex: 1 1 auto;
+}
+.band-acc-btn .band-acc-count {
   font-size: 1rem;
-  font-weight: 700;
-  color: var(--card-accent, var(--action));
-  letter-spacing: 0.03em;
-}
-.chapter-card .num {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: 0.05em;
-}
-.chapter-card .title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin: 0.35rem 0;
-  line-height: 1.25;
-}
-.chapter-card .range {
-  font-size: 1rem;
+  font-weight: 400;
   color: var(--ink-soft);
+}
+.band-acc-btn:hover {
+  background: var(--band-t);
+}
+.band-acc-btn[aria-expanded="true"] {
+  background: var(--band-a);
+  border-color: var(--band-a);
+  color: white;
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+}
+.band-acc-btn[aria-expanded="true"] .band-acc-marker,
+.band-acc-btn[aria-expanded="true"] .band-acc-count {
+  color: white;
+}
+
+.band-acc-body {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-top: none;
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+  padding: 1.25rem;
+}
+
+.band-chapter {
+  margin-bottom: 1.5rem;
+}
+.band-chapter:last-child {
+  margin-bottom: 0;
+}
+.band-ch-name {
+  font-size: 1.15rem;
+  margin: 0 0 0.75rem;
+}
+.band-ch-name a {
+  color: var(--band-a);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.chip-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--band-t);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  padding: 0.5rem 0.875rem;
+  font-size: 1rem;
+  color: var(--ink);
+  text-decoration: none;
+  min-height: 2.75rem;
+}
+.chip:hover {
+  border-color: var(--band-a);
+  color: var(--ink);
+}
+.chip strong {
+  font-weight: 700;
+}
+button.chip-more {
+  font-family: var(--font-body);
+  cursor: pointer;
+  background: var(--surface);
+  font-weight: 600;
 }
 
 /* ============ chapter page ============ */
