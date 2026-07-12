@@ -1,4 +1,4 @@
-# RPwD Act 2016 — Easy Read Guide (web app)
+# RPwD Act 2016: Easy Read Guide (web app)
 
 All 102 sections of India's Rights of Persons with Disabilities Act
 2016 in Easy Read: plain language, one idea at a time, an illustration
