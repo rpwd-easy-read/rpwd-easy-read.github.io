@@ -1,7 +1,7 @@
 # Session log 2026-07-13: fresh-eyes full site audit
 
-Auditor session (Fable), not a build session, run per
-`equitabledocs-program\prompts\fable-rpwd-full-audit.md`. Full method
+Independent auditor session, not a build session, run per
+the programme tower audit brief. Full method
 and findings: `docs\AUDIT-2026-07-13.md`. Raw harness scripts and JSON
 evidence: `design-review\audit-2026-07-13\`.
 

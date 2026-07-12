@@ -1,7 +1,7 @@
 # Session log, 2026-07-12: the v2.2 calm pass
 
 Narrative log for the COGA and neurodivergent-first declutter, run per
-tower prompts\fable-rpwd-coga-calm.md. State captured in
+the tower's calm-pass brief. State captured in
 docs\COGA-CALM-SPEC.md (design decisions) and docs\PLAIN-TITLES.md
 (navigation wording); cross-project record in tower D-P51.
 
@@ -26,7 +26,7 @@ docs\COGA-CALM-SPEC.md (design decisions) and docs\PLAIN-TITLES.md
 2. Plain words everywhere in navigation; titles authored first so no
    layer ever ships legalese rows.
 3. Meta noise goes; citing numbers stay.
-4. Illustrations do the wayfinding; Fable curates 17 chapter thumbs.
+4. Illustrations do the wayfinding; the build session curates 17 chapter thumbs.
 5. Two-line footer; credits move to About.
 6. Training module slide-deck mode with sub-slides kept, global
    counter, Contents overlay grouping 22 slides under 14 segment

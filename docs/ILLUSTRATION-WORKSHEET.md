@@ -22,7 +22,7 @@ LESSONS for future images (learned the hard way this run):
 
 How to use: work band by band. For each row, paste the Prompt into your
 image tool, generate, judge against the dignity rules in
-design-review\claude design output\extracted\design_handoff_rpwd_easy_read\ILLUSTRATION_SPEC.md,
+the design handoff extract in design-review (ILLUSTRATION_SPEC.md),
 then export PNG and save over img\illustrations\<filename>.png (exact
 name). The ONE ACTION in each prompt is seeded from the current alt
 text; improve the action wording freely, the style lines are the fixed

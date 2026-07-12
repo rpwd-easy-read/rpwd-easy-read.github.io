@@ -10,7 +10,7 @@ const CONTENT_URL = 'content.json';
 let CONTENT = null;
 
 /* Five themed bands replace the old 17 chapter hues.
- * Mapping approved by the author 2026-07-12 (tower D-P49):
+ * Mapping approved by the author 2026-07-12:
  * every chapter belongs to exactly one band; Section numbers stay
  * the citable anchor everywhere. */
 const BANDS = [
@@ -86,7 +86,7 @@ const BAND_THUMBS = {
   enforcement: 'justice_scales',
 };
 
-/* One curated thumb per chapter (D-P51 decision 4); every pick unique so
+/* One curated thumb per chapter (author decision); every pick unique so
  * the 17 cards on one screen never repeat an image. */
 const CHAPTER_THUMBS = {
   I: 'book_simple',
@@ -108,7 +108,7 @@ const CHAPTER_THUMBS = {
   XVII: 'document',
 };
 
-/* A band holding one chapter skips its band page (D-P51 decision 1,
+/* A band holding one chapter skips its band page (author decision,
  * data-driven: an amendment adding a chapter restores the band page by
  * itself). */
 const bandHref = (band) => band.chapters.length === 1
@@ -435,7 +435,7 @@ function setupSectionControls(s) {
   }
 
   /* Panel-aware text picker. When the Know more panel is open,
-   * read the panel content too (Deepa decision 2). Otherwise scope
+   * read the panel content too (author decision). Otherwise scope
    * stays on the Easy Read plain text. */
   const buildSpeechText = () => {
     const panel = document.getElementById('know-more-panel');
@@ -461,7 +461,7 @@ function setupSectionControls(s) {
 }
 
 /* Know more panel: open/close via the sub-route #/section/N/more.
- * Deepa decision 1 (sub-route) means Back always returns to the
+ * The sub-route decision means Back always returns to the
  * section page cleanly. Focus moves to the panel heading on open;
  * Escape or Close returns focus to the Know more button. */
 function setupKnowMorePanel(s, openOnLoad) {
@@ -808,7 +808,7 @@ function renderTrainingModule(moduleId, segNumRaw, slideNumRaw) {
 
   /* Contents overlay: the 22 slides grouped under their segment headings.
    * Structure for the trainer preparing a session; the learner just walks
-   * Next through the slides (D-P51 decision 6). */
+   * Next through the slides (author decision). */
   const contents = visibleSegs.map((s) => {
     const slides = (s.slides && s.slides.length)
       ? s.slides
@@ -1044,7 +1044,7 @@ function setupTrainingModule() {
 
   /* Move focus to the slide heading on each render so screen readers
    * pick up the new slide's title, but never let the focus jump move
-   * the page (Deepa 2026-07-13: every Next yanked the viewport up and
+   * the page (author feedback 2026-07-13: every Next yanked the viewport up and
    * forced a fresh scroll down to the stage, disorienting and heavy
    * for users with limited mobility). Instead the viewport is pinned
    * to the same spot on every slide: player strip at the top, stage
@@ -1061,7 +1061,7 @@ function setupTrainingModule() {
    * stage grows to meet the control bar, so short and medium slides
    * show whole and in-stage scrolling is reserved for genuinely large
    * content. When a slide does overflow, a chrome bar appears with a
-   * Scroll down button (Deepa 2026-07-13: an on-screen button beats a
+   * Scroll down button (author feedback 2026-07-13: an on-screen button beats a
    * scroll gesture for users with limited mobility). On phones the
    * stage has no height cap and the page scrolls naturally. */
   const stage = document.getElementById('player-stage');

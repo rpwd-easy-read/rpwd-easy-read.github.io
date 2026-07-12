@@ -1,7 +1,7 @@
 # Know more: official_text extraction check
 
 Verification record for v2.3a per the session brief
-(`equitabledocs-program/prompts/fable-rpwd-know-more.md`).
+(the know-more session brief in the programme tower).
 Prepared before any app wiring, per Deepa's instruction:
 "follow the extraction verification protocol strictly and show me
 the check record before wiring."

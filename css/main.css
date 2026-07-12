@@ -692,7 +692,7 @@ p {
 
 /* Know more panel: verbatim gazette text in a quiet quoted block.
  * Sits inside the section page, opened by the sub-route
- * #/section/N/more (D-P52 decision 1). Not modal: content stays
+ * #/section/N/more (author decision). Not modal: content stays
  * scrollable and the rest of the page is not obscured. */
 .know-more-panel {
   margin: 1.5rem 0 2rem;
@@ -1030,7 +1030,7 @@ p {
   padding: 0 0.25rem;
 }
 
-/* Slide-deck mode (D-P51 decision 6): thin band strip, calm slide
+/* Slide-deck mode (author decision): thin band strip, calm slide
  * surface, fixed Next and Back, Contents overlay instead of a rail. */
 .module-strip {
   display: flex;
@@ -1422,7 +1422,7 @@ p {
  * flash-simulated style of typical LMS modules. The chrome carries the
  * player's own colour; the stage stays light for reading comfort.
  * Themes: default slate; .theme-band and .theme-light are the two
- * candidate variants kept for Deepa's pick. */
+ * candidate variants kept for the author's pick. */
 
 .player {
   --player-chrome: #263238;

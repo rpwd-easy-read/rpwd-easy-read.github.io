@@ -5,7 +5,7 @@
 the chapter rows page keeps band context, breadcrumb and band colour
 stripe). Decision 2: approved, plain titles authored on paper first;
 map layers wait for the signed titles. Decision 3: approved as
-proposed. Decision 4: approved, Fable curates the 17 chapter thumbs and
+proposed. Decision 4: approved, the build session curates the 17 chapter thumbs and
 lists them here before shipping. Decision 5: approved. Decision 6:
 approved with sub-slides kept and a global counter; the Contents
 overlay groups the 22 slides under their 14 segment headings, structure

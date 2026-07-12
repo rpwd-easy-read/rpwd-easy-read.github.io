@@ -5,7 +5,7 @@ Reads:  source/_build/rpwd_act_text.txt   (extracted PDF text)
 Writes: content.json                       (adds official_text field per section)
 Writes: docs/KNOW-MORE-EXTRACTION-CHECK.md (verification record)
 
-Verification protocol (fable-rpwd-know-more.md, session-start brief):
+Verification protocol (know-more session-start brief):
   1. Extract all 102 sections.
   2. Auto-diff every section first and last sentence against the source.
   3. Hand-check the 10 longest sections plus S45, S89, S91, S102.
