@@ -9,6 +9,20 @@
 const CONTENT_URL = 'content.json';
 let CONTENT = null;
 
+/* Five themed bands replace the old 17 chapter hues.
+ * Mapping approved by the author 2026-07-12 (tower D-P49):
+ * every chapter belongs to exactly one band; Section numbers stay
+ * the citable anchor everywhere. */
+const BANDS = [
+  { id: 'foundations', name: 'Foundations & Definitions', chapters: ['I', 'XVII'] },
+  { id: 'rights', name: 'Rights & Entitlements', chapters: ['II'] },
+  { id: 'services', name: 'Services & Support', chapters: ['III', 'IV', 'V', 'VI', 'VII'] },
+  { id: 'systems', name: 'Systems & Authorities', chapters: ['VIII', 'IX', 'X', 'XI', 'XII', 'XIV', 'XV'] },
+  { id: 'enforcement', name: 'Enforcement', chapters: ['XIII', 'XVI'] },
+];
+
+const bandForChapter = (chId) => BANDS.find((b) => b.chapters.includes(chId));
+
 /* ============ helpers ============ */
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({
@@ -74,12 +88,12 @@ function renderHome() {
       <h1>${esc(CONTENT.meta.title)}</h1>
       <p class="hero-subtitle">${esc(CONTENT.meta.subtitle)}</p>
       <p class="hero-tagline">
-        Your rights, in plain words — with the law still attached.
+        Your rights, in plain words, with the law still attached.
         <br>A complete reference for persons with intellectual and learning disabilities.
       </p>
       <div class="hero-actions">
-        <a href="#/map" class="btn btn-primary btn-big">See all 17 chapters</a>
-        <a href="#/complain" class="btn btn-big">How to complain</a>
+        <a href="#/map" class="btn btn-primary">Read the Act</a>
+        <a href="#/about" class="btn">How this guide works</a>
       </div>
     </div>
 
@@ -125,9 +139,12 @@ function renderMap() {
   const cards = CONTENT.chapters.map((ch) => {
     const first = ch.sections[0];
     const last = ch.sections[ch.sections.length - 1];
-    const range = first === last ? `Section ${first}` : `Sections ${first}–${last}`;
+    const range = first === last ? `Section ${first}` : `Sections ${first} to ${last}`;
+    const band = bandForChapter(ch.id);
     return `
-      <a href="#/chapter/${esc(ch.id)}" class="chapter-card" style="--card-color: ${esc(ch.color)}">
+      <a href="#/chapter/${esc(ch.id)}" class="chapter-card"
+         style="--card-accent: var(--band-${band.id}-accent); --card-tint: var(--band-${band.id}-tint)">
+        <div class="band-label">${esc(band.name)}</div>
         <div class="num">${esc(ch.kicker)}</div>
         <div class="title">${esc(ch.title)}</div>
         <div class="range">${esc(range)}</div>
@@ -136,8 +153,8 @@ function renderMap() {
   }).join('');
 
   return `
-    <h1 class="page-title">Map of your rights</h1>
-    <p class="page-intro">All 17 chapters and 102 sections. Each chapter has its own colour.</p>
+    <h1 class="page-title">All sections</h1>
+    <p class="page-intro">All 102 sections, in 17 chapters. Chapters are grouped into 5 colour bands.</p>
     <div class="chapter-grid">${cards}</div>
 
     <section class="search" aria-label="Find a section">
@@ -166,7 +183,7 @@ function renderChapter(chId) {
 
   return `
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="#/">Home</a> · <a href="#/map">All chapters</a>
+      <a href="#/">Home</a> · <a href="#/map">All sections</a>
     </nav>
     <div class="chapter-hero">
       <div class="kicker">${esc(chapter.kicker)}</div>
@@ -185,18 +202,21 @@ function renderSection(num) {
   const prev = idx > 0 ? CONTENT.sections[idx - 1] : null;
   const next = idx < CONTENT.sections.length - 1 ? CONTENT.sections[idx + 1] : null;
 
+  const band = bandForChapter(s.chapter);
+
   return `
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="#/">Home</a> ·
-      <a href="#/map">All chapters</a> ·
-      <a href="#/chapter/${esc(s.chapter)}">${esc(ch.title)}</a>
+      <a href="#/map">${esc(band.name)}</a> ›
+      <a href="#/chapter/${esc(s.chapter)}">Chapter ${esc(s.chapter)}</a> ›
+      Section ${s.num}
     </nav>
 
     <div class="section-head">
-      <div class="section-badge" aria-hidden="true">${s.num}</div>
+      <div class="section-badge">Section ${s.num}</div>
+      <p class="section-badge-note">Official number kept for citing</p>
       <div class="section-title-wrap">
-        <div class="section-chapter-label">${esc(ch.kicker)} · SECTION ${s.num}</div>
-        <h1 class="section-title">${esc(s.title)}</h1>
+        <div class="section-chapter-label">${esc(band.name)} · ${esc(ch.kicker)}</div>
+        <h1 class="section-title">${esc(s.official_title)}</h1>
       </div>
     </div>
 
@@ -217,11 +237,11 @@ function renderSection(num) {
     </div>
 
     <div class="section-controls" aria-label="Page controls">
-      <button type="button" class="btn" id="btn-speak" aria-label="Read this section out loud">
-        🔊 Read out loud
+      <button type="button" class="btn btn-primary" id="btn-speak">
+        ▶ Read this to me
       </button>
-      <button type="button" class="btn btn-ghost" id="btn-stop" hidden>
-        ■ Stop
+      <button type="button" class="btn" id="btn-stop" hidden>
+        ■ Stop reading
       </button>
     </div>
 
@@ -248,7 +268,7 @@ function setupSectionControls(s) {
 
   const speak = () => {
     window.speechSynthesis.cancel();
-    const text = `${s.title}. ${s.plain_text} Use this when: ${s.use_when}`;
+    const text = `Section ${s.num}. ${s.official_title}. ${s.plain_text} Use this when: ${s.use_when}`;
     const utter = new SpeechSynthesisUtterance(text);
     utter.rate = 0.9;
     utter.pitch = 1.0;
@@ -374,6 +394,17 @@ function renderHelp() {
   `;
 }
 
+function renderTraining() {
+  return `
+    <div class="content-page">
+      <h1>Training Resources</h1>
+      <p>For trainers and support workers. Pick a chapter of the Act and download a ready-made slide deck and a printable handout. Free to use and share.</p>
+      <p>The decks and handouts are being prepared. They will appear here, chapter by chapter.</p>
+      <p><a href="#/map" class="btn">Read the Act</a></p>
+    </div>
+  `;
+}
+
 function renderYourRights() {
   const points = [
     ['You are equal.', 'No one can treat you badly.', 'Section 3', 3],
@@ -433,7 +464,7 @@ function setupSearch(inputId, resultsId) {
     }
     results.innerHTML = hits.map((s) => `
       <a href="#/section/${s.num}" class="search-result">
-        <strong>Section ${s.num} — ${esc(s.official_title)}</strong>
+        <strong>Section ${s.num}: ${esc(s.official_title)}</strong>
         ${esc(firstTwoSentences(s.plain_text, 150))}
       </a>
     `).join('');
@@ -449,9 +480,10 @@ function parseRoute() {
   return { hash, parts };
 }
 
-function setBodyChapter(ch) {
-  const classes = (document.body.className || '').split(/\s+/).filter((c) => c && !c.startsWith('ch-'));
-  classes.push('ch-' + (ch || 'I'));
+function setBodyBand(chId) {
+  const band = chId ? bandForChapter(chId) : null;
+  const classes = (document.body.className || '').split(/\s+/).filter((c) => c && !c.startsWith('band-'));
+  if (band) classes.push('band-' + band.id);
   document.body.className = classes.join(' ');
 }
 
@@ -478,7 +510,7 @@ function renderRoute() {
     setupFn = () => setupSearch('search-home', 'search-home-results');
   } else if (parts[0] === 'map') {
     html = renderMap();
-    title = 'Map of your rights';
+    title = 'All sections';
     nav = 'map';
     setupFn = () => setupSearch('search-map', 'search-map-results');
   } else if (parts[0] === 'chapter' && parts[1]) {
@@ -494,20 +526,23 @@ function renderRoute() {
     if (s) {
       html = renderSection(s.num);
       ch = s.chapter;
-      title = s.title;
+      title = `Section ${s.num}: ${s.official_title}`;
       setupFn = () => setupSectionControls(s);
     }
   } else if (parts[0] === 'about') {
     html = renderAbout();
     title = 'About this guide';
+    nav = 'about';
+  } else if (parts[0] === 'training') {
+    html = renderTraining();
+    title = 'Training Resources';
+    nav = 'training';
   } else if (parts[0] === 'complain') {
     html = renderComplain();
     title = 'How to file a complaint';
-    nav = 'complain';
   } else if (parts[0] === 'help') {
     html = renderHelp();
     title = 'Who can help you';
-    nav = 'help';
   } else if (parts[0] === 'your-rights') {
     html = renderYourRights();
     title = 'Your rights in one page';
@@ -525,8 +560,8 @@ function renderRoute() {
   }
 
   main.innerHTML = html;
-  document.title = title + ' — RPwD Act 2016 Easy Read';
-  setBodyChapter(ch);
+  document.title = title + ' · RPwD Act 2016 Easy Read';
+  setBodyBand(ch);
   setActiveNav(nav);
 
   if ('speechSynthesis' in window) {
@@ -553,11 +588,11 @@ function setupToolbar() {
   if (btnBig) {
     const pref = localStorage.getItem('rpwd-big-text') === '1';
     if (pref) {
-      document.body.classList.add('big-text');
+      document.documentElement.classList.add('big-text');
       btnBig.setAttribute('aria-pressed', 'true');
     }
     btnBig.addEventListener('click', () => {
-      const on = document.body.classList.toggle('big-text');
+      const on = document.documentElement.classList.toggle('big-text');
       btnBig.setAttribute('aria-pressed', on ? 'true' : 'false');
       localStorage.setItem('rpwd-big-text', on ? '1' : '0');
     });
