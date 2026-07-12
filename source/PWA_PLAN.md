@@ -1,8 +1,7 @@
 # RPwD Easy Read — Web App Plan
 
-> Status: planning document, not yet started.
+> Status: BUILT AND LIVE at https://rpwd-easy-read.github.io/. v1 shipped 16 April 2026; accessibility evidence pass and public launch 12 July 2026; v2 teach-first redesign (5-band palette, Map ladder, Training Resources, Using the Act) shipped live 12 July 2026 per the Claude Design handoff in design-review\ and tower decision D-P49. Remaining: the v2 second pass (illustration regeneration, decks and handouts), owner-run human checks (NVDA, TalkBack, phone install, offline). This document is the original plan, kept for history; current status lives in the tower card and the git log.
 > Drafted: 16 April 2026, after Deepa asked whether a simple app version was feasible alongside the PPTX/PDF booklet.
-> This document should be the starting point when we resume this work.
 
 ---
 
